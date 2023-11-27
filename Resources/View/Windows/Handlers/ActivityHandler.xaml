@@ -1,0 +1,41 @@
+﻿<Window x:Class="Diplom.Resources.View.Windows.Handlers.ActivityHandler"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Diplom.Resources.View.Windows.Handlers"
+        mc:Ignorable="d"
+        Title="Активность" Height="450" Width="800">
+    <Grid Background="{StaticResource BackgroundWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.ColumnSpan="2" VerticalAlignment="Center" Source="../../../Images/DocumentExample.jpeg"/>
+        <StackPanel Grid.Row="1" Margin="40 0">
+            <TextBlock Text="Название" FontSize="15"/>
+            <TextBox Style="{StaticResource CornerTextBox}" FontSize="15"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="40 0">
+            <TextBlock Text="Дата" FontSize="15"/>
+            <TextBox Style="{StaticResource CornerTextBox}" FontSize="15"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Margin="40 0">
+            <TextBlock Text="Место" FontSize="15"/>
+            <TextBox Style="{StaticResource CornerTextBox}" FontSize="15"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Margin="40 0">
+            <TextBlock Text="Вид достижения" FontSize="15"/>
+            <TextBox Style="{StaticResource CornerTextBox}" FontSize="15"/>
+        </StackPanel>
+
+        <Button Grid.Row="3" Grid.ColumnSpan="2" Width="150" Style="{StaticResource CornerButton}" Content="Добавить" FontSize="20" Margin="0 0 0 10"/>
+    </Grid>
+</Window>

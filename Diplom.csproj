@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Images\1.png" />
+    <None Remove="Resources\Images\Achievements.png" />
+    <None Remove="Resources\Images\Avtorization\3.jpg" />
+    <None Remove="Resources\Images\docs.png" />
+    <None Remove="Resources\Images\DocumentExample.jpeg" />
+    <None Remove="Resources\Images\error.png" />
+    <None Remove="Resources\Images\exit.png" />
+    <None Remove="Resources\Images\passes.png" />
+    <None Remove="Resources\Images\pencil.png" />
+    <None Remove="Resources\Images\plus.png" />
+    <None Remove="Resources\Images\students.png" />
+    <None Remove="Resources\Images\warning.png" />
+    <None Remove="Resources\Images\WindowsBar\close.png" />
+    <None Remove="Resources\Images\WindowsBar\expand-window.png" />
+    <None Remove="Resources\Images\WindowsBar\minimize-sign.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\Scripts\Interfaces\" />
+    <Folder Include="Resources\Scripts\Exeptions\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="4.11.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\1.png" />
+    <Resource Include="Resources\Images\Achievements.png" />
+    <Resource Include="Resources\Images\Avtorization\3.jpg" />
+    <Resource Include="Resources\Images\docs.png" />
+    <Resource Include="Resources\Images\DocumentExample.jpeg" />
+    <Resource Include="Resources\Images\error.png" />
+    <Resource Include="Resources\Images\exit.png" />
+    <Resource Include="Resources\Images\passes.png" />
+    <Resource Include="Resources\Images\pencil.png" />
+    <Resource Include="Resources\Images\plus.png" />
+    <Resource Include="Resources\Images\students.png" />
+    <Resource Include="Resources\Images\warning.png" />
+    <Resource Include="Resources\Images\WindowsBar\close.png" />
+    <Resource Include="Resources\Images\WindowsBar\expand-window.png" />
+    <Resource Include="Resources\Images\WindowsBar\minimize-sign.png" />
+  </ItemGroup>
+
+</Project>
