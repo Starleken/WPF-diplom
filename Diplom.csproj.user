@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources\UserControls\CustomTextBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\MainMenu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\Pages\AchievementsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\Pages\DocumentsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\Pages\PassesPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\Pages\StudentsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\Windows\AddPassesWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\Windows\ErrorWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\Windows\Handlers\ActivityHandler.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\Windows\Handlers\StudentHandler.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\Windows\WarningWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AvtorizationWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\UserControls\CustomTextBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\MainMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Pages\AchievementsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Pages\DocumentsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Pages\PassesPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Pages\StudentsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Windows\AddPassesWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Windows\ErrorWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Windows\Handlers\ActivityHandler.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Windows\Handlers\StudentHandler.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Windows\WarningWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

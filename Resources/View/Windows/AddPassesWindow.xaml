@@ -1,0 +1,53 @@
+﻿<Window x:Class="Diplom.Resources.View.Windows.AddPassesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Diplom.Resources.View.Windows"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        mc:Ignorable="d"
+        Title="Пропуск" Height="450" Width="800">
+    <Grid Background="{DynamicResource BackgroundWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.7*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
+            <Button BorderThickness="0" Background="Transparent" Name="minimizeWindowButton"  Style="{DynamicResource ImageButton}">
+                <Image Source="../../Images/WindowsBar/minimize-sign.png" Width="20" Height="20"/>
+            </Button>
+            <Button BorderThickness="0" Background="Transparent" Name="ExpandWindowButton"  Style="{DynamicResource ImageButton}">
+                <Image Source="../../Images/WindowsBar/expand-window.png" Width="20" Height="20"/>
+            </Button>
+            <Button BorderThickness="0" Background="Transparent" Name="ExitApplicationButton" Style="{DynamicResource ImageButton}">
+                <Image Source="../../Images/WindowsBar/Close.png" Width="20" Height="20"/>
+            </Button>
+        </StackPanel>
+
+        <Border Grid.Row="1" Grid.RowSpan="2" Margin="20" BorderBrush="White" BorderThickness="1">
+            <Image Name="PassImage"  Source="{Binding ImagePath}" MouseUp="PassImage_MouseUp"/>
+        </Border>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <StackPanel Margin="0 0 0 10">
+                <TextBlock Text="Название" Foreground="White" FontSize="25"/>
+                <TextBox FontSize="20" Text="{Binding Name}" Background="#222128" Foreground="White" Style="{DynamicResource CornerTextBox}"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical"  HorizontalAlignment="Left">
+                <TextBlock Text="Дата" Foreground="White" FontSize="25" Margin="0 0 0 10"/>
+                <DatePicker Grid.Row="1" SelectedDate="{Binding DatePass}"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <Button Name="AddPass" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Добавить" Style="{DynamicResource CornerButton}" FontSize="25" Padding="10 10" Click="AddPass_Click"/>
+    </Grid>
+</Window>
