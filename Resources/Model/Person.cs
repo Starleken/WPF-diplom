@@ -9,13 +9,13 @@ namespace Diplom.Resources.Model
 {
     public class Person
     {
-        public int id { get; set; }
+        public int? id { get; set; }
         public string name { get; set;}
         public string surname { get; set; }
         public string patronymic { get; set; }
 
-        //public string FullName => $"{surname} {name}";
-        //public string FullName1 => $"{surname} {name} {patronymic}";
-        //public string Initials => $"{surname[0]}{name[0]}";
+        public string FullName => $"{surname} {name}";
+        public string FullName1 => $"{surname} {name} {patronymic}";
+        public string Initials => $"{surname[0]}{name[0]}";
     }
 }

@@ -8,7 +8,7 @@ namespace Diplom.Resources.Model
 {
     public class Student
     {
-        public int id { get; set; }
+        public int? id { get; set; }
         public string? registrationAddress { get; set; }
         public string? residentialAddress { get; set; }
         public EducationForm? educationForm { get; set; }

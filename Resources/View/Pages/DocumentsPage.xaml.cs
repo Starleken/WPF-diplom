@@ -29,5 +29,10 @@ namespace Diplom.Resources.View.Pages
         {
 
         }
+
+        private void DocumentsDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

@@ -293,11 +293,11 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="Gray"/>
+                    <Setter Property="Background" Value="#07bf96"/>
                     <Setter Property="Foreground" Value="White"/>
                 </Trigger>
                 <Trigger Property="IsSelected" Value="True">
-                    <Setter Property="Background" Value="Gray"/>
+                    <Setter Property="Background" Value="#07bf96"/>
                     <Setter Property="Foreground" Value="White"/>
                 </Trigger>
 
@@ -306,7 +306,8 @@
                         <Condition Property="IsSelected" Value="True"/>
                         <Condition Property="Selector.IsSelectionActive" Value="False"/>
                     </MultiTrigger.Conditions>
-                    <Setter Property="Background" Value="#424242"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Background" Value="#07bf96"/>
                 </MultiTrigger>
             </Style.Triggers>
         </Style>
@@ -453,20 +454,20 @@
               x:Name="Border" 
               Grid.ColumnSpan="2"
               CornerRadius="0"
-              Background="#222128"
+              Background="White"
               BorderBrush="#FF97A0A5"
               BorderThickness="1" />
                 <Border 
               Grid.Column="0"
               CornerRadius="0" 
               Margin="1" 
-              Background="#222128" 
+              Background="White" 
               BorderBrush="#FF97A0A5"
-              BorderThickness="0,0,1,0" />
+              BorderThickness="1,1,1,1" />
                 <Path 
               x:Name="Arrow"
               Grid.Column="1"     
-              Fill="White"
+              Fill="#868686"
               HorizontalAlignment="Center"
               VerticalAlignment="Center"
               Data="M0,0 L0,2 L4,6 L8,2 L8,0 L4,4 z"
@@ -500,7 +501,7 @@
             <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
             <Setter Property="MinWidth" Value="120"/>
             <Setter Property="MinHeight" Value="20"/>
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Foreground" Value="#868686"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ComboBox}">
@@ -526,7 +527,7 @@
                         VerticalAlignment="Center" 
                         Margin="3,3,23,3"
                         Focusable="True" 
-                        Background="#222128"
+                        Background="White"
                         Foreground="Green"
                         Visibility="Hidden"
                         IsReadOnly="{TemplateBinding IsReadOnly}"/>
@@ -544,7 +545,7 @@
                           MaxHeight="{TemplateBinding MaxDropDownHeight}">
                                     <Border 
                             x:Name="DropDownBorder"
-                            Background="#222128"
+                            Background="white"
 
                             BorderThickness="1"
                             BorderBrush="#888888"/>
@@ -559,7 +560,7 @@
                                 <Setter TargetName="DropDownBorder" Property="MinHeight" Value="95"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Foreground" Value="#888888"/>
+                                <Setter Property="Foreground" Value="#868686"/>
                             </Trigger>
                             <Trigger Property="IsGrouping" Value="true">
                                 <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
@@ -584,7 +585,7 @@
         <!-- SimpleStyles: ComboBoxItem -->
         <Style x:Key="{x:Type ComboBoxItem}" TargetType="{x:Type ComboBoxItem}">
             <Setter Property="SnapsToDevicePixels" Value="true"/>
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Foreground" Value="#868686"/>
             <Setter Property="OverridesDefaultStyle" Value="true"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -599,7 +600,7 @@
                                 <Setter TargetName="Border" Property="Background" Value="#FF4F4F4F"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Foreground" Value="#888888"/>
+                                <Setter Property="Foreground" Value="#868686"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>

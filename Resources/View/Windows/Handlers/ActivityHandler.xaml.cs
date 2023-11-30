@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Diplom.Resources.Model.Activity;
+using Diplom.Resources.ViewModel.Handlers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,22 @@ namespace Diplom.Resources.View.Windows.Handlers
     /// </summary>
     public partial class ActivityHandler : Window
     {
+        private ActivityHandlerViewModel viewModel;
+
         public ActivityHandler()
         {
             InitializeComponent();
+
+            viewModel = new ActivityHandlerViewModel();
+            this.DataContext = viewModel;
+        }
+
+        public ActivityHandler(Activity activity)
+        {
+            InitializeComponent();
+
+            viewModel = new ActivityHandlerViewModel(activity, Scripts.HandlerOpenType.update);
+            this.DataContext = viewModel;
         }
     }
 }

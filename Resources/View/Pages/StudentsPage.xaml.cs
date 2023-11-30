@@ -1,4 +1,6 @@
 ﻿using Diplom.Resources.Model;
+using Diplom.Resources.Scripts;
+using Diplom.Resources.Scripts.HttpRequests.Repository;
 using Diplom.Resources.View.Windows;
 using Diplom.Resources.View.Windows.Handlers;
 using Diplom.Resources.ViewModel;
@@ -26,9 +28,15 @@ namespace Diplom.Resources.View.Pages
     {
         private StudentsViewModel viewModel;
 
+        private List<Group> groups;
+        private List<EducationForm> educationForms;
+
         public StudentsPage()
         {
             InitializeComponent();
+
+            groups = new GroupRepository().GetAll().ToList();
+            educationForms = new EducationFormRepository().GetAll().ToList();
 
             viewModel = new StudentsViewModel();
             this.DataContext = viewModel;
@@ -41,18 +49,36 @@ namespace Diplom.Resources.View.Pages
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            StudentHandler studentHandler = new StudentHandler();
+            StudentHandler studentHandler = new StudentHandler(educationForms, groups);
             studentHandler.ShowDialog();
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-
+            StudentHandler studentHandler = new StudentHandler(GetSelectedStudent(), HandlerOpenType.update, educationForms, groups);
+            studentHandler.ShowDialog();
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
+            WarningWindow warningWindow = new WarningWindow("Вы уверены что хотите удалить студента?");
+            warningWindow.ShowDialog();
 
+            if (warningWindow.result == true)
+            {
+                viewModel.DeleteStudent(GetSelectedStudent());
+            }
+        }
+
+        private Student GetSelectedStudent()
+        {
+            return (Student)StudentsDataGrid.SelectedItem;
+        }
+
+        private void StudentsDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            StudentHandler studentHandler = new StudentHandler(GetSelectedStudent(), HandlerOpenType.watch, educationForms, groups);
+            studentHandler.ShowDialog();
         }
     }
 }

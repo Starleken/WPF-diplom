@@ -75,5 +75,4 @@ D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Diplom.csproj.CopyComple
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Windows\Handlers\ActivityHandler.g.cs
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Windows\Handlers\ActivityHandler.baml
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Windows\Handlers\StudentHandler.g.cs
-D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\GeneratedInternalTypeHelper.g.cs
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Windows\Handlers\StudentHandler.baml

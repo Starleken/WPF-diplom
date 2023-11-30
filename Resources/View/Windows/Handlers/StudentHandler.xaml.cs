@@ -1,4 +1,5 @@
 ﻿using Diplom.Resources.Model;
+using Diplom.Resources.Scripts;
 using Diplom.Resources.ViewModel.Handlers;
 using System;
 using System.Collections.Generic;
@@ -24,16 +25,48 @@ namespace Diplom.Resources.View.Windows.Handlers
     {
         private StudentHandlerViewModel viewModel;
 
-        public StudentHandler()
+        public StudentHandler(List<EducationForm> educationForms, List<Group> groups)
         {
             InitializeComponent();
-            viewModel = new StudentHandlerViewModel();
+            viewModel = new StudentHandlerViewModel(educationForms, groups);
             this.DataContext = viewModel;
+        }
+
+        public StudentHandler(Student student, HandlerOpenType handlerType, List<EducationForm> educationForms, List<Group> groups)
+        {
+            InitializeComponent();
+            viewModel = new StudentHandlerViewModel(student, educationForms, groups);
+            this.DataContext = viewModel;
+
+            if (handlerType == HandlerOpenType.watch)
+            {
+                InitWatchType();
+            }
+            else if(handlerType == HandlerOpenType.update)
+            {
+                InitUpdateType();
+            }
+        }
+
+        private void InitWatchType()
+        {
+            AddButton.Visibility = Visibility.Collapsed;
+        }
+        
+        private void InitUpdateType()
+        {
+            AddButton.Visibility = Visibility.Collapsed;
+            ChangeButton.Visibility = Visibility.Visible;
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             viewModel.AddStudent();
+        }
+
+        private void ChangeButton_Click(object sender, RoutedEventArgs e)
+        {
+            viewModel.PutStudent();
         }
     }
 }

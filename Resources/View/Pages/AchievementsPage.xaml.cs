@@ -44,7 +44,7 @@ namespace Diplom.Resources.View.Pages
         {
             Activity selectedActivity = GetSelectedActivity();
 
-            ActivityHandler activityHandler = new ActivityHandler();
+            ActivityHandler activityHandler = new ActivityHandler(GetSelectedActivity());
             activityHandler.ShowDialog();
         }
 

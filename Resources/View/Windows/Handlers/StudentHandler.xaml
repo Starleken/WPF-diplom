@@ -6,7 +6,7 @@
         xmlns:uc ="clr-namespace:Diplom.Resources.UserControls"
         xmlns:local="clr-namespace:Diplom.Resources.View.Windows.Handlers"
         mc:Ignorable="d"
-        Title="Студент" Height="450" Width="800">
+        Title="Студент" Height="550" Width="900" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="MyBoolToVisibilityConverter" />
@@ -67,35 +67,13 @@
         </StackPanel>
         <StackPanel Margin="20 1" Grid.Row="0" Grid.Column="1">
             <TextBlock Text="Форма обучения" Foreground="#97A5B4" FontSize="13" Margin="0 0 0 8"/>
-            <Grid>
-                <TextBlock Margin="13 0" VerticalAlignment="Center" Foreground="#868686" IsHitTestVisible="False" Panel.ZIndex="1"
-                Text="Введите форму обучения" FontSize="14"
-                Visibility="{Binding ElementName=EducationFormTextBox, Path=Text.IsEmpty, Converter={StaticResource MyBoolToVisibilityConverter}}" />
-
-                <TextBox Name="EducationFormTextBox" Style="{StaticResource customTextBox}" Text="{Binding Student.educationForm.name}"/>
-            </Grid>
+            <ComboBox FontSize="13" Padding="10 8" VerticalAlignment="Center" ItemsSource="{Binding EducationForms}" DisplayMemberPath="name" SelectedItem="{Binding Student.educationForm}" IsSynchronizedWithCurrentItem="True"/>
         </StackPanel>
         <StackPanel Margin="20 1" Grid.Row="1" Grid.Column="1">
-            <TextBlock Text="Адрес прописки" Foreground="#97A5B4" FontSize="13" Margin="0 0 0 8"/>
-            <Grid>
-                <TextBlock Margin="13 0" VerticalAlignment="Center" Foreground="#868686" IsHitTestVisible="False" Panel.ZIndex="1"
-                Text="Введите форму обучения" FontSize="14"
-                Visibility="{Binding ElementName=RegistrationTextBox, Path=Text.IsEmpty, Converter={StaticResource MyBoolToVisibilityConverter}}" />
-
-                <TextBox Name="RegistrationTextBox" Style="{StaticResource customTextBox}" Text="{Binding Student.registrationAddress}"/>
-            </Grid>
+            <TextBlock Text="Группа" Foreground="#97A5B4" FontSize="13" Margin="0 0 0 8"/>
+            <ComboBox FontSize="13" Padding="10 8" VerticalAlignment="Center" ItemsSource="{Binding Groups}" DisplayMemberPath="name" SelectedItem="{Binding Student.group}" IsSynchronizedWithCurrentItem="True"/>
         </StackPanel>
         <StackPanel Margin="20 1" Grid.Row="2" Grid.Column="1">
-            <TextBlock Text="Адрес проживания" Foreground="#97A5B4" FontSize="13" Margin="0 0 0 8"/>
-            <Grid>
-                <TextBlock Margin="13 0" VerticalAlignment="Center" Foreground="#868686" IsHitTestVisible="False" Panel.ZIndex="1"
-                Text="Введите адрес проживания" FontSize="14"
-                Visibility="{Binding ElementName=residentialTextBox, Path=Text.IsEmpty, Converter={StaticResource MyBoolToVisibilityConverter}}" />
-
-                <TextBox Name="residentialTextBox" Style="{StaticResource customTextBox}" Text="{Binding Student.residentialAddress}"/>
-            </Grid>
-        </StackPanel>
-        <StackPanel Margin="20 1" Grid.Row="3" Grid.Column="1">
             <TextBlock Text="Пароль" Foreground="#97A5B4" FontSize="13" Margin="0 0 0 8"/>
             <Grid>
                 <TextBlock Margin="13 0" VerticalAlignment="Center" Foreground="#868686" IsHitTestVisible="False" Panel.ZIndex="1"
@@ -105,6 +83,7 @@
                 <TextBox Name="passwordTextBox" Style="{StaticResource customTextBox}" Text="{Binding Student.user.password}"/>
             </Grid>
         </StackPanel>
-        <Button Grid.Row="4" Grid.ColumnSpan="2" Height="45" Width="150" Content="Добавить" Style="{StaticResource CornerButton}" FontSize="20" Name="AddButton" Click="AddButton_Click"/>
+        <Button Grid.Row="4" Grid.ColumnSpan="2" Height="45" Width="150" Content="Сохранить" Style="{StaticResource CornerButton}" FontSize="20" Name="AddButton" Click="AddButton_Click"/>
+        <Button Grid.Row="4" Grid.ColumnSpan="2" Height="45" Width="150" Content="Изменить" Style="{StaticResource CornerButton}" FontSize="20" Name="ChangeButton" Visibility="Collapsed" Click="ChangeButton_Click" />
     </Grid>
 </Window>

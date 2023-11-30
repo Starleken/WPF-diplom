@@ -8,7 +8,7 @@ namespace Diplom.Resources.Model
 {
     public class Group
     {
-        public long id { get; set; }
+        public long? id { get; set; }
         public string name { get; set; }
         public Curator curator { get; set; }
 

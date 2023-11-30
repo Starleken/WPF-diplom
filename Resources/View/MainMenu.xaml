@@ -37,7 +37,7 @@
             <DockPanel>
                 <Border Width="80" Height="80" Padding="3" Background="White" CornerRadius="100"
                         DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="20 -30 0 0">
-                    <TextBlock Text="{Binding Path=User.person.Initials}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40"/>
+                    <TextBlock Text="{Binding Path=User.person.Initials}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"/>
                 </Border>
 
                 <TextBlock Text="{Binding Path=User.person.FullName}" Foreground="White" FontSize="15" FontWeight="SemiBold"
@@ -59,8 +59,8 @@
                 <StackPanel DockPanel.Dock="Top">
                     <Button Style="{StaticResource menuButton}" Name="DocumentsButton" Click="DocumentsButton_Click">
                         <StackPanel Orientation="Horizontal">
-                            <Border Name="DocumentsActivity" Width="3" Background="Black" CornerRadius="5"/>
-                            <Icon:PackIconMaterial Kind="HomeVariant" Style="{StaticResource menuButtonIcon}" />
+                            <Border Name="DocumentsActivity" Width="3" Background="#6568bb" CornerRadius="5"/>
+                            <Icon:PackIconMaterial Kind="FileDocumentMultiple" Style="{StaticResource menuButtonIcon}" />
                             <TextBlock Text="Документы"/>
                         </StackPanel>
                     </Button>
@@ -69,8 +69,17 @@
                     <Button Style="{StaticResource menuButton}" Name="StudentsButton" Click="StudentsButton_Click" >
                         <StackPanel Orientation="Horizontal">
                             <Border Name="StudentsActivity" Width="3" Background="#6568bb" CornerRadius="5" Visibility="Hidden"/>
-                            <Icon:PackIconMaterial Kind="CalendarClock" Style="{StaticResource menuButtonIcon}"/>
+                            <Icon:PackIconMaterial Kind="AccountMultiple" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Студенты"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <StackPanel DockPanel.Dock="Top">
+                    <Button Style="{StaticResource menuButton}" Name="CuratorsButton" Click="StudentsButton_Click" >
+                        <StackPanel Orientation="Horizontal">
+                            <Border Name="CuratorsActivity" Width="3" Background="#6568bb" CornerRadius="5" Visibility="Hidden"/>
+                            <Icon:PackIconMaterial Kind="AccountTie" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Кураторы"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
@@ -78,7 +87,7 @@
                     <Button Style="{StaticResource menuButton}" Name="AchievementsButton" Click="AchievementsButton_Click">
                         <StackPanel Orientation="Horizontal">
                             <Border Visibility="Hidden" Name="AchievementsActivity" Width="3" Background="#6568bb" CornerRadius="5"/>
-                            <Icon:PackIconMaterial Kind="AccountMultipleOutline" Style="{StaticResource menuButtonIcon}"/>
+                            <Icon:PackIconMaterial Kind="Trophy" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Активность"/>
                         </StackPanel>
                     </Button>

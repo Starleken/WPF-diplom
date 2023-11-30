@@ -30,13 +30,22 @@ namespace Diplom.Resources.View.Windows
 
         private void StopButton_Click(object sender, RoutedEventArgs e)
         {
-            result = false;
-            this.Close();
+            Close(false);
         }
 
         private void ApplyButton_Click(object sender, RoutedEventArgs e)
         {
-            result = true;
+            Close(true);
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close(false);
+        }
+
+        private void Close(bool result)
+        {
+            this.result = result;
             this.Close();
         }
     }

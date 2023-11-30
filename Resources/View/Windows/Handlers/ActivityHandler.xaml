@@ -5,7 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Diplom.Resources.View.Windows.Handlers"
         mc:Ignorable="d"
-        Title="Активность" Height="450" Width="800">
+        Title="Активность" Height="550" Width="900" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="MyBoolToVisibilityConverter" />
+    </Window.Resources>
+
     <Grid Background="{StaticResource BackgroundWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"/>
@@ -19,23 +24,41 @@
         </Grid.ColumnDefinitions>
 
         <Image Grid.ColumnSpan="2" VerticalAlignment="Center" Source="../../../Images/DocumentExample.jpeg"/>
-        <StackPanel Grid.Row="1" Margin="40 0">
-            <TextBlock Text="Название" FontSize="15"/>
-            <TextBox Style="{StaticResource CornerTextBox}" FontSize="15"/>
+        <StackPanel Margin="20 1" Grid.Row="1">
+            <TextBlock Text="Достижение" Foreground="#97A5B4" FontSize="13" Margin="0 0 0 8"/>
+            <Grid>
+                <TextBlock Margin="13 0" VerticalAlignment="Center" Foreground="#868686" IsHitTestVisible="False" Panel.ZIndex="1"
+                Text="Введите название достижения" FontSize="14"
+                Visibility="{Binding ElementName=textBox, Path=Text.IsEmpty, Converter={StaticResource MyBoolToVisibilityConverter}}" />
+
+                <TextBox Name="textBox" Style="{StaticResource customTextBox}" Text="{Binding Activity.name}"/>
+            </Grid>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="1" Margin="40 0">
-            <TextBlock Text="Дата" FontSize="15"/>
-            <TextBox Style="{StaticResource CornerTextBox}" FontSize="15"/>
+        <StackPanel Margin="20 1" Grid.Row="1" Grid.Column="1">
+            <TextBlock Text="Дата" Foreground="#97A5B4" FontSize="13" Margin="0 0 0 8"/>
+            <Grid>
+                <TextBlock Margin="13 0" VerticalAlignment="Center" Foreground="#868686" IsHitTestVisible="False" Panel.ZIndex="1"
+                Text="Введите дату выдачи диплома" FontSize="14"
+                Visibility="{Binding ElementName=DateTextBox, Path=Text.IsEmpty, Converter={StaticResource MyBoolToVisibilityConverter}}" />
+
+                <TextBox Name="DateTextBox" Style="{StaticResource customTextBox}" Text="{Binding Activity.date}"/>
+            </Grid>
         </StackPanel>
-        <StackPanel Grid.Row="2" Margin="40 0">
-            <TextBlock Text="Место" FontSize="15"/>
-            <TextBox Style="{StaticResource CornerTextBox}" FontSize="15"/>
+        <StackPanel Margin="20 1" Grid.Row="2">
+            <TextBlock Text="Результат" Foreground="#97A5B4" FontSize="13" Margin="0 0 0 8"/>
+            <Grid>
+                <TextBlock Margin="13 0" VerticalAlignment="Center" Foreground="#868686" IsHitTestVisible="False" Panel.ZIndex="1"
+                Text="Введите ваш результат в конкурсе" FontSize="14"
+                Visibility="{Binding ElementName=PlaceTextBox, Path=Text.IsEmpty, Converter={StaticResource MyBoolToVisibilityConverter}}" />
+
+                <TextBox Name="PlaceTextBox" Style="{StaticResource customTextBox}" Text="{Binding Activity.place}"/>
+            </Grid>
         </StackPanel>
-        <StackPanel Grid.Row="2" Grid.Column="1" Margin="40 0">
-            <TextBlock Text="Вид достижения" FontSize="15"/>
-            <TextBox Style="{StaticResource CornerTextBox}" FontSize="15"/>
+        <StackPanel Margin="20 1" Grid.Row="2" Grid.Column="1">
+            <TextBlock Text="Вид достижения" Foreground="#97A5B4" FontSize="13" Margin="0 0 0 8"/>
+            <ComboBox FontSize="13" Padding="10 8" VerticalAlignment="Center" ItemsSource="{Binding EducationForms}" DisplayMemberPath="name" SelectedItem="{Binding Student.educationForm}" IsSynchronizedWithCurrentItem="True"/>
         </StackPanel>
 
-        <Button Grid.Row="3" Grid.ColumnSpan="2" Width="150" Style="{StaticResource CornerButton}" Content="Добавить" FontSize="20" Margin="0 0 0 10"/>
+        <Button Grid.Row="3" Grid.ColumnSpan="2" Width="150" Height="40" Style="{StaticResource CornerButton}" Content="Добавить" FontSize="20" Margin="0 0 0 10"/>
     </Grid>
 </Window>

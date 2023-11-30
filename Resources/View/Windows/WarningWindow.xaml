@@ -19,13 +19,7 @@
             </Grid.RowDefinitions>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button BorderThickness="0" Background="Transparent" Name="minimizeWindowButton"  Style="{DynamicResource ImageButton}">
-                    <Image Source="../../Images/WindowsBar/minimize-sign.png" Width="20" Height="20"/>
-                </Button>
-                <Button BorderThickness="0" Background="Transparent" Name="ExpandWindowButton"  Style="{DynamicResource ImageButton}">
-                    <Image Source="../../Images/WindowsBar/expand-window.png" Width="20" Height="20"/>
-                </Button>
-                <Button BorderThickness="0" Background="Transparent" Name="ExitApplicationButton" Style="{DynamicResource ImageButton}">
+                <Button BorderThickness="0" Background="Transparent" Name="CloseButton" Style="{DynamicResource ImageButton}" Click="CloseButton_Click">
                     <Image Source="../../Images/WindowsBar/Close.png" Width="20" Height="20"/>
                 </Button>
             </StackPanel>
