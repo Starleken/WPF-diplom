@@ -26,9 +26,9 @@ namespace Diplom.Resources.ViewModel
             }
         }
 
-        private ObservableCollection<ActivityType> activityTypes;
+        private ObservableCollection<ActivityLevel> activityTypes;
 
-        public ObservableCollection<ActivityType> ActivityTypes
+        public ObservableCollection<ActivityLevel> ActivityTypes
         {
             get { return ActivityTypes; }
             set { activityTypes = value; }
@@ -41,7 +41,7 @@ namespace Diplom.Resources.ViewModel
             allActivities = activityGetter.GetAll().ToList();
             Activities = new ObservableCollection<Activity>(allActivities);
 
-            ActivityTypes = new ObservableCollection<ActivityType>(new ActivityTypeGetter().GetAll());
+            ActivityTypes = new ObservableCollection<ActivityLevel>(new ActivityTypeGetter().GetAll());
         }
 
         public void DeleteActivity(Activity activity)

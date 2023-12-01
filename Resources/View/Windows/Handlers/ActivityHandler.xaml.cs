@@ -38,5 +38,10 @@ namespace Diplom.Resources.View.Windows.Handlers
             viewModel = new ActivityHandlerViewModel(activity, Scripts.HandlerOpenType.update);
             this.DataContext = viewModel;
         }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            viewModel.AddActivity();
+        }
     }
 }

@@ -62,11 +62,13 @@ namespace Diplom.Resources.View.Windows.Handlers
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             viewModel.AddStudent();
+            this.Close();
         }
 
         private void ChangeButton_Click(object sender, RoutedEventArgs e)
         {
             viewModel.PutStudent();
+            this.Close();
         }
     }
 }

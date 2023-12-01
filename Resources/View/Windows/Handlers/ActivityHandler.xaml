@@ -11,20 +11,22 @@
         <BooleanToVisibilityConverter x:Key="MyBoolToVisibilityConverter" />
     </Window.Resources>
 
-    <Grid Background="{StaticResource BackgroundWindow}">
+    <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="4*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.7*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Image Grid.ColumnSpan="2" VerticalAlignment="Center" Source="../../../Images/DocumentExample.jpeg"/>
-        <StackPanel Margin="20 1" Grid.Row="1">
+        <Image Grid.RowSpan="5" Margin="10" VerticalAlignment="Center" Source="../../../Images/DocumentExample.jpeg"/>
+        <StackPanel Margin="20 1" Grid.Column="1">
             <TextBlock Text="Достижение" Foreground="#97A5B4" FontSize="13" Margin="0 0 0 8"/>
             <Grid>
                 <TextBlock Margin="13 0" VerticalAlignment="Center" Foreground="#868686" IsHitTestVisible="False" Panel.ZIndex="1"
@@ -36,15 +38,9 @@
         </StackPanel>
         <StackPanel Margin="20 1" Grid.Row="1" Grid.Column="1">
             <TextBlock Text="Дата" Foreground="#97A5B4" FontSize="13" Margin="0 0 0 8"/>
-            <Grid>
-                <TextBlock Margin="13 0" VerticalAlignment="Center" Foreground="#868686" IsHitTestVisible="False" Panel.ZIndex="1"
-                Text="Введите дату выдачи диплома" FontSize="14"
-                Visibility="{Binding ElementName=DateTextBox, Path=Text.IsEmpty, Converter={StaticResource MyBoolToVisibilityConverter}}" />
-
-                <TextBox Name="DateTextBox" Style="{StaticResource customTextBox}" Text="{Binding Activity.date}"/>
-            </Grid>
+            <DatePicker Text="Введите дату"/>
         </StackPanel>
-        <StackPanel Margin="20 1" Grid.Row="2">
+        <StackPanel Margin="20 1" Grid.Row="2" Grid.Column="1">
             <TextBlock Text="Результат" Foreground="#97A5B4" FontSize="13" Margin="0 0 0 8"/>
             <Grid>
                 <TextBlock Margin="13 0" VerticalAlignment="Center" Foreground="#868686" IsHitTestVisible="False" Panel.ZIndex="1"
@@ -54,11 +50,15 @@
                 <TextBox Name="PlaceTextBox" Style="{StaticResource customTextBox}" Text="{Binding Activity.place}"/>
             </Grid>
         </StackPanel>
-        <StackPanel Margin="20 1" Grid.Row="2" Grid.Column="1">
+        <StackPanel Margin="20 1" Grid.Row="3" Grid.Column="1">
             <TextBlock Text="Вид достижения" Foreground="#97A5B4" FontSize="13" Margin="0 0 0 8"/>
-            <ComboBox FontSize="13" Padding="10 8" VerticalAlignment="Center" ItemsSource="{Binding EducationForms}" DisplayMemberPath="name" SelectedItem="{Binding Student.educationForm}" IsSynchronizedWithCurrentItem="True"/>
+            <ComboBox FontSize="13" Padding="10 8" VerticalAlignment="Center" ItemsSource="{Binding ActivityTypes}" DisplayMemberPath="name" SelectedItem="{Binding Activity.activityType}" IsSynchronizedWithCurrentItem="True"/>
+        </StackPanel>
+        <StackPanel Margin="20 1" Grid.Row="4" Grid.Column="1">
+            <TextBlock Text="Уровень" Foreground="#97A5B4" FontSize="13" Margin="0 0 0 8"/>
+            <ComboBox FontSize="13" Padding="10 8" VerticalAlignment="Center" ItemsSource="{Binding ActivityLevels}" DisplayMemberPath="name" SelectedItem="{Binding Activity.activityLevel}" IsSynchronizedWithCurrentItem="True"/>
         </StackPanel>
 
-        <Button Grid.Row="3" Grid.ColumnSpan="2" Width="150" Height="40" Style="{StaticResource CornerButton}" Content="Добавить" FontSize="20" Margin="0 0 0 10"/>
+        <Button Grid.Row="5" Name="AddButton" Grid.ColumnSpan="2" Width="150" Height="40" Style="{StaticResource CornerButton}" Content="Добавить" FontSize="20" Margin="0 0 0 10" Click="AddButton_Click"/>
     </Grid>
 </Window>

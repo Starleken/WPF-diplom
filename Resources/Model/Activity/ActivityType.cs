@@ -8,7 +8,7 @@ namespace Diplom.Resources.Model.Activity
 {
     public class ActivityType
     {
-        public int id { get; set; }
+        public long? id { get; set; }
         public string name { get; set; }
 
         public ActivityType()
@@ -16,7 +16,7 @@ namespace Diplom.Resources.Model.Activity
             
         }
 
-        public ActivityType(int id, string name)
+        public ActivityType(long? id, string name)
         {
             this.id = id;
             this.name = name;
