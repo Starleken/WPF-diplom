@@ -47,7 +47,7 @@ namespace Diplom.Resources.View
             menuButtons.Add("DocumentsButton", new MenuButtonContainer(DocumentsButton, DocumentsActivity));
             menuButtons.Add("AchievementsButton", new MenuButtonContainer(AchievementsButton, AchievementsActivity));
             menuButtons.Add("StudentsButton", new MenuButtonContainer(StudentsButton, StudentsActivity));
-            menuButtons.Add("PassesButton", new MenuButtonContainer(PassesButton, PassesActivity));
+            menuButtons.Add("CuratorsButton", new MenuButtonContainer(CuratorsButton, CuratorsActivity));
         }
 
         private void InitByRole()
@@ -88,11 +88,11 @@ namespace Diplom.Resources.View
             NavigateTo(new DocumentsPage());
         }
 
-        private void PassesButton_Click(object sender, RoutedEventArgs e)
+        private void CuratorsButton_Click(object sender, RoutedEventArgs e)
         {
             DisableActivityButtons();
-            menuButtons["PassesButton"].ActivateButton();
-            NavigateTo(new PassesPage());
+            menuButtons["CuratorsButton"].ActivateButton();
+            NavigateTo(new CuratorPage());
         }
 
         private void AchievementsButton_Click(object sender, RoutedEventArgs e)

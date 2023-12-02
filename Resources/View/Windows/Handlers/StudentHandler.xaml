@@ -84,6 +84,6 @@
             </Grid>
         </StackPanel>
         <Button Grid.Row="4" Grid.ColumnSpan="2" Height="45" Width="150" Content="Сохранить" Style="{StaticResource CornerButton}" FontSize="20" Name="AddButton" Click="AddButton_Click"/>
-        <Button Grid.Row="4" Grid.ColumnSpan="2" Height="45" Width="150" Content="Изменить" Style="{StaticResource CornerButton}" FontSize="20" Name="ChangeButton" Visibility="Collapsed" Click="ChangeButton_Click" />
+        <Button Grid.Row="4" Grid.ColumnSpan="2" Height="45" Width="150" Content="Изменить" Style="{StaticResource CornerButton}" FontSize="20" Name="ChangeButton" Visibility="Collapsed" Click="ChangeButton_Click_1" />
     </Grid>
 </Window>

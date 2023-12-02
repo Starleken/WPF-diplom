@@ -48,11 +48,11 @@
                 <Separator Margin="25" DockPanel.Dock="Top" Height="0.8" Background="#7e5fdc"/>
 
                 <StackPanel DockPanel.Dock="Top">
-                    <Button Style="{StaticResource menuButton}" Name="PassesButton" Click="PassesButton_Click">
+                    <Button Style="{StaticResource menuButton}" Name="CuratorsButton" Click="CuratorsButton_Click">
                         <StackPanel Orientation="Horizontal">
-                            <Border Visibility="Hidden" Name="PassesActivity" Width="3" Background="#6568bb" CornerRadius="5"/>
-                            <Icon:PackIconMaterial Kind="HomeVariant" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Пропуски"/>
+                            <Border Visibility="Hidden" Name="CuratorsActivity" Width="3" Background="#6568bb" CornerRadius="5"/>
+                            <Icon:PackIconMaterial Kind="AccountTie" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Кураторы"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
@@ -71,15 +71,6 @@
                             <Border Name="StudentsActivity" Width="3" Background="#6568bb" CornerRadius="5" Visibility="Hidden"/>
                             <Icon:PackIconMaterial Kind="AccountMultiple" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Студенты"/>
-                        </StackPanel>
-                    </Button>
-                </StackPanel>
-                <StackPanel DockPanel.Dock="Top">
-                    <Button Style="{StaticResource menuButton}" Name="CuratorsButton" Click="StudentsButton_Click" >
-                        <StackPanel Orientation="Horizontal">
-                            <Border Name="CuratorsActivity" Width="3" Background="#6568bb" CornerRadius="5" Visibility="Hidden"/>
-                            <Icon:PackIconMaterial Kind="AccountTie" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Кураторы"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>

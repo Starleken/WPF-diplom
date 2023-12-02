@@ -22,9 +22,7 @@ D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Diplom.genruntimeconfig.
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\ref\Diplom.dll
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\App.baml
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Pages\DocumentsPage.g.cs
-D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Pages\PassesPage.g.cs
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Pages\DocumentsPage.baml
-D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Pages\PassesPage.baml
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\UserControls\CustomTextBox.g.cs
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\UserControls\CustomTextBox.baml
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Pages\StudentsPage.g.cs
@@ -76,3 +74,7 @@ D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Windows\H
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Windows\Handlers\ActivityHandler.baml
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Windows\Handlers\StudentHandler.g.cs
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Windows\Handlers\StudentHandler.baml
+D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Pages\CuratorPage.g.cs
+D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Pages\CuratorPage.baml
+D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Windows\Handlers\CuratorHandler.g.cs
+D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Windows\Handlers\CuratorHandler.baml

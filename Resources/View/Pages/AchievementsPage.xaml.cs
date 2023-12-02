@@ -1,4 +1,5 @@
 ﻿using Diplom.Resources.Model.Activity;
+using Diplom.Resources.Scripts;
 using Diplom.Resources.View.Windows;
 using Diplom.Resources.View.Windows.Handlers;
 using Diplom.Resources.ViewModel;
@@ -44,7 +45,7 @@ namespace Diplom.Resources.View.Pages
         {
             Activity selectedActivity = GetSelectedActivity();
 
-            ActivityHandler activityHandler = new ActivityHandler(GetSelectedActivity());
+            ActivityHandler activityHandler = new ActivityHandler(GetSelectedActivity(), HandlerOpenType.update);
             activityHandler.ShowDialog();
         }
 

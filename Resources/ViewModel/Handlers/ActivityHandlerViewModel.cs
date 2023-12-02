@@ -61,11 +61,19 @@ namespace Diplom.Resources.ViewModel.Handlers
         public ActivityHandlerViewModel(Activity activity, HandlerOpenType openType)
         {
             Activity = activity;
+
+            ActivityLevels = new ObservableCollection<ActivityLevel>(new ActivityLevelRepository().GetAll());
+            ActivityTypes = new ObservableCollection<ActivityType>(new ActivityTypeRepository().GetAll());
         }
 
         public void AddActivity()
         {
             new ActivityRepository().PostActivity(Activity);
+        }
+
+        public void UpdateActivity()
+        {
+            new ActivityRepository().PutActivity(Activity);
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

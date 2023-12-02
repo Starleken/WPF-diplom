@@ -1,0 +1,64 @@
+﻿using Diplom.Resources.Model;
+using Diplom.Resources.View.Windows;
+using Diplom.Resources.View.Windows.Handlers;
+using Diplom.Resources.ViewModel;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace Diplom.Resources.View.Pages
+{
+    /// <summary>
+    /// Interaction logic for CuratorPage.xaml
+    /// </summary>
+    public partial class CuratorPage : Page
+    {
+        private CuratorsViewModel viewModel;
+
+        public CuratorPage()
+        {
+            InitializeComponent();
+
+            viewModel = new CuratorsViewModel();
+            DataContext = viewModel;
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            CuratorHandler handler = new CuratorHandler();
+            handler.ShowDialog();
+        }
+
+        private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            CuratorHandler handler = new CuratorHandler(GetSelectedCurator());
+            handler.ShowDialog();
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private Curator GetSelectedCurator()
+        {
+            return (Curator)CuratorsDataGrid.SelectedItem;
+        }
+    }
+}

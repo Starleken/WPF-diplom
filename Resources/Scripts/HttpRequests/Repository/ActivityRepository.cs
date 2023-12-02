@@ -34,5 +34,16 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
 
             return null;
         }
+
+        public Activity PutActivity(Activity activity)
+        {
+            HttpClient client = new HttpClient();
+
+            using StringContent jsonContent = new StringContent(JsonSerializer.Serialize(activity), Encoding.UTF8, "application/json");
+
+            HttpResponseMessage responseMessage = client.PutAsync(URL, jsonContent).Result;
+
+            return null;
+        }
     }
 }

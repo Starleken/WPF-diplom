@@ -70,5 +70,10 @@ namespace Diplom.Resources.View.Windows.Handlers
             viewModel.PutStudent();
             this.Close();
         }
+
+        private void ChangeButton_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

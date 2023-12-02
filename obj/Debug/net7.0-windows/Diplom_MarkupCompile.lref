@@ -5,11 +5,12 @@ FD:\Projects\WPFprojects\Diplom\Resources\UserControls\CustomTextBox.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\MainMenu.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\AchievementsPage.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\DocumentsPage.xaml;;
-FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\PassesPage.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\StudentsPage.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Windows\AddPassesWindow.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Windows\ErrorWindow.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Windows\Handlers\ActivityHandler.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Windows\Handlers\StudentHandler.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Windows\WarningWindow.xaml;;
+FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\CuratorPage.xaml;;
+FD:\Projects\WPFprojects\Diplom\Resources\View\Windows\Handlers\CuratorHandler.xaml;;
 

@@ -10,10 +10,12 @@ namespace Diplom.Resources.Model
     {
         public long? id { get; set; }
         public User user { get; set; }
+        public Group group { get; set; }
 
         public Curator()
         {
             user = new User();
+            group = new Group();
         }
     }
 }
