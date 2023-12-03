@@ -42,7 +42,7 @@ namespace Diplom.Resources.View.Pages
 
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            viewModel.FilterByName(SearchTextBox.Text);
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)

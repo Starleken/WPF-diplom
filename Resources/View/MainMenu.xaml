@@ -36,7 +36,7 @@
 
             <DockPanel>
                 <Border Width="80" Height="80" Padding="3" Background="White" CornerRadius="100"
-                        DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="20 -30 0 0">
+                        DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="20 -30 0 0" BorderBrush="#07bf96" BorderThickness="2">
                     <TextBlock Text="{Binding Path=User.person.Initials}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"/>
                 </Border>
 

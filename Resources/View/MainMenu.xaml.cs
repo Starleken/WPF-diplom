@@ -62,10 +62,12 @@ namespace Diplom.Resources.View
 
         private void InitByCurator()
         {
+            CuratorsButton.Visibility = Visibility.Collapsed;
         }
 
         private void InitByStudent()
         {
+            StudentsButton.Visibility = Visibility.Collapsed;
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)

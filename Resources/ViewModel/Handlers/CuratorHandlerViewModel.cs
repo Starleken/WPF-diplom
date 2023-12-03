@@ -1,4 +1,5 @@
 ﻿using Diplom.Resources.Model;
+using Diplom.Resources.Scripts;
 using Diplom.Resources.Scripts.HttpRequests.Post;
 using Diplom.Resources.Scripts.HttpRequests.Repository;
 using System;
@@ -16,6 +17,7 @@ namespace Diplom.Resources.ViewModel.Handlers
         private Curator curator;
 
         private GroupRepository groupRepository = new GroupRepository();
+        private CuratorRepository curatorRepository = new CuratorRepository();
 
         public Curator Curator
         {
@@ -52,6 +54,16 @@ namespace Diplom.Resources.ViewModel.Handlers
             Groups = new ObservableCollection<Group>(groupRepository.GetAll());
 
             this.Curator = curator;
+        }
+
+        public void AddCurator()
+        {
+            curatorRepository.Create(Curator);
+        }
+
+        public void UpdateCurator()
+        {
+            curatorRepository.Update(Curator);
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

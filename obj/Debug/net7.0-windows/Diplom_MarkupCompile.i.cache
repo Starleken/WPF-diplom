@@ -16,5 +16,5 @@ D:\Projects\WPFprojects\Diplom\App.xaml
 231-1391118399
 AvtorizationWindow.xaml;Resources\UserControls\CustomTextBox.xaml;Resources\View\MainMenu.xaml;Resources\View\Pages\AchievementsPage.xaml;Resources\View\Pages\CuratorPage.xaml;Resources\View\Pages\DocumentsPage.xaml;Resources\View\Pages\StudentsPage.xaml;Resources\View\Windows\AddPassesWindow.xaml;Resources\View\Windows\ErrorWindow.xaml;Resources\View\Windows\Handlers\ActivityHandler.xaml;Resources\View\Windows\Handlers\CuratorHandler.xaml;Resources\View\Windows\Handlers\StudentHandler.xaml;Resources\View\Windows\WarningWindow.xaml;
 
-False
+True
 

@@ -14,6 +14,8 @@ namespace Diplom.Resources.ViewModel
     {
         private CuratorRepository curatorRepository;
 
+        private List<Curator> allCurators;
+
         private ObservableCollection<Curator> curators;
 
         public ObservableCollection<Curator> Curators
@@ -30,7 +32,19 @@ namespace Diplom.Resources.ViewModel
         {
             curatorRepository = new CuratorRepository();
 
-            Curators = new ObservableCollection<Curator>(curatorRepository.GetAll());
+            allCurators = curatorRepository.GetAll().ToList();
+
+            Curators = new ObservableCollection<Curator>(allCurators);
+        }
+
+        public void FilterByName(string name) 
+        {
+            if (String.IsNullOrEmpty(name))
+            {
+                Curators = new ObservableCollection<Curator>(allCurators);
+            }
+
+            Curators = new ObservableCollection<Curator>(allCurators.Where(x => x.user.person.FullName1.ToLower().Contains(name.ToLower())));
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
