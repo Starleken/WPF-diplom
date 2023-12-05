@@ -22,6 +22,12 @@
     <Compile Update="Resources\View\Pages\CuratorPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Resources\View\Pages\StudentAchievementsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\Pages\StudentDocumentsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Resources\View\Pages\StudentsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -61,6 +67,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Resources\View\Pages\CuratorPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Pages\StudentAchievementsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Pages\StudentDocumentsPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Resources\View\Pages\StudentsPage.xaml">

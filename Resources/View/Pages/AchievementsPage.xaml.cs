@@ -1,4 +1,5 @@
-﻿using Diplom.Resources.Model.Activity;
+﻿using Diplom.Resources.Model;
+using Diplom.Resources.Model.Activity;
 using Diplom.Resources.Scripts;
 using Diplom.Resources.View.Windows;
 using Diplom.Resources.View.Windows.Handlers;
@@ -27,11 +28,11 @@ namespace Diplom.Resources.View.Pages
     {
         private AchievementsViewModel viewModel;
 
-        public AchievementsPage()
+        public AchievementsPage(Student student)
         {
             InitializeComponent();
 
-            viewModel = new AchievementsViewModel();
+            viewModel = new AchievementsViewModel(student);
             this.DataContext = viewModel;
         }
 

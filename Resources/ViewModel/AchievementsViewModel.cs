@@ -1,5 +1,7 @@
-﻿using Diplom.Resources.Model.Activity;
+﻿using Diplom.Resources.Model;
+using Diplom.Resources.Model.Activity;
 using Diplom.Resources.Scripts.HttpRequests.Get;
+using Diplom.Resources.Scripts.HttpRequests.Repository;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,6 +14,8 @@ namespace Diplom.Resources.ViewModel
 {
     internal class AchievementsViewModel : INotifyPropertyChanged
     {
+        private ActivityRepository activityRepository = new ActivityRepository();
+
         private List<Activity> allActivities;
 
         private ObservableCollection<Activity> activities;
@@ -34,14 +38,17 @@ namespace Diplom.Resources.ViewModel
             set { activityTypes = value; }
         }
 
-
-        public AchievementsViewModel()
+        public AchievementsViewModel(Student student)
         {
-            ActivityGetter activityGetter = new ActivityGetter();
-            allActivities = activityGetter.GetAll().ToList();
-            Activities = new ObservableCollection<Activity>(allActivities);
+            PullAchievmentsByUserId(student);
 
             ActivityTypes = new ObservableCollection<ActivityLevel>(new ActivityTypeGetter().GetAll());
+        }
+
+        public void PullAchievmentsByUserId(Student student)
+        {
+            allActivities = activityRepository.GetActivitiesByUserId(student.user.id).ToList();
+            Activities = new ObservableCollection<Activity>(allActivities);
         }
 
         public void DeleteActivity(Activity activity)

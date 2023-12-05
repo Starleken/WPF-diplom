@@ -23,6 +23,14 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
             return response;
         }
 
+        public Curator GetCuratorByUser(long? userId)
+        {
+            HttpClient httpClient = new HttpClient();
+            var response = httpClient.GetFromJsonAsync<Curator>($"{URL}/user?userId={userId}").Result;
+
+            return response;
+        }
+
         public Curator Create(Curator curator)
         {
             HttpClient client = new HttpClient();

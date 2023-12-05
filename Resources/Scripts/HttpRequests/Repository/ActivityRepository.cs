@@ -24,6 +24,14 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
             return response;
         }
 
+        public Activity[] GetActivitiesByUserId(long? id)
+        {
+            HttpClient httpClient = new HttpClient();
+            var response = httpClient.GetFromJsonAsync<Activity[]>($"{URL}/user?userId={id}").Result;
+
+            return response;
+        }
+
         public Activity PostActivity(Activity activity)
         {
             HttpClient client = new HttpClient();

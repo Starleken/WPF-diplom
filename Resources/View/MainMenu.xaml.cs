@@ -1,6 +1,7 @@
 ﻿using Diplom.Resources.Model;
 using Diplom.Resources.Scripts;
 using Diplom.Resources.Scripts.HttpRequests;
+using Diplom.Resources.Scripts.HttpRequests.Repository;
 using Diplom.Resources.View.Pages;
 using Diplom.Resources.ViewModel;
 using System;
@@ -28,9 +29,13 @@ namespace Diplom.Resources.View
 
         private Dictionary<string, MenuButtonContainer> menuButtons;
 
+        private User user;
+
         public MainMenu(User user)
         {
             InitializeComponent();
+
+            this.user = user;
 
             viewModel = new MainMenuViewModel(user);
             this.DataContext = viewModel;
@@ -102,8 +107,16 @@ namespace Diplom.Resources.View
             DisableActivityButtons();
             menuButtons["AchievementsButton"].ActivateButton();
 
-            AchievementsActivity.Visibility = Visibility.Visible;
-            NavigateTo(new AchievementsPage());
+            if (user.role.id == 3)
+            {
+                AchievementsActivity.Visibility = Visibility.Visible;
+                NavigateTo(new AchievementsPage(new StudentRepository().GetStudentsByUser(viewModel.User.id)));
+            }
+            else
+            {
+                AchievementsActivity.Visibility = Visibility.Visible;
+                NavigateTo(new StudentAchievementsPage(viewModel.User, FrameContainer));
+            }
         }
 
         private void StudentsButton_Click(object sender, RoutedEventArgs e)
@@ -111,7 +124,7 @@ namespace Diplom.Resources.View
             DisableActivityButtons();
             menuButtons["StudentsButton"].ActivateButton();
 
-            NavigateTo(new StudentsPage());
+            NavigateTo(new StudentsPage(viewModel.User));
         }
 
         private void NavigateTo(Page page)

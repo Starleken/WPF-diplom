@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 D:\Projects\WPFprojects\Diplom\App.xaml
-131921252198
+151412876208
 
-53-1183441182
+59-341367574
 231-1391118399
-AvtorizationWindow.xaml;Resources\UserControls\CustomTextBox.xaml;Resources\View\MainMenu.xaml;Resources\View\Pages\AchievementsPage.xaml;Resources\View\Pages\CuratorPage.xaml;Resources\View\Pages\DocumentsPage.xaml;Resources\View\Pages\StudentsPage.xaml;Resources\View\Windows\AddPassesWindow.xaml;Resources\View\Windows\ErrorWindow.xaml;Resources\View\Windows\Handlers\ActivityHandler.xaml;Resources\View\Windows\Handlers\CuratorHandler.xaml;Resources\View\Windows\Handlers\StudentHandler.xaml;Resources\View\Windows\WarningWindow.xaml;
+AvtorizationWindow.xaml;Resources\UserControls\CustomTextBox.xaml;Resources\View\MainMenu.xaml;Resources\View\Pages\AchievementsPage.xaml;Resources\View\Pages\CuratorPage.xaml;Resources\View\Pages\DocumentsPage.xaml;Resources\View\Pages\StudentAchievementsPage.xaml;Resources\View\Pages\StudentDocumentsPage.xaml;Resources\View\Pages\StudentsPage.xaml;Resources\View\Windows\AddPassesWindow.xaml;Resources\View\Windows\ErrorWindow.xaml;Resources\View\Windows\Handlers\ActivityHandler.xaml;Resources\View\Windows\Handlers\CuratorHandler.xaml;Resources\View\Windows\Handlers\StudentHandler.xaml;Resources\View\Windows\WarningWindow.xaml;
 
-True
+False
 

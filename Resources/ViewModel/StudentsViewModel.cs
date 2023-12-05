@@ -1,5 +1,6 @@
 ﻿using Diplom.Resources.Model;
 using Diplom.Resources.Scripts.HttpRequests.Get;
+using Diplom.Resources.Scripts.HttpRequests.Repository;
 using Diplom.Resources.View.Windows;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,9 @@ namespace Diplom.Resources.ViewModel
 {
     internal class StudentsViewModel : INotifyPropertyChanged
     {
+        private StudentRepository studentRepository = new StudentRepository();
+        private CuratorRepository curatorRepository = new CuratorRepository();
+
         private List<Student> allStudents;
 
         private ObservableCollection<Student> students;
@@ -27,10 +31,24 @@ namespace Diplom.Resources.ViewModel
             }
         }
 
-        public StudentsViewModel()
+        public StudentsViewModel(User user)
         {
-            allStudents = new StudentGetter().GetAll().ToList();
-            Students = new ObservableCollection<Student>(allStudents);
+            PullStudentsByRole(user);
+        }
+
+        private void PullStudentsByRole(User user)
+        {
+            if (user.role.id == 1)
+            {
+                allStudents = studentRepository.GetAll().ToList();
+                Students = new ObservableCollection<Student>(allStudents);
+            }
+            else
+            {
+                Curator curator = curatorRepository.GetCuratorByUser(user.id);
+                allStudents = studentRepository.GetStudentsByGroup(curator.group.id).ToList();
+                Students = new ObservableCollection<Student>(allStudents);
+            }
         }
 
         public void SearchStudentsByFullName(string fullName)

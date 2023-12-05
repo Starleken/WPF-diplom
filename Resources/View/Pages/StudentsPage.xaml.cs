@@ -31,14 +31,14 @@ namespace Diplom.Resources.View.Pages
         private List<Group> groups;
         private List<EducationForm> educationForms;
 
-        public StudentsPage()
+        public StudentsPage(User user)
         {
             InitializeComponent();
 
             groups = new GroupRepository().GetAll().ToList();
             educationForms = new EducationFormRepository().GetAll().ToList();
 
-            viewModel = new StudentsViewModel();
+            viewModel = new StudentsViewModel(user);
             this.DataContext = viewModel;
         }
 

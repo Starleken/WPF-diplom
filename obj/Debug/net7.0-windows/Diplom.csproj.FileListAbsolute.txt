@@ -78,3 +78,5 @@ D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Pages\Cur
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Pages\CuratorPage.baml
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Windows\Handlers\CuratorHandler.g.cs
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Windows\Handlers\CuratorHandler.baml
+D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Pages\StudentAchievementsPage.g.cs
+D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Pages\StudentAchievementsPage.baml
