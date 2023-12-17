@@ -14,6 +14,7 @@ namespace Diplom.Resources.ViewModel
 {
     internal class AchievementsViewModel : INotifyPropertyChanged
     {
+
         private ActivityRepository activityRepository = new ActivityRepository();
 
         private List<Activity> allActivities;

@@ -25,9 +25,13 @@ namespace Diplom.Resources.View.Pages
         private StudentAchievementsViewModel viewModel;
         private Frame pageContainer;
 
+        private User user;
+
         public StudentAchievementsPage(User user, Frame pageContainer)
         {
             InitializeComponent();
+
+            this.user = user;
 
             viewModel = new StudentAchievementsViewModel(user);
             DataContext = viewModel;
@@ -37,7 +41,7 @@ namespace Diplom.Resources.View.Pages
 
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            viewModel.SearchStudentsByFullName(SearchTextBox.Text);
         }
 
         private void StudentsDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -49,7 +53,7 @@ namespace Diplom.Resources.View.Pages
                 return;
             }
 
-            pageContainer.Navigate(new AchievementsPage(student));
+            pageContainer.Navigate(new AchievementsPage(pageContainer, user, student));
         }
 
         private Student GetSelectedStudent()

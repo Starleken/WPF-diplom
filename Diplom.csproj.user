@@ -22,6 +22,9 @@
     <Compile Update="Resources\View\Pages\CuratorPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Resources\View\Pages\ProfilPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Resources\View\Pages\StudentAchievementsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -43,7 +46,10 @@
     <Compile Update="Resources\View\Windows\Handlers\CuratorHandler.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Resources\View\Windows\Handlers\StudentHandler.xaml.cs">
+    <Compile Update="Resources\View\Windows\Handlers\CuratorHandlerPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\Windows\Handlers\StudentHandlerPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Resources\View\Windows\WarningWindow.xaml.cs">
@@ -69,6 +75,9 @@
     <Page Update="Resources\View\Pages\CuratorPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Resources\View\Pages\ProfilPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Resources\View\Pages\StudentAchievementsPage.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -90,7 +99,10 @@
     <Page Update="Resources\View\Windows\Handlers\CuratorHandler.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Resources\View\Windows\Handlers\StudentHandler.xaml">
+    <Page Update="Resources\View\Windows\Handlers\CuratorHandlerPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Windows\Handlers\StudentHandlerPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Resources\View\Windows\WarningWindow.xaml">

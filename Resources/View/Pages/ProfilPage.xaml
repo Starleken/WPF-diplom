@@ -1,0 +1,117 @@
+﻿<Page x:Class="Diplom.Resources.View.Pages.ProfilPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Diplom.Resources.View.Pages"
+      xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ProfilPage">
+
+    <Grid Background="{StaticResource BackgroundWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Row="0" Grid.ColumnSpan="2" Background="White" CornerRadius="20" Margin="10 10 30 0" BorderBrush="Transparent">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="10" Direction="-90" RenderingBias="Quality" ShadowDepth="0.5"/>
+            </Border.Effect>
+        </Border>
+
+        <Border Grid.Row="0" Grid.ColumnSpan="2" Background="White" CornerRadius="20" Margin="10 10 30 0" BorderBrush="Transparent">
+            <StackPanel Margin="10 0 0 0" Orientation="Horizontal" VerticalAlignment="Center">
+                <Border Width="60" Height="60" Padding="3" Background="White" CornerRadius="100"
+                HorizontalAlignment="Center"  BorderBrush="#07bf96" BorderThickness="2">
+                    <TextBlock Text="{Binding Path=Student.user.person.Initials}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"/>
+                </Border>
+                <TextBlock Text="Вилесов Кирилл" VerticalAlignment="Center" Margin="10 0 0 0" FontSize="25"/>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="1" Grid.RowSpan="2" Background="White" CornerRadius="20" Margin="10 30 0 10" BorderBrush="Transparent" MaxHeight="800">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="10" Direction="-90" RenderingBias="Quality" ShadowDepth="0.5"/>
+            </Border.Effect>
+        </Border>
+
+        <Border Grid.Row="1" Grid.RowSpan="2" Background="White" CornerRadius="20" Margin="10 30 0 10" MaxHeight="800">
+            <StackPanel Orientation="Vertical" >
+                <Image Source="../../Images/warning.png" Width="50" Height="50"/>
+                <TextBlock Text="Уведомления"  HorizontalAlignment="Center" FontSize="20"/>
+
+                <ListView Margin="10 0" ItemsSource="{Binding Notifications}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" BorderBrush="Transparent">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="25"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="10"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="#" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center"/>
+                                <TextBlock Text="Текст" FontWeight="Bold" FontSize="15" Grid.Column="1"/>
+
+                                <TextBlock Text="{Binding number}" Foreground="red" FontSize="15" Grid.Row="1" Margin="0 5 0 0" HorizontalAlignment="Center"/>
+                                <TextBlock Text="{Binding description}" TextWrapping="Wrap" FontSize="15" Grid.Row="1" Margin="0 5 0 0" Grid.Column="1" Foreground="Red"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="1" Background="White" CornerRadius="20" Margin="30 30 30 10" BorderBrush="Transparent" MaxHeight="400">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="10" Direction="-90" RenderingBias="Quality" ShadowDepth="0.5"/>
+            </Border.Effect>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="1" CornerRadius="50" Background="White" Margin="30 30 30 10" BorderBrush="Transparent" MaxHeight="400">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
+                    <Label Content="Фамилия:" MinWidth="150" FontSize="20"></Label>
+                    <TextBox Name="surnameTextBox" MinWidth="175" IsReadOnly="True" Style="{StaticResource customTextBox}" Text="{Binding Student.user.person.surname}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
+                    <Label Content="Имя:" MinWidth="150" FontSize="20"></Label>
+                    <TextBox Name="nameTextBox" MinWidth="175" IsReadOnly="True" Style="{StaticResource customTextBox}" Text="{Binding Student.user.person.name}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
+                    <Label Content="Отчество:" MinWidth="150" FontSize="20"></Label>
+                    <TextBox Name="patronymicTextBox" MinWidth="175" IsReadOnly="True" Style="{StaticResource customTextBox}" Text="{Binding Student.user.person.patronymic}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
+                    <Label Content="Группа:" MinWidth="150" FontSize="20"></Label>
+                    <TextBox Name="groupTextBox" MinWidth="175" IsReadOnly="True" Style="{StaticResource customTextBox}" Text="{Binding Student.group.name}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
+                    <Label Content="Адрес регистр:" MinWidth="150" FontSize="20"></Label>
+                    <TextBox Name="registrationTextBox" MinWidth="175" IsReadOnly="True" Style="{StaticResource customTextBox}" Text="{Binding Student.user.person.registrationAddress}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
+                    <Label Content="Адрес прожив:" MinWidth="150" FontSize="20"></Label>
+                    <TextBox Name="redidentialTextBox" MinWidth="175" IsReadOnly="True" Style="{StaticResource customTextBox}" Text="{Binding Student.user.person.residentialAddress}"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        
+        <Border Grid.Row="2" Grid.Column="1" Background="White" CornerRadius="20" Margin="30 10 30 10" MaxHeight="180" BorderBrush="Transparent">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="10" Direction="-90" RenderingBias="Quality" ShadowDepth="0.5"/>
+            </Border.Effect>
+        </Border>
+    </Grid>
+</Page>

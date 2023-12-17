@@ -15,6 +15,7 @@
             </Setter>
         </Style>
         <SolidColorBrush x:Key="BackgroundWindow" Color="#eff2f7"/>
+        <SolidColorBrush x:Key="MainColor" Color="#07bf96"/>
 
         <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
         <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
@@ -333,6 +334,7 @@
         <Style x:Key="DataGridCellStyle1" TargetType="{x:Type DataGridCell}">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
             <Setter Property="Margin" Value="15 0"/>
@@ -720,7 +722,7 @@
 
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="BorderBrush" Value="#07bf96"/>
+                    <Setter Property="BorderBrush" Value="{StaticResource MainColor}"/>
                 </Trigger>
             </Style.Triggers>
         </Style>

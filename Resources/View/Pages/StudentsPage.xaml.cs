@@ -30,13 +30,15 @@ namespace Diplom.Resources.View.Pages
 
         private List<Group> groups;
         private List<EducationForm> educationForms;
+        private Frame frame;
 
-        public StudentsPage(User user)
+        public StudentsPage(User user, Frame frame)
         {
             InitializeComponent();
 
             groups = new GroupRepository().GetAll().ToList();
             educationForms = new EducationFormRepository().GetAll().ToList();
+            this.frame = frame;
 
             viewModel = new StudentsViewModel(user);
             this.DataContext = viewModel;
@@ -49,14 +51,14 @@ namespace Diplom.Resources.View.Pages
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            StudentHandler studentHandler = new StudentHandler(educationForms, groups);
-            studentHandler.ShowDialog();
+            StudentHandlerPage studentHandler = new StudentHandlerPage(educationForms, groups);
+            frame.Navigate(studentHandler);
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            StudentHandler studentHandler = new StudentHandler(GetSelectedStudent(), HandlerOpenType.update, educationForms, groups);
-            studentHandler.ShowDialog();
+            StudentHandlerPage studentHandler = new StudentHandlerPage(GetSelectedStudent(), HandlerOpenType.update, educationForms, groups);
+            frame.Navigate(studentHandler);
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
@@ -77,8 +79,16 @@ namespace Diplom.Resources.View.Pages
 
         private void StudentsDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            StudentHandler studentHandler = new StudentHandler(GetSelectedStudent(), HandlerOpenType.watch, educationForms, groups);
-            studentHandler.ShowDialog();
+            User user = GetSelectedStudent().user;
+
+            if (user == null)
+            {
+                return;
+            }
+
+            ProfilPage profile = new ProfilPage(user);
+
+            frame.Navigate(profile);
         }
     }
 }

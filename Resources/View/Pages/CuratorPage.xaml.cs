@@ -25,19 +25,21 @@ namespace Diplom.Resources.View.Pages
     public partial class CuratorPage : Page
     {
         private CuratorsViewModel viewModel;
+        private Frame frameContainer;
 
-        public CuratorPage()
+        public CuratorPage(Frame frameContainer)
         {
             InitializeComponent();
 
             viewModel = new CuratorsViewModel();
             DataContext = viewModel;
+            this.frameContainer = frameContainer;
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            CuratorHandler handler = new CuratorHandler();
-            handler.ShowDialog();
+            CuratorHandlerPage handler = new CuratorHandlerPage();
+            frameContainer.Navigate(handler);
         }
 
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)

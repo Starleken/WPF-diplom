@@ -53,6 +53,7 @@ namespace Diplom.Resources.View
             menuButtons.Add("AchievementsButton", new MenuButtonContainer(AchievementsButton, AchievementsActivity));
             menuButtons.Add("StudentsButton", new MenuButtonContainer(StudentsButton, StudentsActivity));
             menuButtons.Add("CuratorsButton", new MenuButtonContainer(CuratorsButton, CuratorsActivity));
+            menuButtons.Add("ProfileButton", new MenuButtonContainer(ProfileButton, ProfileActivity));
         }
 
         private void InitByRole()
@@ -68,10 +69,12 @@ namespace Diplom.Resources.View
         private void InitByCurator()
         {
             CuratorsButton.Visibility = Visibility.Collapsed;
+            ProfileButton.Visibility = Visibility.Collapsed;
         }
 
         private void InitByStudent()
         {
+            CuratorsButton.Visibility = Visibility.Collapsed;
             StudentsButton.Visibility = Visibility.Collapsed;
         }
 
@@ -92,14 +95,14 @@ namespace Diplom.Resources.View
         {
             DisableActivityButtons();
             menuButtons["DocumentsButton"].ActivateButton();
-            NavigateTo(new DocumentsPage());
+            NavigateTo(new StudentDocumentsPage(viewModel.User, FrameContainer));
         }
 
         private void CuratorsButton_Click(object sender, RoutedEventArgs e)
         {
             DisableActivityButtons();
             menuButtons["CuratorsButton"].ActivateButton();
-            NavigateTo(new CuratorPage());
+            NavigateTo(new CuratorPage(FrameContainer));
         }
 
         private void AchievementsButton_Click(object sender, RoutedEventArgs e)
@@ -110,7 +113,7 @@ namespace Diplom.Resources.View
             if (user.role.id == 3)
             {
                 AchievementsActivity.Visibility = Visibility.Visible;
-                NavigateTo(new AchievementsPage(new StudentRepository().GetStudentsByUser(viewModel.User.id)));
+                NavigateTo(new AchievementsPage(FrameContainer, viewModel.User, new StudentRepository().GetStudentsByUser(viewModel.User.id)));
             }
             else
             {
@@ -124,7 +127,7 @@ namespace Diplom.Resources.View
             DisableActivityButtons();
             menuButtons["StudentsButton"].ActivateButton();
 
-            NavigateTo(new StudentsPage(viewModel.User));
+            NavigateTo(new StudentsPage(viewModel.User, FrameContainer));
         }
 
         private void NavigateTo(Page page)
@@ -167,6 +170,13 @@ namespace Diplom.Resources.View
             {
                 this.DragMove();
             }
+        }
+
+        private void ProfileButton_Click(object sender, RoutedEventArgs e)
+        {
+            DisableActivityButtons();
+            menuButtons["ProfileButton"].ActivateButton();
+            NavigateTo(new ProfilPage(viewModel.User));
         }
     }
 }

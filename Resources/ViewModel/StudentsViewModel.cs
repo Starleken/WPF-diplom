@@ -58,7 +58,7 @@ namespace Diplom.Resources.ViewModel
                 Students = new ObservableCollection<Student>(allStudents);
             }
 
-            //Students = new ObservableCollection<Student>(allStudents.Where(x => x.user.person.FullName1.ToLower().Contains(fullName.ToLower())));
+            Students = new ObservableCollection<Student>(allStudents.Where(x => x.user.person.FullName1.ToLower().Contains(fullName.ToLower())));
         }
 
         public void DeleteStudent(Student student)

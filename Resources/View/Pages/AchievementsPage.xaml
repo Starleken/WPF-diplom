@@ -45,12 +45,12 @@
         <Separator Height="1" Grid.Row="3" Background="#dae2ea" Margin="0 -1 0 10"/>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0 10 0 0">
-            <Button Content="Все" Style="{StaticResource tabButton}" Width="50"/>
-            <Button Content="Международный" Style="{StaticResource tabButton}" Width="130"/>
-            <Button Content="Городской" Style="{StaticResource tabButton}" Width="90"/>
-            <Button Content="Университетский" Style="{StaticResource tabButton}" Width="130"/>
-            <Button Content="Региональный" Style="{StaticResource tabButton}" Width="110"/>
-            <Button Content="Всероссийский" Style="{StaticResource tabButton}" Width="130"/>
+            <Button Content="Все" Style="{StaticResource tabButton}" Name="AllButton" Width="50" Click="AllButton_Click"/>
+            <Button Content="Международный" Style="{StaticResource tabButton}" Name="InternationalButton" Width="130"/>
+            <Button Content="Городской" Style="{StaticResource tabButton}" Name="CityButton" Width="90"/>
+            <Button Content="Университетский" Style="{StaticResource tabButton}" Name="UniversityButton" Width="130"/>
+            <Button Content="Региональный" Style="{StaticResource tabButton}" Name="RegionalButton" Width="110"/>
+            <Button Content="Всероссийский" Style="{StaticResource tabButton}" Name="CountryButton" Width="130"/>
         </StackPanel>
 
         <TextBlock Text="{Binding Path=Activities.Count, StringFormat=' {0} Документов'}" Grid.Row="4" FontSize="18" FontWeight="SemiBold"

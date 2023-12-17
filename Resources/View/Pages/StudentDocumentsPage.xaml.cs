@@ -24,13 +24,39 @@ namespace Diplom.Resources.View.Pages
     {
         private StudentDocumentsViewModel viewModel;
 
-        public StudentDocumentsPage(User user)
+        private Frame pageContainer;
+
+        public StudentDocumentsPage(User user, Frame pageContainer)
         {
             InitializeComponent();
 
+            this.pageContainer = pageContainer;
             viewModel = new StudentDocumentsViewModel(user);
 
             DataContext = viewModel;
+        }
+
+        private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void StudentsDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Student student = GetSelectedStudent();
+
+            if(student == null)
+            {
+                return;
+            }
+
+            pageContainer.Navigate(new DocumentsPage(student));
+        }
+
+        private Student GetSelectedStudent()
+        {
+            Student student = (Student)StudentsDataGrid.SelectedItem;
+            return student;
         }
     }
 }

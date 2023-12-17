@@ -27,27 +27,40 @@ namespace Diplom.Resources.View.Pages
     public partial class AchievementsPage : Page
     {
         private AchievementsViewModel viewModel;
+        private Frame frameContainer;
 
-        public AchievementsPage(Student student)
+        public AchievementsPage(Frame frameContainer, User user, Student student)
         {
             InitializeComponent();
 
             viewModel = new AchievementsViewModel(student);
             this.DataContext = viewModel;
+            this.frameContainer = frameContainer;
+
+            InitByRole(user);
+        }
+
+        private void InitByRole(User user)
+        {
+            if (user.role.id != 3)
+            {
+                AddButton.Visibility = Visibility.Collapsed;
+                ActivitiesDataGrid.Columns[4].Visibility = Visibility.Collapsed;
+            }
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             ActivityHandler activityHandler = new ActivityHandler();
-            activityHandler.ShowDialog();
+            frameContainer.Navigate(new ActivityHandler());
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
             Activity selectedActivity = GetSelectedActivity();
 
-            ActivityHandler activityHandler = new ActivityHandler(GetSelectedActivity(), HandlerOpenType.update);
-            activityHandler.ShowDialog();
+            //ActivityHandler activityHandler = new ActivityHandler(GetSelectedActivity(), HandlerOpenType.update);
+            //activityHandler.ShowDialog();
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
@@ -81,6 +94,11 @@ namespace Diplom.Resources.View.Pages
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             viewModel.SearchActivitiesByName(SearchTextBox.Text);
+        }
+
+        private void AllButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
