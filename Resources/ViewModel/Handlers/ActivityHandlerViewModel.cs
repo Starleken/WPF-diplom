@@ -1,4 +1,5 @@
-﻿using Diplom.Resources.Model.Activity;
+﻿using Diplom.Resources.Model;
+using Diplom.Resources.Model.Activity;
 using Diplom.Resources.Scripts;
 using Diplom.Resources.Scripts.HttpRequests.Repository;
 using System;
@@ -13,6 +14,8 @@ namespace Diplom.Resources.ViewModel.Handlers
 {
     internal class ActivityHandlerViewModel : INotifyPropertyChanged
     {
+        private StudentEntity student;
+
         private Activity activity;
 
         public Activity Activity
@@ -50,16 +53,20 @@ namespace Diplom.Resources.ViewModel.Handlers
         }
 
 
-        public ActivityHandlerViewModel()
+        public ActivityHandlerViewModel(StudentEntity student)
         {
+            this.student = student;
+
             Activity = new Activity();
 
             ActivityLevels = new ObservableCollection<ActivityLevel>(new ActivityLevelRepository().GetAll());
             ActivityTypes = new ObservableCollection<ActivityType>(new ActivityTypeRepository().GetAll());
         }
 
-        public ActivityHandlerViewModel(Activity activity, HandlerOpenType openType)
+        public ActivityHandlerViewModel(StudentEntity student, Activity activity, HandlerOpenType openType)
         {
+            this.student = student;
+
             Activity = activity;
 
             ActivityLevels = new ObservableCollection<ActivityLevel>(new ActivityLevelRepository().GetAll());
@@ -68,12 +75,13 @@ namespace Diplom.Resources.ViewModel.Handlers
 
         public void AddActivity()
         {
-            new ActivityRepository().PostActivity(Activity);
+            Activity.student = student;
+            new ActivityRepository().PostActivity(new Requests.ActivityCreateRequest(Activity), Activity.imageURL);
         }
 
         public void UpdateActivity()
         {
-            new ActivityRepository().PutActivity(Activity);
+            new ActivityRepository().PutActivity(new Requests.ActivityUpdateRequest(Activity), Activity.imageURL);
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

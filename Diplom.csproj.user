@@ -7,9 +7,6 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Resources\UserControls\CustomTextBox.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Resources\View\MainMenu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -20,6 +17,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Resources\View\Pages\CuratorPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\Pages\Documents\FluorographyDataGridPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\Pages\Documents\FluVaccineDataGridPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\Pages\Documents\MedicalPoliciesDataGridPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\Pages\Documents\SnilsDataGridPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Resources\View\Pages\ProfilPage.xaml.cs">
@@ -35,6 +44,24 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Resources\View\Windows\AddPassesWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\Windows\Documents\FluorographyHandler.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\Windows\Documents\FluVaccineHandler.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\Windows\Documents\InnHandler.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\Windows\Documents\MedicalPolicyHandler.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\Windows\Documents\PassportHandler.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\Windows\Documents\SnilsHandler.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Resources\View\Windows\ErrorWindow.xaml.cs">
@@ -60,9 +87,6 @@
     <Page Update="AvtorizationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Resources\UserControls\CustomTextBox.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Resources\View\MainMenu.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -73,6 +97,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Resources\View\Pages\CuratorPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Pages\Documents\FluorographyDataGridPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Pages\Documents\FluVaccineDataGridPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Pages\Documents\MedicalPoliciesDataGridPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Pages\Documents\SnilsDataGridPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Resources\View\Pages\ProfilPage.xaml">
@@ -88,6 +124,24 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Resources\View\Windows\AddPassesWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Windows\Documents\FluorographyHandler.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Windows\Documents\FluVaccineHandler.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Windows\Documents\InnHandler.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Windows\Documents\MedicalPolicyHandler.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Windows\Documents\PassportHandler.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Windows\Documents\SnilsHandler.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Resources\View\Windows\ErrorWindow.xaml">

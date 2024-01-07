@@ -29,7 +29,7 @@ namespace Diplom.Resources.View.Pages
         private AchievementsViewModel viewModel;
         private Frame frameContainer;
 
-        public AchievementsPage(Frame frameContainer, User user, Student student)
+        public AchievementsPage(Frame frameContainer, UserEntity user, StudentEntity student)
         {
             InitializeComponent();
 
@@ -40,7 +40,7 @@ namespace Diplom.Resources.View.Pages
             InitByRole(user);
         }
 
-        private void InitByRole(User user)
+        private void InitByRole(UserEntity user)
         {
             if (user.role.id != 3)
             {
@@ -51,16 +51,21 @@ namespace Diplom.Resources.View.Pages
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            ActivityHandler activityHandler = new ActivityHandler();
-            frameContainer.Navigate(new ActivityHandler());
+            ActivityHandler activityHandler = new ActivityHandler(viewModel.student);
+            frameContainer.Navigate(activityHandler);
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
             Activity selectedActivity = GetSelectedActivity();
 
-            //ActivityHandler activityHandler = new ActivityHandler(GetSelectedActivity(), HandlerOpenType.update);
-            //activityHandler.ShowDialog();
+            if (selectedActivity == null)
+            {
+                return;
+            }
+
+            ActivityHandler activityHandler = new ActivityHandler(viewModel.student, selectedActivity, HandlerOpenType.update);
+            frameContainer.Navigate(activityHandler);
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
@@ -76,7 +81,6 @@ namespace Diplom.Resources.View.Pages
                 errorWindow.ShowDialog();
                 return;
             }
-
 
             if (window.result == true)
             {

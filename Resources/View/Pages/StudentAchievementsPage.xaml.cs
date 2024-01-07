@@ -25,9 +25,9 @@ namespace Diplom.Resources.View.Pages
         private StudentAchievementsViewModel viewModel;
         private Frame pageContainer;
 
-        private User user;
+        private UserEntity user;
 
-        public StudentAchievementsPage(User user, Frame pageContainer)
+        public StudentAchievementsPage(UserEntity user, Frame pageContainer)
         {
             InitializeComponent();
 
@@ -46,7 +46,7 @@ namespace Diplom.Resources.View.Pages
 
         private void StudentsDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Student student = GetSelectedStudent();
+            StudentEntity student = GetSelectedStudent();
 
             if (student == null)
             {
@@ -56,9 +56,9 @@ namespace Diplom.Resources.View.Pages
             pageContainer.Navigate(new AchievementsPage(pageContainer, user, student));
         }
 
-        private Student GetSelectedStudent()
+        private StudentEntity GetSelectedStudent()
         {
-            return (Student)StudentsDataGrid.SelectedItem;
+            return (StudentEntity)StudentsDataGrid.SelectedItem;
         }
     }
 }

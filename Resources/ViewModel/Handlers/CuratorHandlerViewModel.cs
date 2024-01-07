@@ -14,12 +14,12 @@ namespace Diplom.Resources.ViewModel.Handlers
 {
     internal class CuratorHandlerViewModel : INotifyPropertyChanged
     {
-        private Curator curator;
+        private CuratorEntity curator;
 
         private GroupRepository groupRepository = new GroupRepository();
         private CuratorRepository curatorRepository = new CuratorRepository();
 
-        public Curator Curator
+        public CuratorEntity Curator
         {
             get { return curator; }
             set
@@ -29,9 +29,9 @@ namespace Diplom.Resources.ViewModel.Handlers
             }
         }
 
-        private ObservableCollection<Group> groups;
+        private ObservableCollection<GroupEntity> groups;
 
-        public ObservableCollection<Group> Groups
+        public ObservableCollection<GroupEntity> Groups
         {
             get { return groups; }
             set
@@ -43,15 +43,15 @@ namespace Diplom.Resources.ViewModel.Handlers
 
         public CuratorHandlerViewModel()
         {
-            Groups = new ObservableCollection<Group>(groupRepository.GetAll());
+            Groups = new ObservableCollection<GroupEntity>(groupRepository.GetAll());
 
-            Curator = new Curator();
+            Curator = new CuratorEntity();
             Curator.user.role.id = 2;
         }
 
-        public CuratorHandlerViewModel(Curator curator)
+        public CuratorHandlerViewModel(CuratorEntity curator)
         {
-            Groups = new ObservableCollection<Group>(groupRepository.GetAll());
+            Groups = new ObservableCollection<GroupEntity>(groupRepository.GetAll());
 
             this.Curator = curator;
         }

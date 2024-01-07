@@ -1,11 +1,14 @@
 ﻿using Diplom.Resources.Model;
 using Diplom.Resources.Model.Activity;
+using Diplom.Resources.Requests;
 using Diplom.Resources.Scripts.DbConstants;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -24,34 +27,64 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
             return response;
         }
 
-        public Activity[] GetActivitiesByUserId(long? id)
+        public Activity[] GetActivitiesByStudentId(long? id)
         {
             HttpClient httpClient = new HttpClient();
-            var response = httpClient.GetFromJsonAsync<Activity[]>($"{URL}/user?userId={id}").Result;
+            var response = httpClient.GetFromJsonAsync<Activity[]>($"{URL}/student?studentId={id}").Result;
 
             return response;
         }
 
-        public Activity PostActivity(Activity activity)
-        {
-            HttpClient client = new HttpClient();
+        public Activity PostActivity(ActivityCreateRequest createRequest, string imagePath)
+        {    
+            var client = new RestClient(ApiConstants.API_URL);
+            var request = new RestRequest("activity");
+            request.AddFile("image", imagePath);
 
-            using StringContent jsonContent = new StringContent(JsonSerializer.Serialize(activity), Encoding.UTF8, "application/json");
+            request.AddParameter("name", createRequest.name);
+            request.AddParameter("place", createRequest.place);
+            request.AddParameter("activityTypeId", createRequest.activityTypeId.Value);
+            request.AddParameter("activityLevelId", createRequest.activityLevelId);
+            request.AddParameter("studentId", createRequest.studentId.Value);
 
-            HttpResponseMessage responseMessage = client.PostAsync(URL, jsonContent).Result;
+            string date = $"{createRequest.date.Year}-{createRequest.date.Month}-{createRequest.date.Day}";
+
+            request.AddParameter("date", date);
+
+            client.Post(request);
 
             return null;
         }
 
-        public Activity PutActivity(Activity activity)
+        public Activity PutActivity(ActivityUpdateRequest updateRequest, string imagePath)
         {
-            HttpClient client = new HttpClient();
+            var client = new RestClient(ApiConstants.API_URL);
+            var request = new RestRequest("activity");
 
-            using StringContent jsonContent = new StringContent(JsonSerializer.Serialize(activity), Encoding.UTF8, "application/json");
+            if (!imagePath.Contains("http"))
+            {
+                request.AddFile("image", imagePath);
+            }
 
-            HttpResponseMessage responseMessage = client.PutAsync(URL, jsonContent).Result;
+            request.AddParameter("id", updateRequest.id);
+            request.AddParameter("name", updateRequest.name);
+            request.AddParameter("place", updateRequest.place);
+            request.AddParameter("activityTypeId", updateRequest.activityTypeId.Value);
+            request.AddParameter("activityLevelId", updateRequest.activityLevelId.Value);
+
+            string date = $"{updateRequest.date.Year}-{updateRequest.date.Month}-{updateRequest.date.Day}";
+
+            request.AddParameter("date", date);
+
+            client.Put(request);
 
             return null;
+        }
+
+        public void DeleteById(long? id)
+        {
+            HttpClient httpClient = new HttpClient();
+            httpClient.DeleteAsync($"{URL}/{id}");
         }
     }
 }

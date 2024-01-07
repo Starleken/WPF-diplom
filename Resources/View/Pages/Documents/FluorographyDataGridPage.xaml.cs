@@ -1,0 +1,60 @@
+﻿using Diplom.Resources.Model;
+using Diplom.Resources.View.Windows.Documents;
+using Diplom.Resources.ViewModel.Documents;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace Diplom.Resources.View.Pages.Documents
+{
+    /// <summary>
+    /// Interaction logic for FluorographyDataGridPage.xaml
+    /// </summary>
+    public partial class FluorographyDataGridPage : Page
+    {
+        private FluorographyDataGridViewModel viewModel;
+        private Frame frameContainer;
+
+        public FluorographyDataGridPage(Frame frameContainer, StudentEntity student)
+        {
+            InitializeComponent();
+
+            viewModel = new FluorographyDataGridViewModel(student);
+
+            DataContext = viewModel;
+
+            this.frameContainer = frameContainer;
+        }
+
+        public void AddFluorography()
+        {
+            frameContainer.Navigate(new FluorographyHandler(viewModel.student));
+        }
+
+        private FluorographyEntity GetSelectedFluorography()
+        {
+            return (FluorographyEntity)FluorographiesDataGrid.SelectedItem;
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            FluorographyEntity fluorography = GetSelectedFluorography();
+
+            if (fluorography != null)
+            {
+                frameContainer.Navigate(new FluorographyHandler(fluorography, Scripts.HandlerOpenType.update));
+            }
+        }
+    }
+}

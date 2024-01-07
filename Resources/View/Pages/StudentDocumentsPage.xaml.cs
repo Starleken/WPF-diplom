@@ -1,4 +1,5 @@
 ﻿using Diplom.Resources.Model;
+using Diplom.Resources.Scripts.Util;
 using Diplom.Resources.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace Diplom.Resources.View.Pages
 
         private Frame pageContainer;
 
-        public StudentDocumentsPage(User user, Frame pageContainer)
+        public StudentDocumentsPage(UserEntity user, Frame pageContainer)
         {
             InitializeComponent();
 
@@ -43,19 +44,19 @@ namespace Diplom.Resources.View.Pages
 
         private void StudentsDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Student student = GetSelectedStudent();
+            StudentEntity student = GetSelectedStudent();
 
             if(student == null)
             {
                 return;
             }
 
-            pageContainer.Navigate(new DocumentsPage(student));
+            pageContainer.Navigate(new DocumentsPage(pageContainer, AuthController.CurrentUser, student));
         }
 
-        private Student GetSelectedStudent()
+        private StudentEntity GetSelectedStudent()
         {
-            Student student = (Student)StudentsDataGrid.SelectedItem;
+            StudentEntity student = (StudentEntity)StudentsDataGrid.SelectedItem;
             return student;
         }
     }

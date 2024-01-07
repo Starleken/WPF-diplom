@@ -15,31 +15,31 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
     {
         private string URL = ApiConstants.API_URL + "student";
 
-        public Student[] GetAll()
+        public StudentEntity[] GetAll()
         {
             HttpClient httpClient = new HttpClient();
-            var response = httpClient.GetFromJsonAsync<Student[]>(URL).Result;
+            var response = httpClient.GetFromJsonAsync<StudentEntity[]>(URL).Result;
 
             return response;
         }
 
-        public Student[] GetStudentsByGroup(long? id)
+        public StudentEntity[] GetStudentsByGroup(long? id)
         {
             HttpClient httpClient = new HttpClient();
-            var response = httpClient.GetFromJsonAsync<Student[]>($"{URL}/group?groupId={id}").Result;
+            var response = httpClient.GetFromJsonAsync<StudentEntity[]>($"{URL}/group?groupId={id}").Result;
 
             return response;
         }
 
-        public Student GetStudentsByUser(long? id)
+        public StudentEntity GetStudentsByUser(long? id)
         {
             HttpClient httpClient = new HttpClient();
-            var response = httpClient.GetFromJsonAsync<Student>($"{URL}/user?userId={id}").Result;
+            var response = httpClient.GetFromJsonAsync<StudentEntity>($"{URL}/user?userId={id}").Result;
 
             return response;
         }
 
-        public Student PutStudent(Student student)
+        public StudentEntity PutStudent(StudentEntity student)
         {
             HttpClient client = new HttpClient();
 
@@ -48,6 +48,12 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
             HttpResponseMessage responseMessage = client.PutAsync(URL, jsonContent).Result;
 
             return null;
+        }
+
+        public void Delete(long? id)
+        {
+            HttpClient httpClient = new HttpClient();
+            httpClient.DeleteAsync($"{URL}/{id}");
         }
     }
 }

@@ -29,9 +29,9 @@ namespace Diplom.Resources.View
 
         private Dictionary<string, MenuButtonContainer> menuButtons;
 
-        private User user;
+        private UserEntity user;
 
-        public MainMenu(User user)
+        public MainMenu(UserEntity user)
         {
             InitializeComponent();
 
@@ -59,6 +59,7 @@ namespace Diplom.Resources.View
         private void InitByRole()
         {
             string roleName = viewModel.User.role.name;
+            ProfileButton.Visibility = Visibility.Collapsed;
 
             if (roleName == "Куратор")
                 InitByCurator();
@@ -76,6 +77,7 @@ namespace Diplom.Resources.View
         {
             CuratorsButton.Visibility = Visibility.Collapsed;
             StudentsButton.Visibility = Visibility.Collapsed;
+            ProfileButton.Visibility = Visibility.Visible;
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
@@ -95,6 +97,12 @@ namespace Diplom.Resources.View
         {
             DisableActivityButtons();
             menuButtons["DocumentsButton"].ActivateButton();
+
+            if (user.role.id == 3)
+            {
+                NavigateTo(new DocumentsPage(FrameContainer ,viewModel.User, new StudentRepository().GetStudentsByUser(viewModel.User.id)));
+                return;
+            }
             NavigateTo(new StudentDocumentsPage(viewModel.User, FrameContainer));
         }
 

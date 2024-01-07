@@ -14,10 +14,10 @@ namespace Diplom.Resources.Scripts.HttpRequests.Get
     {
         private string URL = ApiConstants.API_URL + "student";
 
-        public Student[] GetAll()
+        public StudentEntity[] GetAll()
         {
             HttpClient httpClient = new HttpClient();
-            var response = httpClient.GetFromJsonAsync<Student[]>(URL).Result;
+            var response = httpClient.GetFromJsonAsync<StudentEntity[]>(URL).Result;
 
             return response;
         }

@@ -14,10 +14,10 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
     {
         private string URL = ApiConstants.API_URL + "group";
 
-        public Group[] GetAll()
+        public GroupEntity[] GetAll()
         {
             HttpClient httpClient = new HttpClient();
-            var response = httpClient.GetFromJsonAsync<Group[]>(URL).Result;
+            var response = httpClient.GetFromJsonAsync<GroupEntity[]>(URL).Result;
 
             return response;
         }

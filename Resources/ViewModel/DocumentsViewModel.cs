@@ -12,11 +12,11 @@ namespace Diplom.Resources.ViewModel
 {
     class DocumentsViewModel : INotifyPropertyChanged
     {
-        public Student student { get; set; }
+        public StudentEntity student { get; set; }
 
-        private ObservableCollection<Snils> snils;
+        private ObservableCollection<SnilsEntity> snils;
 
-        public ObservableCollection<Snils> Snils
+        public ObservableCollection<SnilsEntity> Snils
         {
             get { return snils; }
             set
@@ -26,9 +26,9 @@ namespace Diplom.Resources.ViewModel
             }
         }
 
-        private ObservableCollection<Fluorography> fluorographies;
+        private ObservableCollection<FluorographyEntity> fluorographies;
 
-        public ObservableCollection<Fluorography> Fluorographies
+        public ObservableCollection<FluorographyEntity> Fluorographies
         {
             get { return fluorographies; }
             set
@@ -38,9 +38,9 @@ namespace Diplom.Resources.ViewModel
             }
         }
 
-        private ObservableCollection<MedicalPolicy> medicalPolicies;
+        private ObservableCollection<MedicalPolicyEntity> medicalPolicies;
 
-        public ObservableCollection<MedicalPolicy> MedicalPolicies
+        public ObservableCollection<MedicalPolicyEntity> MedicalPolicies
         {
             get { return medicalPolicies; }
             set
@@ -50,9 +50,9 @@ namespace Diplom.Resources.ViewModel
             }
         }
 
-        private ObservableCollection<FluVaccine> fluVaccines;
+        private ObservableCollection<FluVaccineEntity> fluVaccines;
 
-        public ObservableCollection<FluVaccine> FluVaccines
+        public ObservableCollection<FluVaccineEntity> FluVaccines
         {
             get { return fluVaccines; }
             set
@@ -62,7 +62,7 @@ namespace Diplom.Resources.ViewModel
             }
         }
 
-        public DocumentsViewModel(Student student)
+        public DocumentsViewModel(StudentEntity student)
         {
             this.student = student;
         }
@@ -76,22 +76,22 @@ namespace Diplom.Resources.ViewModel
 
         public void GetSnilsByStudent()
         {
-            Snils = new ObservableCollection<Snils>(new SnilsRepository().GetAllByStudent(student.id).ToList());
+            Snils = new ObservableCollection<SnilsEntity>(new SnilsRepository().GetAllByStudent(student.id).ToList());
         }
 
         public void GetFluographiesByStudent()
         {
-            Fluorographies = new ObservableCollection<Fluorography>(new FluorographyRepository().GetAllByStudent(student.id).ToList());
+            Fluorographies = new ObservableCollection<FluorographyEntity>(new FluorographyRepository().GetAllByStudent(student.id).ToList());
         }
 
         public void GetMedicalPoliciesByStudent()
         {
-            MedicalPolicies = new ObservableCollection<MedicalPolicy>(new MedicalPolicyRepository().GetAllByStudent(student.id).ToList());
+            MedicalPolicies = new ObservableCollection<MedicalPolicyEntity>(new MedicalPolicyRepository().GetAllByStudent(student.id).ToList());
         }
 
         public void GetFluVaccinesByStudent()
         {
-            FluVaccines = new ObservableCollection<FluVaccine>(new FluVaccineRepository().GetAllByStudent(student.id).ToList());
+            FluVaccines = new ObservableCollection<FluVaccineEntity>(new FluVaccineRepository().GetAllByStudent(student.id).ToList());
         }
     }
 }

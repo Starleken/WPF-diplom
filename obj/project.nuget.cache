@@ -1,10 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "P560SAwZn8bWNR7fFWepOGgN7vEDC9n0DnjxRjZsC7j7/sY/R7YGs1f3CW/heHxXP3S3XJgIc4ZTUWKOz5X95A==",
+  "dgSpecHash": "MSBoZKby6KVt8HdU0Zk8Ax7SqEkH1J2FKSKD4IjEHOjlE7m2ETWWvB4vLD+fOBGPFfFwcizaoYprvR+lpW8ZOQ==",
   "success": true,
   "projectFilePath": "D:\\Projects\\WPFprojects\\Diplom\\Diplom.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Starleken\\.nuget\\packages\\mahapps.metro.iconpacks\\4.11.0\\mahapps.metro.iconpacks.4.11.0.nupkg.sha512"
+    "C:\\Users\\Starleken\\.nuget\\packages\\mahapps.metro.iconpacks\\4.11.0\\mahapps.metro.iconpacks.4.11.0.nupkg.sha512",
+    "C:\\Users\\Starleken\\.nuget\\packages\\materialdesigncolors\\2.1.4\\materialdesigncolors.2.1.4.nupkg.sha512",
+    "C:\\Users\\Starleken\\.nuget\\packages\\materialdesignthemes\\4.9.0\\materialdesignthemes.4.9.0.nupkg.sha512",
+    "C:\\Users\\Starleken\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
+    "C:\\Users\\Starleken\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
+    "C:\\Users\\Starleken\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
+    "C:\\Users\\Starleken\\.nuget\\packages\\system.text.json\\7.0.2\\system.text.json.7.0.2.nupkg.sha512"
   ],
   "logs": []
 }

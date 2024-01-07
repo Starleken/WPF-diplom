@@ -58,9 +58,9 @@ namespace Diplom.Resources.View.Pages
 
         }
 
-        private Curator GetSelectedCurator()
+        private CuratorEntity GetSelectedCurator()
         {
-            return (Curator)CuratorsDataGrid.SelectedItem;
+            return (CuratorEntity)CuratorsDataGrid.SelectedItem;
         }
     }
 }

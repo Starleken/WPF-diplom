@@ -1,4 +1,5 @@
 ﻿using Diplom.Resources.Model;
+using Diplom.Resources.View.Pages.Documents;
 using Diplom.Resources.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -22,74 +23,74 @@ namespace Diplom.Resources.View.Pages
     /// </summary>
     public partial class DocumentsPage : Page
     {
+        public delegate void AddButtonClick();
+        public event AddButtonClick OnAddButtonClick;
+
         private DocumentsViewModel viewModel;
 
-        public DocumentsPage(Student student)
+        private Frame frameContainer;
+
+        public DocumentsPage(Frame frameContainer, UserEntity user, StudentEntity student)
         {
             InitializeComponent();
 
             viewModel = new DocumentsViewModel(student);
             DataContext = viewModel;
+            this.frameContainer = frameContainer;
 
             SnilsButton_Click(null, null);
+
+            InitByRole(user.role);
+        }
+
+        private void InitByRole(RoleEntity role)
+        {
+
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-
+            OnAddButtonClick?.Invoke();
         }
 
         private void SnilsButton_Click(object sender, RoutedEventArgs e)
         {
-            DisableAllDataGrid();
-            SnilsDataGrid.Visibility = Visibility.Visible;
-
             DocumentNameTextBlock.Text = "Снилс";
-            Color color = (Color)ColorConverter.ConvertFromString("#07bf96");
-            viewModel.GetSnilsByStudent();
+            UnsubListeners();
+            SnilsDataGridPage page = new SnilsDataGridPage(frameContainer, viewModel.student);
+            OnAddButtonClick += page.AddSnils;
+            PageDataGridContainer.Navigate(page);
         }
 
         private void FluorographyButton_Click(object sender, RoutedEventArgs e)
         {
-            DisableAllDataGrid();
-            FluorographiesDataGrid.Visibility = Visibility.Visible;
-
             DocumentNameTextBlock.Text = "Флюроография";
-            Color color = (Color)ColorConverter.ConvertFromString("#07bf96");
-            viewModel.GetFluographiesByStudent();
+            UnsubListeners();
+            FluorographyDataGridPage page = new FluorographyDataGridPage(frameContainer, viewModel.student);
+            OnAddButtonClick += page.AddFluorography;
+            PageDataGridContainer.Navigate(page);
         }
 
         private void MedicalPoliciesButton_Click(object sender, RoutedEventArgs e)
         {
-            DisableAllDataGrid();
-            MedicalPoliciesDataGrid.Visibility = Visibility.Visible;
-
             DocumentNameTextBlock.Text = "Медицинский полюс";
-            Color color = (Color)ColorConverter.ConvertFromString("#07bf96");
-            viewModel.GetMedicalPoliciesByStudent();
+            UnsubListeners();
+            MedicalPoliciesDataGridPage page = new MedicalPoliciesDataGridPage(frameContainer, viewModel.student);
+            OnAddButtonClick += page.AddMedicalPolicy;
+            PageDataGridContainer.Navigate(page);
         }
 
         private void FluVaccinesButton_Click(object sender, RoutedEventArgs e)
         {
-            DisableAllDataGrid();
-            FluVaccinesDataGrid.Visibility = Visibility.Visible;
-
             DocumentNameTextBlock.Text = "Прививка от гриппа";
-            Color color = (Color)ColorConverter.ConvertFromString("#07bf96");
-            viewModel.GetFluVaccinesByStudent();
+
+            FluVaccineDataGridPage page = new FluVaccineDataGridPage(viewModel.student);
+            PageDataGridContainer.Navigate(page);
         }
 
-        private void SnilsDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void UnsubListeners()
         {
-
-        }
-
-        private void DisableAllDataGrid()
-        {
-            SnilsDataGrid.Visibility = Visibility.Collapsed;
-            FluorographiesDataGrid.Visibility = Visibility.Collapsed;
-            MedicalPoliciesDataGrid.Visibility = Visibility.Collapsed;
-            FluVaccinesDataGrid.Visibility = Visibility.Collapsed;
+            OnAddButtonClick = null;
         }
     }
 }

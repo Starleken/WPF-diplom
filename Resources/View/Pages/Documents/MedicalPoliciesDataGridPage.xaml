@@ -1,0 +1,33 @@
+﻿<Page x:Class="Diplom.Resources.View.Pages.Documents.MedicalPoliciesDataGridPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      xmlns:local="clr-namespace:Diplom.Resources.View.Pages.Documents"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MedicalPoliciesDataGridPage">
+
+    <Grid>
+        <DataGrid Name="MedicalPoliciesDataGrid" Grid.Row="5" RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" Style="{DynamicResource DataGridStyle1}" Background="Transparent" ItemsSource="{Binding MedicalPolicies}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер" Binding="{Binding number}"/>
+                <DataGridTemplateColumn Header="Операции" IsReadOnly="True" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Name="EditButton" Style="{StaticResource gridEditButton}" Click="EditButton_Click" >
+                                    <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
+                                </Button>
+                                <Button Name="DeleteButton" Style="{StaticResource gridDeleteButton}" >
+                                    <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}"/>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

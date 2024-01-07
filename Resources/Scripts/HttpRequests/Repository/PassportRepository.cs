@@ -15,18 +15,18 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
     {
         private string URL = ApiConstants.API_URL + "passport";
 
-        public Passport[] GetAll()
+        public PassportEntity[] GetAll()
         {
             HttpClient httpClient = new HttpClient();
-            var response = httpClient.GetFromJsonAsync<Passport[]>(URL).Result;
+            var response = httpClient.GetFromJsonAsync<PassportEntity[]>(URL).Result;
 
             return response;
         }
 
-        public Passport[] GetAllByStudent(long? studentId)
+        public PassportEntity[] GetAllByStudent(long? studentId)
         {
             HttpClient httpClient = new HttpClient();
-            var response = httpClient.GetFromJsonAsync<Passport[]>($"{URL}/student?studentId={studentId}").Result;
+            var response = httpClient.GetFromJsonAsync<PassportEntity[]>($"{URL}/student?studentId={studentId}").Result;
 
             return response;
         }

@@ -28,11 +28,11 @@ namespace Diplom.Resources.View.Pages
     {
         private StudentsViewModel viewModel;
 
-        private List<Group> groups;
-        private List<EducationForm> educationForms;
+        private List<GroupEntity> groups;
+        private List<EducationFormEntity> educationForms;
         private Frame frame;
 
-        public StudentsPage(User user, Frame frame)
+        public StudentsPage(UserEntity user, Frame frame)
         {
             InitializeComponent();
 
@@ -72,21 +72,21 @@ namespace Diplom.Resources.View.Pages
             }
         }
 
-        private Student GetSelectedStudent()
+        private StudentEntity GetSelectedStudent()
         {
-            return (Student)StudentsDataGrid.SelectedItem;
+            return (StudentEntity)StudentsDataGrid.SelectedItem;
         }
 
         private void StudentsDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            User user = GetSelectedStudent().user;
+            StudentEntity student = GetSelectedStudent();
 
-            if (user == null)
+            if (student == null)
             {
                 return;
             }
 
-            ProfilPage profile = new ProfilPage(user);
+            ProfilPage profile = new ProfilPage(student.user);
 
             frame.Navigate(profile);
         }

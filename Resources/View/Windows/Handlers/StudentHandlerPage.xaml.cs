@@ -25,14 +25,14 @@ namespace Diplom.Resources.View.Windows.Handlers
     {
         private StudentHandlerViewModel viewModel;
 
-        public StudentHandlerPage(List<EducationForm> educationForms, List<Group> groups)
+        public StudentHandlerPage(List<EducationFormEntity> educationForms, List<GroupEntity> groups)
         {
             InitializeComponent();
             viewModel = new StudentHandlerViewModel(educationForms, groups);
             this.DataContext = viewModel;
         }
 
-        public StudentHandlerPage(Student student, HandlerOpenType handlerType, List<EducationForm> educationForms, List<Group> groups)
+        public StudentHandlerPage(StudentEntity student, HandlerOpenType handlerType, List<EducationFormEntity> educationForms, List<GroupEntity> groups)
         {
             InitializeComponent();
             viewModel = new StudentHandlerViewModel(student, educationForms, groups);
@@ -67,10 +67,6 @@ namespace Diplom.Resources.View.Windows.Handlers
         private void ChangeButton_Click(object sender, RoutedEventArgs e)
         {
             viewModel.PutStudent();
-        }
-
-        private void ExitButton_Click(object sender, RoutedEventArgs e)
-        {
         }
     }
 }

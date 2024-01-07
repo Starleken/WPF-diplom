@@ -13,9 +13,9 @@ namespace Diplom.Resources.ViewModel
 {
     class ProfileViewModel : INotifyPropertyChanged
     {
-        private Student student;
+        private StudentEntity student;
 
-        public Student Student
+        public StudentEntity Student
         {
             get { return student; }
             set 
@@ -37,7 +37,7 @@ namespace Diplom.Resources.ViewModel
             }
         }
 
-        public ProfileViewModel(User user)
+        public ProfileViewModel(UserEntity user)
         {
             StudentRepository repository = new StudentRepository();
             Student = repository.GetStudentsByUser(user.id);

@@ -15,23 +15,23 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
     {
         private string URL = ApiConstants.API_URL + "curator";
 
-        public Curator[] GetAll()
+        public CuratorEntity[] GetAll()
         {
             HttpClient httpClient = new HttpClient();
-            var response = httpClient.GetFromJsonAsync<Curator[]>(URL).Result;
+            var response = httpClient.GetFromJsonAsync<CuratorEntity[]>(URL).Result;
 
             return response;
         }
 
-        public Curator GetCuratorByUser(long? userId)
+        public CuratorEntity GetCuratorByUser(long? userId)
         {
             HttpClient httpClient = new HttpClient();
-            var response = httpClient.GetFromJsonAsync<Curator>($"{URL}/user?userId={userId}").Result;
+            var response = httpClient.GetFromJsonAsync<CuratorEntity>($"{URL}/user?userId={userId}").Result;
 
             return response;
         }
 
-        public Curator Create(Curator curator)
+        public CuratorEntity Create(CuratorEntity curator)
         {
             HttpClient client = new HttpClient();
 
@@ -42,7 +42,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
             return null;
         }
 
-        public Curator Update(Curator curator)
+        public CuratorEntity Update(CuratorEntity curator)
         {
             HttpClient client = new HttpClient();
 

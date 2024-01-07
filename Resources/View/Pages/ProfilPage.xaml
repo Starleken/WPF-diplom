@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Diplom.Resources.View.Pages"
       xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ProfilPage">
@@ -32,7 +33,7 @@
                 HorizontalAlignment="Center"  BorderBrush="#07bf96" BorderThickness="2">
                     <TextBlock Text="{Binding Path=Student.user.person.Initials}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"/>
                 </Border>
-                <TextBlock Text="Вилесов Кирилл" VerticalAlignment="Center" Margin="10 0 0 0" FontSize="25"/>
+                <TextBlock Text="{Binding Path=Student.user.person.FullName}" VerticalAlignment="Center" Margin="10 0 0 0" FontSize="25"/>
             </StackPanel>
         </Border>
 
@@ -83,7 +84,7 @@
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
                     <Label Content="Фамилия:" MinWidth="150" FontSize="20"></Label>
-                    <TextBox Name="surnameTextBox" MinWidth="175" IsReadOnly="True" Style="{StaticResource customTextBox}" Text="{Binding Student.user.person.surname}"/>
+                    <TextBox Name="surnameTextBox" MinWidth="175" IsReadOnly="True" Style="{DynamicResource MaterialDesignTextBoxBase}" Text="{Binding Student.user.person.surname}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
                     <Label Content="Имя:" MinWidth="150" FontSize="20"></Label>

@@ -14,18 +14,18 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
     {
         private string URL = ApiConstants.API_URL + "fluVaccine";
 
-        public FluVaccine[] GetAll()
+        public FluVaccineEntity[] GetAll()
         {
             HttpClient httpClient = new HttpClient();
-            var response = httpClient.GetFromJsonAsync<FluVaccine[]>(URL).Result;
+            var response = httpClient.GetFromJsonAsync<FluVaccineEntity[]>(URL).Result;
 
             return response;
         }
 
-        public FluVaccine[] GetAllByStudent(long? studentId)
+        public FluVaccineEntity[] GetAllByStudent(long? studentId)
         {
             HttpClient httpClient = new HttpClient();
-            var response = httpClient.GetFromJsonAsync<FluVaccine[]>($"{URL}/student?studentId={studentId}").Result;
+            var response = httpClient.GetFromJsonAsync<FluVaccineEntity[]>($"{URL}/student?studentId={studentId}").Result;
 
             return response;
         }

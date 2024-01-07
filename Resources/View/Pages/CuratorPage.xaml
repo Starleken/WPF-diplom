@@ -25,11 +25,11 @@
         </Grid.RowDefinitions>
 
         <Grid Width="300" HorizontalAlignment="Left">
-            <TextBlock Margin="20 0" VerticalAlignment="Center" Foreground="#b0b9c6" 
-                   IsHitTestVisible="False" Panel.ZIndex="1" Text="Искать..." Visibility="{Binding ElementName=SearchTextBox, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}"/>
-            <TextBox x:Name="SearchTextBox" Style="{StaticResource textBoxSearch}" TextChanged="SearchTextBox_TextChanged"/>
+            <TextBlock Height="30" Style="{DynamicResource MaterialDesignBody1TextBlock}" Foreground="#b0b9c6" 
+               IsHitTestVisible="False" Panel.ZIndex="1" Text="Искать..." Visibility="{Binding ElementName=SearchTextBox, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}"/>
+            <TextBox x:Name="SearchTextBox" Height="30" Style="{DynamicResource MaterialDesignTextBox}" FontSize="15" TextChanged="SearchTextBox_TextChanged"/>
             <Icon:PackIconMaterial Kind="Magnify" Width="15" Height="15" VerticalAlignment="Center" Margin="0 0 15 0"
-                               Foreground="#b0b9c6" HorizontalAlignment="Right"/>
+                           Foreground="#b0b9c6" HorizontalAlignment="Right"/>
         </Grid>
 
         <TextBlock Text="Кураторы" Grid.Row="1" FontSize="32" FontWeight="SemiBold" Margin="0 20 0 0"

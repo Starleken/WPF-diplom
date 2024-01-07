@@ -3,14 +3,11 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Diplom.Resources.View.Windows.Handlers"
       mc:Ignorable="d"
       Title="StudentHandlerPage" Height="500" Width="700">
-
-    <Page.Resources>
-        <BooleanToVisibilityConverter x:Key="MyBoolToVisibilityConverter" />
-    </Page.Resources>
 
     <Grid Background="{StaticResource BackgroundWindow}">
         <Grid.RowDefinitions>
@@ -35,67 +32,39 @@
                 <StackPanel Orientation="Horizontal">
                     <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
                     <Label Content="Фамилия:" MinWidth="225" FontSize="20"></Label>
-                    <Grid>
-                        <TextBlock Margin="13 0"  VerticalAlignment="Center" Foreground="#868686" IsHitTestVisible="False" Panel.ZIndex="1"
-                    Text="Введите фамилию студента" FontSize="14" MinWidth="175"
-                    Visibility="{Binding ElementName=textBox, Path=Text.IsEmpty, Converter={StaticResource MyBoolToVisibilityConverter}}" />
 
-                        <TextBox Name="textBox" MinWidth="175" Style="{StaticResource customTextBox}" Text="{Binding Student.user.person.surname}"/>
-                    </Grid>
+                    <TextBox Name="textBox" MinWidth="175" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Введите фамилию студента" Text="{Binding Student.user.person.surname}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
                     <Label Content="Имя:" MinWidth="225" FontSize="20"></Label>
-                    <Grid>
-                        <TextBlock Margin="13 0" VerticalAlignment="Center" Foreground="#868686" IsHitTestVisible="False" Panel.ZIndex="1"
-                    Text="Введите имя студента" FontSize="14" MinWidth="175"
-                    Visibility="{Binding ElementName=nameTextBox, Path=Text.IsEmpty, Converter={StaticResource MyBoolToVisibilityConverter}}" />
+                    <TextBox Name="nameTextBox" MinWidth="175" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Введите имя студента"  Text="{Binding Student.user.person.name}"/>
 
-                        <TextBox Name="nameTextBox" MinWidth="175" Style="{StaticResource customTextBox}" Text="{Binding Student.user.person.name}"/>
-                    </Grid>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
                     <Label Content="Отчество:" MinWidth="225" FontSize="20"></Label>
-                    <Grid>
-                        <TextBlock Margin="13 0" VerticalAlignment="Center" Foreground="#868686" IsHitTestVisible="False" Panel.ZIndex="1"
-                            Text="Введите отчество студента" FontSize="14" MinWidth="175"
-                            Visibility="{Binding ElementName=PatronymicTextBox, Path=Text.IsEmpty, Converter={StaticResource MyBoolToVisibilityConverter}}" />
-
-                        <TextBox Name="PatronymicTextBox" MinWidth="175" Style="{StaticResource customTextBox}" Text="{Binding Student.user.person.patronymic}"/>
-                    </Grid>
+                    <TextBox Name="PatronymicTextBox" MinWidth="175" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Введите отчество студента" Text="{Binding Student.user.person.patronymic}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
                     <Label Content="Логин:" MinWidth="225" FontSize="20"></Label>
-                    <Grid>
-                        <TextBlock Margin="13 0" VerticalAlignment="Center" Foreground="#868686" IsHitTestVisible="False" Panel.ZIndex="1"
-                            Text="Введите логин студента" FontSize="14" MinWidth="175"
-                            Visibility="{Binding ElementName=LoginTextBox, Path=Text.IsEmpty, Converter={StaticResource MyBoolToVisibilityConverter}}" />
-
-                        <TextBox Name="LoginTextBox" MinWidth="175" Style="{StaticResource customTextBox}" Text="{Binding Student.user.login}"/>
-                    </Grid>
+                    <TextBox Name="LoginTextBox" MinWidth="175" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Введите логин студента" Text="{Binding Student.user.login}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
                     <Label Content="Пароль:" MinWidth="225" FontSize="20"></Label>
-                    <Grid>
-                        <TextBlock Margin="13 0" VerticalAlignment="Center" Foreground="#868686" IsHitTestVisible="False" Panel.ZIndex="1"
-                            Text="Введите пароль студента" FontSize="14" MinWidth="175"
-                            Visibility="{Binding ElementName=passwordTextBox, Path=Text.IsEmpty, Converter={StaticResource MyBoolToVisibilityConverter}}" />
-
-                        <TextBox Name="passwordTextBox" MinWidth="175" Style="{StaticResource customTextBox}" Text="{Binding Student.user.password}"/>
-                    </Grid>
+                    <TextBox Name="passwordTextBox" MinWidth="175" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Введите пароль студента" Text="{Binding Student.user.password}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
                     <Label Content="Форма обучения:" MinWidth="225" FontSize="20"></Label>
-                    <ComboBox FontSize="13" MinWidth="200" Padding="10 8" VerticalAlignment="Center" ItemsSource="{Binding EducationForms}" DisplayMemberPath="name" SelectedValuePath="name" SelectedItem="{Binding Student.educationForm}" IsSynchronizedWithCurrentItem="True"/>
+                    <ComboBox Style="{DynamicResource MaterialDesignComboBox}" MinWidth="175" FontSize="13" Padding="10 8" VerticalAlignment="Center" ItemsSource="{Binding EducationForms}" DisplayMemberPath="name" SelectedValuePath="name" SelectedItem="{Binding Student.educationForm}" IsSynchronizedWithCurrentItem="True"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
                     <Label Content="Группа:" MinWidth="225" FontSize="20"></Label>
-                    <ComboBox FontSize="13" Padding="10 8" MinWidth="200" VerticalAlignment="Center" ItemsSource="{Binding Groups}" DisplayMemberPath="name" SelectedValuePath="name" SelectedItem="{Binding Student.group}" IsSynchronizedWithCurrentItem="True"/>
+                    <ComboBox Style="{DynamicResource MaterialDesignComboBox}" MinWidth="175" FontSize="13" Padding="10 8" VerticalAlignment="Center" ItemsSource="{Binding Groups}" DisplayMemberPath="name" SelectedValuePath="name" SelectedItem="{Binding Student.group}" IsSynchronizedWithCurrentItem="True"/>
                 </StackPanel>
             </StackPanel>
         </Border>

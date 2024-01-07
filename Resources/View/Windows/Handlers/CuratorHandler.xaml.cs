@@ -31,7 +31,7 @@ namespace Diplom.Resources.View.Windows.Handlers
             DataContext = viewModel;
         }
 
-        public CuratorHandler(Curator curator)
+        public CuratorHandler(CuratorEntity curator)
         {
             InitializeComponent();
 

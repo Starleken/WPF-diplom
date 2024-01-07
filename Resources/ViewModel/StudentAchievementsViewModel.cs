@@ -16,11 +16,11 @@ namespace Diplom.Resources.ViewModel
         private StudentRepository studentRepository = new StudentRepository();
         private CuratorRepository curatorRepository = new CuratorRepository();
 
-        private List<Student> allStudents;
+        private List<StudentEntity> allStudents;
 
-        private ObservableCollection<Student> students;
+        private ObservableCollection<StudentEntity> students;
 
-        public ObservableCollection<Student> Students
+        public ObservableCollection<StudentEntity> Students
         {
             get { return students; }
             set
@@ -30,23 +30,23 @@ namespace Diplom.Resources.ViewModel
             }
         }
 
-        public StudentAchievementsViewModel(User user)
+        public StudentAchievementsViewModel(UserEntity user)
         {
             PullStudentsByRole(user);   
         }
 
-        private void PullStudentsByRole(User user)
+        private void PullStudentsByRole(UserEntity user)
         {
             if (user.role.id == 1)
             {
                 allStudents = studentRepository.GetAll().ToList();
-                Students = new ObservableCollection<Student>(allStudents);
+                Students = new ObservableCollection<StudentEntity>(allStudents);
             }
             else
             {
-                Curator curator = curatorRepository.GetCuratorByUser(user.id);
+                CuratorEntity curator = curatorRepository.GetCuratorByUser(user.id);
                 allStudents = studentRepository.GetStudentsByGroup(curator.group.id).ToList();
-                Students = new ObservableCollection<Student>(allStudents);
+                Students = new ObservableCollection<StudentEntity>(allStudents);
             }
         }
 
@@ -54,10 +54,10 @@ namespace Diplom.Resources.ViewModel
         {
             if (fullName == null)
             {
-                Students = new ObservableCollection<Student>(allStudents);
+                Students = new ObservableCollection<StudentEntity>(allStudents);
             }
 
-            Students = new ObservableCollection<Student>(allStudents.Where(x => x.user.person.FullName1.ToLower().Contains(fullName.ToLower())));
+            Students = new ObservableCollection<StudentEntity>(allStudents.Where(x => x.user.person.FullName1.ToLower().Contains(fullName.ToLower())));
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

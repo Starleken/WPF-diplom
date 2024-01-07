@@ -1,6 +1,9 @@
 ﻿using Diplom.Resources.Model;
+using Diplom.Resources.Scripts.Exeptions;
 using Diplom.Resources.Scripts.HttpRequests;
+using Diplom.Resources.Scripts.Util;
 using Diplom.Resources.View;
+using Diplom.Resources.View.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,16 +26,13 @@ namespace Diplom
     /// </summary>
     public partial class AvtorizationWidnow : Window
     {
-        private User[] users;
+        private UserEntity[] users;
 
         public AvtorizationWidnow()
         {
             InitializeComponent();
 
             EnterButton.IsEnabled = false;
-
-            UserGetter userGetter = new UserGetter();
-            users = userGetter.GetAll();
         }
 
         private void EnterButton_Click(object sender, RoutedEventArgs e)
@@ -42,37 +42,22 @@ namespace Diplom
 
         private void EnterMainMenu()
         {
-            User user;
+            AuthController authController = new AuthController();
 
             try
             {
-                user = GetUserByAvtorizationData();
+                authController.AuthByLoginAndPassword(LoginTextBox.Text, PasswordTextBox.Text);
             }
-            catch (Exception ex)
+            catch (AuthException ex)
             {
-                MessageBox.Show(ex.Message);
+                new ErrorWindow(ex.Message).ShowDialog();
                 return;
             }
 
-            MainMenu mainMenu = new MainMenu(user);
+            MainMenu mainMenu = new MainMenu(AuthController.CurrentUser);
             mainMenu.Show();
 
             this.Close();
-        }
-
-        private User GetUserByAvtorizationData()
-        {
-            string login = LoginTextBox.Text;
-            string password = PasswordTextBox.Text;
-
-            User user = users.FirstOrDefault(x => x.login == login && x.password == password);
-
-            if (user == null)
-            {
-                throw new NullReferenceException("Пользователь не найден");
-            }
-
-            return user;
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)

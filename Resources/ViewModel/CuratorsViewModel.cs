@@ -14,11 +14,11 @@ namespace Diplom.Resources.ViewModel
     {
         private CuratorRepository curatorRepository;
 
-        private List<Curator> allCurators;
+        private List<CuratorEntity> allCurators;
 
-        private ObservableCollection<Curator> curators;
+        private ObservableCollection<CuratorEntity> curators;
 
-        public ObservableCollection<Curator> Curators
+        public ObservableCollection<CuratorEntity> Curators
         {
             get { return curators; }
             set 
@@ -34,17 +34,17 @@ namespace Diplom.Resources.ViewModel
 
             allCurators = curatorRepository.GetAll().ToList();
 
-            Curators = new ObservableCollection<Curator>(allCurators);
+            Curators = new ObservableCollection<CuratorEntity>(allCurators);
         }
 
         public void FilterByName(string name) 
         {
             if (String.IsNullOrEmpty(name))
             {
-                Curators = new ObservableCollection<Curator>(allCurators);
+                Curators = new ObservableCollection<CuratorEntity>(allCurators);
             }
 
-            Curators = new ObservableCollection<Curator>(allCurators.Where(x => x.user.person.FullName1.ToLower().Contains(name.ToLower())));
+            Curators = new ObservableCollection<CuratorEntity>(allCurators.Where(x => x.user.person.FullName1.ToLower().Contains(name.ToLower())));
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

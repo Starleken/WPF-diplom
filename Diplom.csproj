@@ -18,6 +18,7 @@
     <None Remove="Resources\Images\passes.png" />
     <None Remove="Resources\Images\pencil.png" />
     <None Remove="Resources\Images\plus.png" />
+    <None Remove="Resources\Images\QuestionMark.png" />
     <None Remove="Resources\Images\students.png" />
     <None Remove="Resources\Images\warning.png" />
     <None Remove="Resources\Images\WindowsBar\close.png" />
@@ -27,11 +28,12 @@
 
   <ItemGroup>
     <Folder Include="Resources\Scripts\Interfaces\" />
-    <Folder Include="Resources\Scripts\Exeptions\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MahApps.Metro.IconPacks" Version="4.11.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="RestSharp" Version="110.2.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,6 +47,7 @@
     <Resource Include="Resources\Images\passes.png" />
     <Resource Include="Resources\Images\pencil.png" />
     <Resource Include="Resources\Images\plus.png" />
+    <Resource Include="Resources\Images\QuestionMark.png" />
     <Resource Include="Resources\Images\students.png" />
     <Resource Include="Resources\Images\warning.png" />
     <Resource Include="Resources\Images\WindowsBar\close.png" />

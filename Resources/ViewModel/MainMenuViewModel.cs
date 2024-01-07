@@ -10,9 +10,9 @@ namespace Diplom.Resources.ViewModel
 {
     internal class MainMenuViewModel : INotifyPropertyChanged
     {
-		private User user;
+		private UserEntity user;
 
-		public User User
+		public UserEntity User
 		{
 			get { return user; }
 			set 
@@ -22,7 +22,7 @@ namespace Diplom.Resources.ViewModel
 			}
 		}
 
-        public MainMenuViewModel(User user)
+        public MainMenuViewModel(UserEntity user)
         {
             this.User = user;
         }

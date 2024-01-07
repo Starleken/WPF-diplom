@@ -14,6 +14,7 @@ namespace Diplom.Resources.ViewModel
 {
     internal class AchievementsViewModel : INotifyPropertyChanged
     {
+        public StudentEntity student { get; set; }
 
         private ActivityRepository activityRepository = new ActivityRepository();
 
@@ -39,21 +40,25 @@ namespace Diplom.Resources.ViewModel
             set { activityTypes = value; }
         }
 
-        public AchievementsViewModel(Student student)
+        public AchievementsViewModel(StudentEntity student)
         {
-            PullAchievmentsByUserId(student);
+            this.student = student;
+
+            PullAchievmentsByStudentId(student);
 
             ActivityTypes = new ObservableCollection<ActivityLevel>(new ActivityTypeGetter().GetAll());
         }
 
-        public void PullAchievmentsByUserId(Student student)
+        public void PullAchievmentsByStudentId(StudentEntity student)
         {
-            allActivities = activityRepository.GetActivitiesByUserId(student.user.id).ToList();
+            allActivities = activityRepository.GetActivitiesByStudentId(student.id).ToList();
             Activities = new ObservableCollection<Activity>(allActivities);
         }
 
         public void DeleteActivity(Activity activity)
         {
+            new ActivityRepository().DeleteById(activity.id);
+
             Activities.Remove(activity);
             allActivities.Remove(activity);
         }

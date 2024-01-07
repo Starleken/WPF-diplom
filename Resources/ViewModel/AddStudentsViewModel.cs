@@ -12,9 +12,9 @@ namespace Diplom.Resources.ViewModel
 {
     class AddStudentsViewModel : INotifyPropertyChanged
     {
-        private User student;
+        private UserEntity student;
 
-        public User Student
+        public UserEntity Student
         {
             get { return student; }
             set 

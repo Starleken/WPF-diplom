@@ -24,7 +24,7 @@ namespace Diplom.Resources.View.Pages
     {
         private ProfileViewModel viewModel;
 
-        public ProfilPage(User user)
+        public ProfilPage(UserEntity user)
         {
             InitializeComponent();
 

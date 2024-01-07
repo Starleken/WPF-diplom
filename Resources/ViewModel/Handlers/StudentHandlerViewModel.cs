@@ -13,9 +13,9 @@ namespace Diplom.Resources.ViewModel.Handlers
 {
     class StudentHandlerViewModel : INotifyPropertyChanged
     {
-        private Student student;
+        private StudentEntity student;
 
-        public Student Student
+        public StudentEntity Student
         {
             get { return student; }
             set
@@ -25,9 +25,9 @@ namespace Diplom.Resources.ViewModel.Handlers
             }
         }
 
-        private ObservableCollection<EducationForm> educationForms;
+        private ObservableCollection<EducationFormEntity> educationForms;
 
-        public ObservableCollection<EducationForm> EducationForms
+        public ObservableCollection<EducationFormEntity> EducationForms
         {
             get { return educationForms; }
             set 
@@ -37,9 +37,9 @@ namespace Diplom.Resources.ViewModel.Handlers
             }
         }
 
-        private ObservableCollection<Group> groups;
+        private ObservableCollection<GroupEntity> groups;
 
-        public ObservableCollection<Group> Groups
+        public ObservableCollection<GroupEntity> Groups
         {
             get { return groups; }
             set
@@ -49,19 +49,19 @@ namespace Diplom.Resources.ViewModel.Handlers
             }
         }
 
-        public StudentHandlerViewModel(List<EducationForm> educationForms, List<Group> groups)
+        public StudentHandlerViewModel(List<EducationFormEntity> educationForms, List<GroupEntity> groups)
         {
-            EducationForms = new ObservableCollection<EducationForm>(educationForms);
-            Groups = new ObservableCollection<Group>(groups);
+            EducationForms = new ObservableCollection<EducationFormEntity>(educationForms);
+            Groups = new ObservableCollection<GroupEntity>(groups);
 
-            Student = new Student();
+            Student = new StudentEntity();
             Student.user.role.id = 3;
         }
 
-        public StudentHandlerViewModel(Student student, List<EducationForm> educationForms, List<Group> groups)
+        public StudentHandlerViewModel(StudentEntity student, List<EducationFormEntity> educationForms, List<GroupEntity> groups)
         {
-            EducationForms = new ObservableCollection<EducationForm>(educationForms);
-            Groups = new ObservableCollection<Group>(groups);
+            EducationForms = new ObservableCollection<EducationFormEntity>(educationForms);
+            Groups = new ObservableCollection<GroupEntity>(groups);
 
             this.Student = student;
         }
@@ -70,7 +70,6 @@ namespace Diplom.Resources.ViewModel.Handlers
         {
             StudentPoster studentPoster = new StudentPoster();
             studentPoster.PostStudent(Student);
-            
         }
 
         public void PutStudent()

@@ -13,7 +13,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Post
     {
         private readonly string URL = "http://localhost:8080/api/v1/student";
 
-        public Student PostStudent(Student student)
+        public StudentEntity PostStudent(StudentEntity student)
         {
             HttpClient client = new HttpClient();
 
