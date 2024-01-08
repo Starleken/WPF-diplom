@@ -51,12 +51,12 @@ namespace Diplom.Resources.ViewModel.Handlers.Documents
         public void AddMedicalPolicy()
         {
             MedicalPolicy.student = student;
-            repository.Post(MedicalPolicy);
+            repository.Post(new Requests.MedicalPolicy.MedicalPolicyCreateRequest(MedicalPolicy), MedicalPolicy.imageURL);
         }
 
         public void UpdateMedicalPolicy()
         {
-            repository.Put(MedicalPolicy);
+            repository.Put(new Requests.MedicalPolicy.MedicalPolicyUpdateRequest(MedicalPolicy), MedicalPolicy.imageURL);
         }
     }
 }

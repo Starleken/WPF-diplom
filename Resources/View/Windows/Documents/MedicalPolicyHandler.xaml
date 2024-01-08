@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Diplom.Resources.View.Windows.Documents"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MedicalPolicyHandler">
@@ -37,13 +38,7 @@
                         <Label Content="Номер:" MinWidth="150" FontSize="20"></Label>
                     </StackPanel>
 
-                    <Grid>
-                        <TextBlock Margin="13 0" VerticalAlignment="Center" Foreground="#868686" MinWidth="195" IsHitTestVisible="False" Panel.ZIndex="1"
-                            Text="Введите номер полюса" FontSize="14"
-                            Visibility="{Binding ElementName=numberTextBox, Path=Text.IsEmpty, Converter={StaticResource MyBoolToVisibilityConverter}}" />
-
-                        <TextBox Name="numberTextBox"  MinWidth="225" Style="{StaticResource customTextBox}" Text="{Binding MedicalPolicy.number}"/>
-                    </Grid>
+                    <TextBox Name="numberTextBox"  MinWidth="225" materialDesign:HintAssist.Hint="Номер медицинского полиса"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding MedicalPolicy.number}"/>
                 </StackPanel>
             </StackPanel>
         </Border>
@@ -66,7 +61,9 @@
                     <Label Content="Выбор изображения:" MinWidth="150" FontSize="20"></Label>
                 </StackPanel>
 
-                <Image Grid.Row="1" Source="../../../Images/DocumentExample.jpeg" Margin="10"/>
+                <Button Style="{StaticResource ImageButton}"  Grid.Row="1" Margin="10" Name="ImageButton" Click="ImageButton_Click">
+                    <Image Grid.Row="1" Source="{Binding MedicalPolicy.imageURL}" Name="MedicalPolicyImage" Margin="10"/>
+                </Button>
             </Grid>
         </Border>
 

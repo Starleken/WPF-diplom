@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Diplom.Resources.Model.Activity
 {
-    public class ActivityType
+    public class ActivityTypeEntity
     {
         public long? id { get; set; }
         public string name { get; set; }
 
-        public ActivityType()
+        public ActivityTypeEntity()
         {
             
         }
 
-        public ActivityType(long? id, string name)
+        public ActivityTypeEntity(long? id, string name)
         {
             this.id = id;
             this.name = name;

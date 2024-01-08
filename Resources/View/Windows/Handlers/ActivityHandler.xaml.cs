@@ -37,7 +37,7 @@ namespace Diplom.Resources.View.Windows.Handlers
             DataContext = viewModel;
         }
 
-        public ActivityHandler(StudentEntity student, Activity activity, HandlerOpenType openType)
+        public ActivityHandler(StudentEntity student, ActivityEntity activity, HandlerOpenType openType)
         {
             InitializeComponent();
 

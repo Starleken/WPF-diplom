@@ -1,6 +1,6 @@
 ﻿using Diplom.Resources.Model;
 using Diplom.Resources.Model.Activity;
-using Diplom.Resources.Requests;
+using Diplom.Resources.Requests.Activity;
 using Diplom.Resources.Scripts.DbConstants;
 using RestSharp;
 using System;
@@ -19,23 +19,23 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
     {
         private string URL = ApiConstants.API_URL + "activity";
 
-        public Activity[] GetAll()
+        public ActivityEntity[] GetAll()
         {
             HttpClient httpClient = new HttpClient();
-            var response = httpClient.GetFromJsonAsync<Activity[]>(URL).Result;
+            var response = httpClient.GetFromJsonAsync<ActivityEntity[]>(URL).Result;
 
             return response;
         }
 
-        public Activity[] GetActivitiesByStudentId(long? id)
+        public ActivityEntity[] GetActivitiesByStudentId(long? id)
         {
             HttpClient httpClient = new HttpClient();
-            var response = httpClient.GetFromJsonAsync<Activity[]>($"{URL}/student?studentId={id}").Result;
+            var response = httpClient.GetFromJsonAsync<ActivityEntity[]>($"{URL}/student?studentId={id}").Result;
 
             return response;
         }
 
-        public Activity PostActivity(ActivityCreateRequest createRequest, string imagePath)
+        public ActivityEntity PostActivity(ActivityCreateRequest createRequest, string imagePath)
         {    
             var client = new RestClient(ApiConstants.API_URL);
             var request = new RestRequest("activity");
@@ -56,7 +56,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
             return null;
         }
 
-        public Activity PutActivity(ActivityUpdateRequest updateRequest, string imagePath)
+        public ActivityEntity PutActivity(ActivityUpdateRequest updateRequest, string imagePath)
         {
             var client = new RestClient(ApiConstants.API_URL);
             var request = new RestRequest("activity");

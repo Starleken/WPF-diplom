@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Diplom.Resources.Model.Activity
 {
-    public class ActivityLevel
+    public class ActivityLevelEntity
     {
         public int id { get; set; }
         public string name { get; set; }
 
-        public ActivityLevel()
+        public ActivityLevelEntity()
         {
             
         }
 
-        public ActivityLevel(int id, string name)
+        public ActivityLevelEntity(int id, string name)
         {
             this.id = id;
             this.name = name;

@@ -1,6 +1,7 @@
 ﻿using Diplom.Resources.Model;
 using Diplom.Resources.Scripts;
 using Diplom.Resources.ViewModel.Handlers.Documents;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,6 +65,18 @@ namespace Diplom.Resources.View.Windows.Documents
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
             viewModel.UpdateMedicalPolicy();
+        }
+
+        private void ImageButton_Click(object sender, RoutedEventArgs e)
+        {
+            var dlg = new OpenFileDialog();
+            dlg.Filter = "Files|*.jpg;*.jpeg;*.png;";
+            if (dlg.ShowDialog() == true)
+            {
+                Uri uri = new Uri(dlg.FileName, UriKind.Absolute);
+                MedicalPolicyImage.Source = BitmapFrame.Create(uri);
+                viewModel.MedicalPolicy.imageURL = uri.AbsolutePath;
+            }
         }
     }
 }

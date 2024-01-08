@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Diplom.Resources.View.Windows.Documents"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="FluVaccineHandler">
@@ -31,26 +32,12 @@
 
         <Border Background="White" CornerRadius="20" BorderBrush="Transparent" Margin="20">
             <StackPanel>
-                <StackPanel  Margin="10 3 10 0">
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
-                        <Label Content="Номер:" MinWidth="150" FontSize="20"></Label>
-                    </StackPanel>
-
-                    <Grid>
-                        <TextBlock Margin="13 0" VerticalAlignment="Center" Foreground="#868686" MinWidth="195" IsHitTestVisible="False" Panel.ZIndex="1"
-                Text="Введите номер флюорографии" FontSize="14"
-                Visibility="{Binding ElementName=numberTextBox, Path=Text.IsEmpty, Converter={StaticResource MyBoolToVisibilityConverter}}" />
-
-                        <TextBox Name="numberTextBox"  MinWidth="225" Style="{StaticResource customTextBox}" Text="{Binding Fluorography.number}"/>
-                    </Grid>
-                </StackPanel>
                 <StackPanel Margin="10 3 10 0">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
                         <Label Content="Дата:" MinWidth="150" FontSize="20"></Label>
                     </StackPanel>
-                    <DatePicker Height="30" Text="Введите дату" MinWidth="220"/>
+                    <DatePicker Height="30" Text="Введите дату" materialDesign:HintAssist.Hint="Дата выдачи справки" MinWidth="220" SelectedDate="{Binding FluVaccine.createDate}"/>
                 </StackPanel>
             </StackPanel>
         </Border>
@@ -73,7 +60,9 @@
                     <Label Content="Выбор изображения:" MinWidth="150" FontSize="20"></Label>
                 </StackPanel>
 
-                <Image Grid.Row="1" Source="../../../Images/DocumentExample.jpeg" Margin="10"/>
+                <Button Style="{StaticResource ImageButton}"  Grid.Row="1" Margin="10" Name="ImageButton" Click="ImageButton_Click">
+                    <Image Grid.Row="1" Source="{Binding FluVaccine.imageURL}" Name="FluVaccineImage" Margin="10"/>
+                </Button>
             </Grid>
         </Border>
 

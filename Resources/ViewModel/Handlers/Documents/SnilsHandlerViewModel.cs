@@ -50,12 +50,12 @@ namespace Diplom.Resources.ViewModel.Handlers.Documents
         public void AddSnils()
         {
             Snils.student = student;
-            repository.Post(Snils);
+            repository.Post(new Requests.Snils.SnilsCreateRequest(Snils), Snils.imageURL);
         }
 
         public void UpdateSnils()
         {
-            repository.Put(Snils);
+            repository.Put(new Requests.Snils.SnilsUpdateRequest(Snils), Snils.imageURL);
         }
     }
 }

@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Diplom.Resources.Model;
+using Diplom.Resources.Scripts;
+using Diplom.Resources.ViewModel.Handlers.Documents;
+using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,19 +24,59 @@ namespace Diplom.Resources.View.Windows.Documents
     /// </summary>
     public partial class PassportHandler : Page
     {
-        public PassportHandler()
+        private PassportHandlerViewModel viewModel;
+
+        public PassportHandler(StudentEntity student)
         {
             InitializeComponent();
+
+            viewModel = new PassportHandlerViewModel(student);
+            DataContext = viewModel;
+        }
+
+        public PassportHandler(PassportEntity passport, HandlerOpenType openType)
+        {
+            InitializeComponent();
+
+            viewModel = new PassportHandlerViewModel(passport);
+            DataContext = viewModel;
+
+            InitByOpenType(openType);
+        }
+
+        private void InitByOpenType(HandlerOpenType openType)
+        {
+            if (openType == HandlerOpenType.update)
+            {
+                EditButton.Visibility = Visibility.Visible;
+                AddButton.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                AddButton.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-
+            viewModel.AddPassport();
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
+            viewModel.UpdatePassport();
+        }
 
+        private void ImageButton_Click(object sender, RoutedEventArgs e)
+        {
+            var dlg = new OpenFileDialog();
+            dlg.Filter = "Files|*.jpg;*.jpeg;*.png;";
+            if (dlg.ShowDialog() == true)
+            {
+                Uri uri = new Uri(dlg.FileName, UriKind.Absolute);
+                PassportImage.Source = BitmapFrame.Create(uri);
+                viewModel.Passport.imageURL = uri.AbsolutePath;
+            }
         }
     }
 }

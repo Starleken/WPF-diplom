@@ -1,5 +1,7 @@
 ﻿using Diplom.Resources.Model;
+using Diplom.Resources.Requests.MedicalPolicy;
 using Diplom.Resources.Scripts.DbConstants;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,24 +33,34 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
             return response;
         }
 
-        public MedicalPolicyEntity Post(MedicalPolicyEntity medicalPolicy)
+        public MedicalPolicyEntity Post(MedicalPolicyCreateRequest createRequest, string imagePath)
         {
-            HttpClient client = new HttpClient();
+            var client = new RestClient(ApiConstants.API_URL);
+            var request = new RestRequest("medicalPolicy");
+            request.AddFile("image", imagePath);
 
-            using StringContent jsonContent = new StringContent(JsonSerializer.Serialize(medicalPolicy), Encoding.UTF8, "application/json");
+            request.AddParameter("number", createRequest.number);
+            request.AddParameter("studentId", createRequest.studentId);
 
-            HttpResponseMessage responseMessage = client.PostAsync(URL, jsonContent).Result;
+            client.Post(request);
 
             return null;
         }
 
-        public MedicalPolicyEntity Put(MedicalPolicyEntity medicalPolicy)
+        public MedicalPolicyEntity Put(MedicalPolicyUpdateRequest updateRequest, string imagePath)
         {
-            HttpClient client = new HttpClient();
+            var client = new RestClient(ApiConstants.API_URL);
+            var request = new RestRequest("medicalPolicy");
 
-            using StringContent jsonContent = new StringContent(JsonSerializer.Serialize(medicalPolicy), Encoding.UTF8, "application/json");
+            if (!imagePath.Contains("http"))
+            {
+                request.AddFile("image", imagePath);
+            }
 
-            HttpResponseMessage responseMessage = client.PutAsync(URL, jsonContent).Result;
+            request.AddParameter("id", updateRequest.id);
+            request.AddParameter("number", updateRequest.number);
+
+            client.Put(request);
 
             return null;
         }

@@ -1,5 +1,7 @@
 ﻿using Diplom.Resources.Model;
+using Diplom.Resources.Requests.Snils;
 using Diplom.Resources.Scripts.DbConstants;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,24 +33,34 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
             return response;
         }
 
-        public SnilsEntity Post(SnilsEntity snils)
+        public SnilsEntity Post(SnilsCreateRequest createRequest, string imagePath)
         {
-            HttpClient client = new HttpClient();
+            var client = new RestClient(ApiConstants.API_URL);
+            var request = new RestRequest("snils");
+            request.AddFile("image", imagePath);
 
-            using StringContent jsonContent = new StringContent(JsonSerializer.Serialize(snils), Encoding.UTF8, "application/json");
+            request.AddParameter("number", createRequest.number);
+            request.AddParameter("studentId", createRequest.studentId);
 
-            HttpResponseMessage responseMessage = client.PostAsync(URL, jsonContent).Result;
+            client.Post(request);
 
             return null;
         }
 
-        public SnilsEntity Put(SnilsEntity snils)
+        public SnilsEntity Put(SnilsUpdateRequest updateRequest, string imagePath)
         {
-            HttpClient client = new HttpClient();
+            var client = new RestClient(ApiConstants.API_URL);
+            var request = new RestRequest("snils");
 
-            using StringContent jsonContent = new StringContent(JsonSerializer.Serialize(snils), Encoding.UTF8, "application/json");
+            if (!imagePath.Contains("http"))
+            {
+                request.AddFile("image", imagePath);
+            }
 
-            HttpResponseMessage responseMessage = client.PutAsync(URL, jsonContent).Result;
+            request.AddParameter("id", updateRequest.id);
+            request.AddParameter("number", updateRequest.number);
+
+            client.Put(request);
 
             return null;
         }

@@ -25,7 +25,13 @@
     <Compile Update="Resources\View\Pages\Documents\FluVaccineDataGridPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Resources\View\Pages\Documents\InnDataGridPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Resources\View\Pages\Documents\MedicalPoliciesDataGridPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\View\Pages\Documents\PassportDataGridPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Resources\View\Pages\Documents\SnilsDataGridPage.xaml.cs">
@@ -41,9 +47,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Resources\View\Pages\StudentsPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Resources\View\Windows\AddPassesWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Resources\View\Windows\Documents\FluorographyHandler.xaml.cs">
@@ -105,7 +108,13 @@
     <Page Update="Resources\View\Pages\Documents\FluVaccineDataGridPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Resources\View\Pages\Documents\InnDataGridPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Resources\View\Pages\Documents\MedicalPoliciesDataGridPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\View\Pages\Documents\PassportDataGridPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Resources\View\Pages\Documents\SnilsDataGridPage.xaml">
@@ -121,9 +130,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Resources\View\Pages\StudentsPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Resources\View\Windows\AddPassesWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Resources\View\Windows\Documents\FluorographyHandler.xaml">

@@ -16,6 +16,8 @@ namespace Diplom.Resources.ViewModel.Documents
 
         private ObservableCollection<FluVaccineEntity> fluVaccines;
 
+        public StudentEntity student { get; set; }
+
         public ObservableCollection<FluVaccineEntity> FluVaccines
         {
             get { return fluVaccines; }
@@ -28,6 +30,7 @@ namespace Diplom.Resources.ViewModel.Documents
 
         public FluVaccineDataGridViewModel(StudentEntity student)
         {
+            this.student = student;
             repository = new FluVaccineRepository();
 
             FluVaccines = new ObservableCollection<FluVaccineEntity>(repository.GetAllByStudent(student.id));

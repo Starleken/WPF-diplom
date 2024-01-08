@@ -18,11 +18,11 @@ namespace Diplom.Resources.ViewModel
 
         private ActivityRepository activityRepository = new ActivityRepository();
 
-        private List<Activity> allActivities;
+        private List<ActivityEntity> allActivities;
 
-        private ObservableCollection<Activity> activities;
+        private ObservableCollection<ActivityEntity> activities;
 
-        public ObservableCollection<Activity> Activities
+        public ObservableCollection<ActivityEntity> Activities
         {
             get { return activities; }
             set
@@ -32,9 +32,9 @@ namespace Diplom.Resources.ViewModel
             }
         }
 
-        private ObservableCollection<ActivityLevel> activityTypes;
+        private ObservableCollection<ActivityLevelEntity> activityTypes;
 
-        public ObservableCollection<ActivityLevel> ActivityTypes
+        public ObservableCollection<ActivityLevelEntity> ActivityTypes
         {
             get { return ActivityTypes; }
             set { activityTypes = value; }
@@ -46,16 +46,16 @@ namespace Diplom.Resources.ViewModel
 
             PullAchievmentsByStudentId(student);
 
-            ActivityTypes = new ObservableCollection<ActivityLevel>(new ActivityTypeGetter().GetAll());
+            ActivityTypes = new ObservableCollection<ActivityLevelEntity>(new ActivityTypeGetter().GetAll());
         }
 
         public void PullAchievmentsByStudentId(StudentEntity student)
         {
             allActivities = activityRepository.GetActivitiesByStudentId(student.id).ToList();
-            Activities = new ObservableCollection<Activity>(allActivities);
+            Activities = new ObservableCollection<ActivityEntity>(allActivities);
         }
 
-        public void DeleteActivity(Activity activity)
+        public void DeleteActivity(ActivityEntity activity)
         {
             new ActivityRepository().DeleteById(activity.id);
 
@@ -67,10 +67,10 @@ namespace Diplom.Resources.ViewModel
         {
             if (String.IsNullOrEmpty(name))
             {
-                Activities = new ObservableCollection<Activity>(allActivities);
+                Activities = new ObservableCollection<ActivityEntity>(allActivities);
             }
 
-            Activities = new ObservableCollection<Activity>(allActivities.Where(x => x.name.ToLower().Contains(name.ToLower())));
+            Activities = new ObservableCollection<ActivityEntity>(allActivities.Where(x => x.name.ToLower().Contains(name.ToLower())));
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

@@ -1,4 +1,5 @@
 ﻿using Diplom.Resources.Model;
+using Diplom.Resources.View.Windows.Documents;
 using Diplom.Resources.ViewModel.Documents;
 using System;
 using System.Collections.Generic;
@@ -23,13 +24,37 @@ namespace Diplom.Resources.View.Pages.Documents
     public partial class FluVaccineDataGridPage : Page
     {
         private FluVaccineDataGridViewModel viewModel;
+        private Frame frameContainer;
 
-        public FluVaccineDataGridPage(StudentEntity student)
+        public FluVaccineDataGridPage(Frame frameContainer, StudentEntity student)
         {
             InitializeComponent();
 
             viewModel = new FluVaccineDataGridViewModel(student);
+
             DataContext = viewModel;
+
+            this.frameContainer = frameContainer;
+        }
+
+        public void AddFluVaccine()
+        {
+            frameContainer.Navigate(new FluVaccineHandler(viewModel.student));
+        }
+
+        private FluVaccineEntity GetSelectedFluVaccine()
+        {
+            return (FluVaccineEntity)FluVaccinesDataGrid.SelectedItem;
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            FluVaccineEntity fluVaccine = GetSelectedFluVaccine();
+
+            if (fluVaccine != null)
+            {
+                frameContainer.Navigate(new FluVaccineHandler(fluVaccine, Scripts.HandlerOpenType.update));
+            }
         }
     }
 }

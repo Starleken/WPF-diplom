@@ -16,14 +16,16 @@ namespace Diplom.Resources.Scripts.Util
         public void AuthByLoginAndPassword(string login, string password)
         {
             UserRepository userRepository = new UserRepository();
-            UserEntity user = userRepository.findByLoginAndPassword(login, password);
 
-            if (user == null)
+            try
+            {
+                UserEntity user = userRepository.findByLoginAndPassword(login, password);
+                CurrentUser = user;
+            }
+            catch (EntityNotFoundException ex)
             {
                 throw new AuthException("Неверный логин или пароль");
             }
-
-            CurrentUser = user;
         }
     }
 }

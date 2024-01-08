@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace Diplom.Resources.Requests
+namespace Diplom.Resources.Requests.Activity
 {
     class ActivityUpdateRequest
     {
@@ -18,13 +18,13 @@ namespace Diplom.Resources.Requests
         public long? activityTypeId { get; set; }
         public long? activityLevelId { get; set; }
 
-        public ActivityUpdateRequest(Activity activity)
+        public ActivityUpdateRequest(ActivityEntity activity)
         {
-            this.id = activity.id;
-            this.name = activity.name;
-            this.date = activity.date;
-            this.activityTypeId = activity.activityType.id;
-            this.activityLevelId = activity.activityLevel.id;
+            id = activity.id;
+            name = activity.name;
+            date = activity.date;
+            activityTypeId = activity.activityType.id;
+            activityLevelId = activity.activityLevel.id;
         }
     }
 }

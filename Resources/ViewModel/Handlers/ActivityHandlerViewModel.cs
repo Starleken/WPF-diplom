@@ -16,9 +16,9 @@ namespace Diplom.Resources.ViewModel.Handlers
     {
         private StudentEntity student;
 
-        private Activity activity;
+        private ActivityEntity activity;
 
-        public Activity Activity
+        public ActivityEntity Activity
         {
             get { return activity; }
             set 
@@ -28,9 +28,9 @@ namespace Diplom.Resources.ViewModel.Handlers
             }
         }
 
-        private ObservableCollection<ActivityLevel> activityLevels;
+        private ObservableCollection<ActivityLevelEntity> activityLevels;
 
-        public ObservableCollection<ActivityLevel> ActivityLevels
+        public ObservableCollection<ActivityLevelEntity> ActivityLevels
         {
             get { return activityLevels; }
             set 
@@ -40,9 +40,9 @@ namespace Diplom.Resources.ViewModel.Handlers
             }
         }
 
-        private ObservableCollection<ActivityType> activityTypes;
+        private ObservableCollection<ActivityTypeEntity> activityTypes;
 
-        public ObservableCollection<ActivityType> ActivityTypes
+        public ObservableCollection<ActivityTypeEntity> ActivityTypes
         {
             get { return activityTypes; }
             set 
@@ -57,31 +57,31 @@ namespace Diplom.Resources.ViewModel.Handlers
         {
             this.student = student;
 
-            Activity = new Activity();
+            Activity = new ActivityEntity();
 
-            ActivityLevels = new ObservableCollection<ActivityLevel>(new ActivityLevelRepository().GetAll());
-            ActivityTypes = new ObservableCollection<ActivityType>(new ActivityTypeRepository().GetAll());
+            ActivityLevels = new ObservableCollection<ActivityLevelEntity>(new ActivityLevelRepository().GetAll());
+            ActivityTypes = new ObservableCollection<ActivityTypeEntity>(new ActivityTypeRepository().GetAll());
         }
 
-        public ActivityHandlerViewModel(StudentEntity student, Activity activity, HandlerOpenType openType)
+        public ActivityHandlerViewModel(StudentEntity student, ActivityEntity activity, HandlerOpenType openType)
         {
             this.student = student;
 
             Activity = activity;
 
-            ActivityLevels = new ObservableCollection<ActivityLevel>(new ActivityLevelRepository().GetAll());
-            ActivityTypes = new ObservableCollection<ActivityType>(new ActivityTypeRepository().GetAll());
+            ActivityLevels = new ObservableCollection<ActivityLevelEntity>(new ActivityLevelRepository().GetAll());
+            ActivityTypes = new ObservableCollection<ActivityTypeEntity>(new ActivityTypeRepository().GetAll());
         }
 
         public void AddActivity()
         {
             Activity.student = student;
-            new ActivityRepository().PostActivity(new Requests.ActivityCreateRequest(Activity), Activity.imageURL);
+            new ActivityRepository().PostActivity(new Requests.Activity.ActivityCreateRequest(Activity), Activity.imageURL);
         }
 
         public void UpdateActivity()
         {
-            new ActivityRepository().PutActivity(new Requests.ActivityUpdateRequest(Activity), Activity.imageURL);
+            new ActivityRepository().PutActivity(new Requests.Activity.ActivityUpdateRequest(Activity), Activity.imageURL);
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

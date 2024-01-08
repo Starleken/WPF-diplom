@@ -14,10 +14,10 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
     {
         private string URL = ApiConstants.API_URL + "activityType";
 
-        public ActivityType[] GetAll()
+        public ActivityTypeEntity[] GetAll()
         {
             HttpClient httpClient = new HttpClient();
-            var response = httpClient.GetFromJsonAsync<ActivityType[]>(URL).Result;
+            var response = httpClient.GetFromJsonAsync<ActivityTypeEntity[]>(URL).Result;
 
             return response;
         }

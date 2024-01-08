@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Diplom.Resources.Model
 {
-    internal class PassportEntity
+    public class PassportEntity
     {
         public long? id { get; set; }
         public string series { get; set; }

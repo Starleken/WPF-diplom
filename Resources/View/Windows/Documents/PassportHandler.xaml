@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Diplom.Resources.View.Windows.Documents"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PassportHandler">
@@ -37,35 +38,23 @@
                         <Label Content="Номер:" MinWidth="150" FontSize="20"></Label>
                     </StackPanel>
 
-                    <Grid>
-                        <TextBlock Margin="13 0" VerticalAlignment="Center" Foreground="#868686" MinWidth="195" IsHitTestVisible="False" Panel.ZIndex="1"
-                            Text="Введите номер паспорта" FontSize="14"
-                            Visibility="{Binding ElementName=numberTextBox, Path=Text.IsEmpty, Converter={StaticResource MyBoolToVisibilityConverter}}" />
-
-                        <TextBox Name="numberTextBox"  MinWidth="225" Style="{StaticResource customTextBox}" Text="{Binding Fluorography.number}"/>
-                    </Grid>
+                    <TextBox Name="numberTextBox"  MinWidth="225" materialDesign:HintAssist.Hint="Номер паспорта"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding Passport.number}"/>
                 </StackPanel>
                 <StackPanel  Margin="10 3 10 0">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
-                        <Label Content="Номер:" MinWidth="150" FontSize="20"></Label>
+                        <Label Content="Серия:" MinWidth="150" FontSize="20"></Label>
                     </StackPanel>
 
-                    <Grid>
-                        <TextBlock Margin="13 0" VerticalAlignment="Center" Foreground="#868686" MinWidth="195" IsHitTestVisible="False" Panel.ZIndex="1"
-                            Text="Введите серию паспорта" FontSize="14"
-                            Visibility="{Binding ElementName=seriesTextBox, Path=Text.IsEmpty, Converter={StaticResource MyBoolToVisibilityConverter}}" />
-
-                        <TextBox Name="seriesTextBox"  MinWidth="225" Style="{StaticResource customTextBox}" Text="{Binding Fluorography.number}"/>
-                    </Grid>
+                    <TextBox Name="seriesTextBox"  MinWidth="225" materialDesign:HintAssist.Hint="Серия паспорта"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding Passport.series}"/>
                 </StackPanel>
-                <StackPanel Margin="10 3 10 0">
+                <!--<StackPanel Margin="10 3 10 0">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
                         <Label Content="Дата:" MinWidth="150" FontSize="20"></Label>
                     </StackPanel>
-                    <DatePicker Height="30" Text="Введите дату" MinWidth="220"/>
-                </StackPanel>
+                    <DatePicker Height="30" Text="Введите дату" MinWidth="220" materialDesign:HintAssist.Hint="Дата получения паспорта"/>
+                </StackPanel>-->
             </StackPanel>
         </Border>
 
@@ -87,7 +76,9 @@
                     <Label Content="Выбор изображения:" MinWidth="150" FontSize="20"></Label>
                 </StackPanel>
 
-                <Image Grid.Row="1" Source="../../../Images/DocumentExample.jpeg" Margin="10"/>
+                <Button Style="{StaticResource ImageButton}"  Grid.Row="1" Margin="10" Name="ImageButton" Click="ImageButton_Click">
+                    <Image Grid.Row="1" Source="{Binding Passport.imageURL}" Name="PassportImage" Margin="10"/>
+                </Button>
             </Grid>
         </Border>
 

@@ -57,7 +57,7 @@ namespace Diplom.Resources.View.Pages
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            Activity selectedActivity = GetSelectedActivity();
+            ActivityEntity selectedActivity = GetSelectedActivity();
 
             if (selectedActivity == null)
             {
@@ -73,7 +73,7 @@ namespace Diplom.Resources.View.Pages
             WarningWindow window = new WarningWindow("Вы уверены что хотите удалить?");
             window.ShowDialog();
 
-            Activity selectedActivity = GetSelectedActivity();
+            ActivityEntity selectedActivity = GetSelectedActivity();
 
             if (selectedActivity == null)
             {
@@ -88,9 +88,9 @@ namespace Diplom.Resources.View.Pages
             }
         }
 
-        private Activity GetSelectedActivity()
+        private ActivityEntity GetSelectedActivity()
         {
-            Activity selectedActivity = (Activity)ActivitiesDataGrid.SelectedItem;
+            ActivityEntity selectedActivity = (ActivityEntity)ActivitiesDataGrid.SelectedItem;
 
             return selectedActivity;
         }

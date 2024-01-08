@@ -13,7 +13,6 @@ FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\ProfilPage.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\StudentAchievementsPage.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\StudentDocumentsPage.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\StudentsPage.xaml;;
-FD:\Projects\WPFprojects\Diplom\Resources\View\Windows\AddPassesWindow.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Windows\Documents\FluorographyHandler.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Windows\Documents\FluVaccineHandler.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Windows\Documents\InnHandler.xaml;;
@@ -26,4 +25,6 @@ FD:\Projects\WPFprojects\Diplom\Resources\View\Windows\Handlers\CuratorHandler.x
 FD:\Projects\WPFprojects\Diplom\Resources\View\Windows\Handlers\CuratorHandlerPage.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Windows\Handlers\StudentHandlerPage.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Windows\WarningWindow.xaml;;
+FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\Documents\InnDataGridPage.xaml;;
+FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\Documents\PassportDataGridPage.xaml;;
 

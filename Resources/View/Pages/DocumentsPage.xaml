@@ -47,9 +47,10 @@
         <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0 10 0 0">
             <Button Content="Снилс" Style="{StaticResource tabButton}" Name="SnilsButton" Click="SnilsButton_Click"/>
             <Button Content="Флюроография" Style="{StaticResource tabButton}" Name="FluorographyButton" Width="120" Click="FluorographyButton_Click"/>
-            <Button Content="Паспорт" Style="{StaticResource tabButton}"/>
+            <Button Content="Паспорт" Style="{StaticResource tabButton}" Name="PassportsButton" Click="PassportsButton_Click"/>
             <Button Content="Мед полис" Style="{StaticResource tabButton}" Width="90" Name="MedicalPoliciesButton" Click="MedicalPoliciesButton_Click"/>
             <Button Content="Прививка" Style="{StaticResource tabButton}" Name="FluVaccinesButton" Click="FluVaccinesButton_Click"/>
+            <Button Content="ИНН" Style="{StaticResource tabButton}" Name="InnButton" Click="InnButton_Click" />
         </StackPanel>
 
         <TextBlock Name="DocumentNameTextBlock" Text="Снилс" Grid.Row="4" FontSize="18" FontWeight="SemiBold"

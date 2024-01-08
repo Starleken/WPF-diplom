@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Diplom.Resources.Model
 {
-    class FluVaccineEntity
+    public class FluVaccineEntity
     {
         public long? id { get; set; }
         public DateTime createDate { get; set; }

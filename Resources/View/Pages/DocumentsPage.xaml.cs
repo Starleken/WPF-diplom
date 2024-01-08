@@ -83,8 +83,27 @@ namespace Diplom.Resources.View.Pages
         private void FluVaccinesButton_Click(object sender, RoutedEventArgs e)
         {
             DocumentNameTextBlock.Text = "Прививка от гриппа";
+            UnsubListeners();
+            FluVaccineDataGridPage page = new FluVaccineDataGridPage(frameContainer, viewModel.student);
+            OnAddButtonClick += page.AddFluVaccine;
+            PageDataGridContainer.Navigate(page);
+        }
 
-            FluVaccineDataGridPage page = new FluVaccineDataGridPage(viewModel.student);
+        private void InnButton_Click(object sender, RoutedEventArgs e)
+        {
+            DocumentNameTextBlock.Text = "ИНН";
+            UnsubListeners();
+            InnDataGridPage page = new InnDataGridPage(frameContainer, viewModel.student);
+            OnAddButtonClick += page.AddInn;
+            PageDataGridContainer.Navigate(page);
+        }
+
+        private void PassportsButton_Click(object sender, RoutedEventArgs e)
+        {
+            DocumentNameTextBlock.Text = "Паспорт";
+            UnsubListeners();
+            PassportDataGridPage page = new PassportDataGridPage(frameContainer, viewModel.student);
+            OnAddButtonClick += page.AddPassport;
             PageDataGridContainer.Navigate(page);
         }
 

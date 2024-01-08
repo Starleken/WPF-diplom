@@ -31,8 +31,6 @@ D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Windows\E
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Windows\ErrorWindow.baml
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Windows\WarningWindow.g.cs
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Windows\WarningWindow.baml
-D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Windows\AddPassesWindow.g.cs
-D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Windows\AddPassesWindow.baml
 D:\Projects\WPFprojects\Diplom\bin\Debug\net7.0-windows\MahApps.Metro.IconPacks.BootstrapIcons.dll
 D:\Projects\WPFprojects\Diplom\bin\Debug\net7.0-windows\MahApps.Metro.IconPacks.BoxIcons.dll
 D:\Projects\WPFprojects\Diplom\bin\Debug\net7.0-windows\MahApps.Metro.IconPacks.Codicons.dll
@@ -108,3 +106,7 @@ D:\Projects\WPFprojects\Diplom\bin\Debug\net7.0-windows\MaterialDesignColors.dll
 D:\Projects\WPFprojects\Diplom\bin\Debug\net7.0-windows\MaterialDesignThemes.Wpf.dll
 D:\Projects\WPFprojects\Diplom\bin\Debug\net7.0-windows\Microsoft.Xaml.Behaviors.dll
 D:\Projects\WPFprojects\Diplom\bin\Debug\net7.0-windows\RestSharp.dll
+D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Pages\Documents\InnDataGridPage.g.cs
+D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Pages\Documents\InnDataGridPage.baml
+D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Pages\Documents\PassportDataGridPage.g.cs
+D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Pages\Documents\PassportDataGridPage.baml
