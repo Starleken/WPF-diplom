@@ -1,4 +1,6 @@
 ﻿using Diplom.Resources.Model;
+using Diplom.Resources.Scripts.Interfaces;
+using Diplom.Resources.Scripts.Util;
 using Diplom.Resources.View.Pages.Documents;
 using Diplom.Resources.ViewModel;
 using System;
@@ -45,7 +47,10 @@ namespace Diplom.Resources.View.Pages
 
         private void InitByRole(RoleEntity role)
         {
-
+            if (role.name != "Студент")
+            {
+                AddButton.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
@@ -55,56 +60,69 @@ namespace Diplom.Resources.View.Pages
 
         private void SnilsButton_Click(object sender, RoutedEventArgs e)
         {
-            DocumentNameTextBlock.Text = "Снилс";
-            UnsubListeners();
+
             SnilsDataGridPage page = new SnilsDataGridPage(frameContainer, viewModel.student);
-            OnAddButtonClick += page.AddSnils;
-            PageDataGridContainer.Navigate(page);
+            ChangePage("Снилс", page);
         }
 
         private void FluorographyButton_Click(object sender, RoutedEventArgs e)
         {
-            DocumentNameTextBlock.Text = "Флюроография";
-            UnsubListeners();
             FluorographyDataGridPage page = new FluorographyDataGridPage(frameContainer, viewModel.student);
-            OnAddButtonClick += page.AddFluorography;
-            PageDataGridContainer.Navigate(page);
+            ChangePage("Флюорография", page);
         }
 
         private void MedicalPoliciesButton_Click(object sender, RoutedEventArgs e)
         {
-            DocumentNameTextBlock.Text = "Медицинский полюс";
-            UnsubListeners();
             MedicalPoliciesDataGridPage page = new MedicalPoliciesDataGridPage(frameContainer, viewModel.student);
-            OnAddButtonClick += page.AddMedicalPolicy;
-            PageDataGridContainer.Navigate(page);
+            ChangePage("Медицинский полюс", page);
         }
 
         private void FluVaccinesButton_Click(object sender, RoutedEventArgs e)
         {
-            DocumentNameTextBlock.Text = "Прививка от гриппа";
-            UnsubListeners();
             FluVaccineDataGridPage page = new FluVaccineDataGridPage(frameContainer, viewModel.student);
-            OnAddButtonClick += page.AddFluVaccine;
-            PageDataGridContainer.Navigate(page);
+            ChangePage("Прививка от гриппа", page);
         }
 
         private void InnButton_Click(object sender, RoutedEventArgs e)
         {
-            DocumentNameTextBlock.Text = "ИНН";
-            UnsubListeners();
             InnDataGridPage page = new InnDataGridPage(frameContainer, viewModel.student);
-            OnAddButtonClick += page.AddInn;
-            PageDataGridContainer.Navigate(page);
+            ChangePage("ИНН", page);
         }
 
         private void PassportsButton_Click(object sender, RoutedEventArgs e)
         {
-            DocumentNameTextBlock.Text = "Паспорт";
-            UnsubListeners();
             PassportDataGridPage page = new PassportDataGridPage(frameContainer, viewModel.student);
-            OnAddButtonClick += page.AddPassport;
-            PageDataGridContainer.Navigate(page);
+            ChangePage("Паспорт", page);
+        }
+
+        private void ChangePage(string pageName, IDocumentPage page)
+        {
+            DocumentNameTextBlock.Text = pageName;
+            UnsubListeners();
+            CheckUnigueDocumentCount(page);
+            OnAddButtonClick += page.AddEntity;
+            PageDataGridContainer.Navigate((Page)page);
+        }
+
+        private void CheckUnigueDocumentCount(IDocumentPage page)
+        {
+            if (AuthController.CurrentUser.role.name != "Студент")
+            {
+                return;
+            }
+
+            AddButton.Visibility = Visibility.Visible;
+
+            int documentCount = 0;
+            if (page is IUnigue unigue)
+            {
+                documentCount = unigue.GetDocumentCount();
+            }
+
+            if (documentCount > 0)
+            {
+                AddButton.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void UnsubListeners()

@@ -37,6 +37,13 @@ namespace Diplom.Resources.ViewModel.Documents
             this.student = student;
         }
 
+        public void DeleteMedicalPolicy(MedicalPolicyEntity medicalPolicy)
+        {
+            MedicalPolicies.Remove(medicalPolicy);
+
+            new MedicalPolicyRepository().DeleteById(medicalPolicy.id);
+        }
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public void OnPropertyChanged(string propertyName)

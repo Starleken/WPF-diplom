@@ -50,7 +50,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
             return null;
         }
 
-        public void Delete(long? id)
+        public void DeleteById(long? id)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.DeleteAsync($"{URL}/{id}");

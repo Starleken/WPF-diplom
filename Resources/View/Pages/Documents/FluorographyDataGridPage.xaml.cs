@@ -1,4 +1,7 @@
 ﻿using Diplom.Resources.Model;
+using Diplom.Resources.Scripts.Interfaces;
+using Diplom.Resources.Scripts.Util;
+using Diplom.Resources.View.Windows;
 using Diplom.Resources.View.Windows.Documents;
 using Diplom.Resources.ViewModel.Documents;
 using System;
@@ -21,7 +24,7 @@ namespace Diplom.Resources.View.Pages.Documents
     /// <summary>
     /// Interaction logic for FluorographyDataGridPage.xaml
     /// </summary>
-    public partial class FluorographyDataGridPage : Page
+    public partial class FluorographyDataGridPage : Page, IUnigue, IDocumentPage
     {
         private FluorographyDataGridViewModel viewModel;
         private Frame frameContainer;
@@ -35,11 +38,26 @@ namespace Diplom.Resources.View.Pages.Documents
             DataContext = viewModel;
 
             this.frameContainer = frameContainer;
+
+            InitByRole();
         }
 
-        public void AddFluorography()
+        private void InitByRole()
+        {
+            if (AuthController.CurrentUser.id != 3)
+            {
+                FluorographiesDataGrid.Columns[2].Visibility = Visibility.Collapsed;
+            }
+        }
+
+        public void AddEntity()
         {
             frameContainer.Navigate(new FluorographyHandler(viewModel.student));
+        }
+
+        public int GetDocumentCount()
+        {
+            return viewModel.Fluorographies.Count;
         }
 
         private FluorographyEntity GetSelectedFluorography()
@@ -54,6 +72,17 @@ namespace Diplom.Resources.View.Pages.Documents
             if (fluorography != null)
             {
                 frameContainer.Navigate(new FluorographyHandler(fluorography, Scripts.HandlerOpenType.update));
+            }
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            WarningWindow warningWindow = new WarningWindow("Вы уверены что хотите удалить флюорографию?");
+            warningWindow.ShowDialog();
+
+            if (warningWindow.result == true)
+            {
+                viewModel.DeleteFluorography(GetSelectedFluorography());
             }
         }
     }

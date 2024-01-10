@@ -36,6 +36,13 @@ namespace Diplom.Resources.ViewModel.Documents
             FluVaccines = new ObservableCollection<FluVaccineEntity>(repository.GetAllByStudent(student.id));
         }
 
+        public void DeleteFluVaccine(FluVaccineEntity fluVaccine)
+        {
+            FluVaccines.Remove(fluVaccine);
+
+            new FluVaccineRepository().DeleteById(fluVaccine.id);
+        }
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public void OnPropertyChanged(string propertyName)

@@ -20,7 +20,7 @@
                                 <Button Name="EditButton" Style="{StaticResource gridEditButton}" Click="EditButton_Click" >
                                     <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
                                 </Button>
-                                <Button Name="DeleteButton" Style="{StaticResource gridDeleteButton}" >
+                                <Button Name="DeleteButton" Style="{StaticResource gridDeleteButton}" Click="DeleteButton_Click">
                                     <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}"/>
                                 </Button>
                             </StackPanel>

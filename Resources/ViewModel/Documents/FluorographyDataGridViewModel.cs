@@ -36,6 +36,13 @@ namespace Diplom.Resources.ViewModel.Documents
             Fluorographies = new ObservableCollection<FluorographyEntity>(repository.GetAllByStudent(student.id));
         }
 
+        public void DeleteFluorography (FluorographyEntity fluorography)
+        {
+            Fluorographies.Remove(fluorography);
+
+            new FluorographyRepository().DeleteById(fluorography.id);
+        }
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public void OnPropertyChanged(string propertyName)

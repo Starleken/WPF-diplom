@@ -110,3 +110,5 @@ D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Pages\Doc
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Pages\Documents\InnDataGridPage.baml
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Pages\Documents\PassportDataGridPage.g.cs
 D:\Projects\WPFprojects\Diplom\obj\Debug\net7.0-windows\Resources\View\Pages\Documents\PassportDataGridPage.baml
+D:\Projects\WPFprojects\Diplom\bin\Debug\net7.0-windows\WinForms.DataVisualization.Utilities.dll
+D:\Projects\WPFprojects\Diplom\bin\Debug\net7.0-windows\WinForms.DataVisualization.dll

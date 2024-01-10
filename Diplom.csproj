@@ -27,13 +27,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\Scripts\Interfaces\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="MahApps.Metro.IconPacks" Version="4.11.0" />
     <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
     <PackageReference Include="RestSharp" Version="110.2.0" />
+    <PackageReference Include="WinForms.DataVisualization" Version="1.9.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -53,6 +50,10 @@
     <Resource Include="Resources\Images\WindowsBar\close.png" />
     <Resource Include="Resources\Images\WindowsBar\expand-window.png" />
     <Resource Include="Resources\Images\WindowsBar\minimize-sign.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\UserControls\" />
   </ItemGroup>
 
 </Project>

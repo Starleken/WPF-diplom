@@ -59,8 +59,9 @@
                     <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
                     <Label Content="Выбор изображения:" MinWidth="150" FontSize="20"></Label>
                 </StackPanel>
-
-                <Button Style="{StaticResource ImageButton}"  Grid.Row="1" Margin="10" Name="ImageButton" Click="ImageButton_Click">
+                
+                <Image Grid.Row="1" Margin="40" Source="../../../Images/QuestionMark.png"/>
+                <Button Style="{StaticResource DocumentImage}"  Grid.Row="1" Margin="10" Name="ImageButton" Click="ImageButton_Click">
                     <Image Grid.Row="1" Source="{Binding FluVaccine.imageURL}" Name="FluVaccineImage" Margin="10"/>
                 </Button>
             </Grid>

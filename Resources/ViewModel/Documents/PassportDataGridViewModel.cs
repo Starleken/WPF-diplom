@@ -36,6 +36,13 @@ namespace Diplom.Resources.ViewModel.Documents
             Passports = new ObservableCollection<PassportEntity>(repository.GetAllByStudent(student.id));
         }
 
+        public void DeletePassport(PassportEntity passport)
+        {
+            Passports.Remove(passport);
+
+            new PassportRepository().DeleteById(passport.id);
+        }
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public void OnPropertyChanged(string propertyName)

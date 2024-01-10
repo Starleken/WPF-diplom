@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MSBoZKby6KVt8HdU0Zk8Ax7SqEkH1J2FKSKD4IjEHOjlE7m2ETWWvB4vLD+fOBGPFfFwcizaoYprvR+lpW8ZOQ==",
+  "dgSpecHash": "Sgf/4ZuwRHXdH6mEJwrOoXfKYVlcryazvco5vagq3AzR0Mq9UPTgdX/NdqvUx4jjytayokCxN6tsNmSk2wABEg==",
   "success": true,
   "projectFilePath": "D:\\Projects\\WPFprojects\\Diplom\\Diplom.csproj",
   "expectedPackageFiles": [
@@ -10,7 +10,8 @@
     "C:\\Users\\Starleken\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
     "C:\\Users\\Starleken\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
     "C:\\Users\\Starleken\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
-    "C:\\Users\\Starleken\\.nuget\\packages\\system.text.json\\7.0.2\\system.text.json.7.0.2.nupkg.sha512"
+    "C:\\Users\\Starleken\\.nuget\\packages\\system.text.json\\7.0.2\\system.text.json.7.0.2.nupkg.sha512",
+    "C:\\Users\\Starleken\\.nuget\\packages\\winforms.datavisualization\\1.9.1\\winforms.datavisualization.1.9.1.nupkg.sha512"
   ],
   "logs": []
 }

@@ -7,7 +7,9 @@ FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\CuratorPage.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\DocumentsPage.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\Documents\FluorographyDataGridPage.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\Documents\FluVaccineDataGridPage.xaml;;
+FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\Documents\InnDataGridPage.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\Documents\MedicalPoliciesDataGridPage.xaml;;
+FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\Documents\PassportDataGridPage.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\Documents\SnilsDataGridPage.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\ProfilPage.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\StudentAchievementsPage.xaml;;
@@ -25,6 +27,4 @@ FD:\Projects\WPFprojects\Diplom\Resources\View\Windows\Handlers\CuratorHandler.x
 FD:\Projects\WPFprojects\Diplom\Resources\View\Windows\Handlers\CuratorHandlerPage.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Windows\Handlers\StudentHandlerPage.xaml;;
 FD:\Projects\WPFprojects\Diplom\Resources\View\Windows\WarningWindow.xaml;;
-FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\Documents\InnDataGridPage.xaml;;
-FD:\Projects\WPFprojects\Diplom\Resources\View\Pages\Documents\PassportDataGridPage.xaml;;
 

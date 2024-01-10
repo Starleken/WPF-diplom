@@ -84,27 +84,27 @@
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
                     <Label Content="Фамилия:" MinWidth="150" FontSize="20"></Label>
-                    <TextBox Name="surnameTextBox" MinWidth="175" IsReadOnly="True" Style="{DynamicResource MaterialDesignTextBoxBase}" Text="{Binding Student.user.person.surname}"/>
+                    <TextBox Name="surnameTextBox" MinWidth="175" IsReadOnly="True" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" Text="{Binding Student.user.person.surname}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
                     <Label Content="Имя:" MinWidth="150" FontSize="20"></Label>
-                    <TextBox Name="nameTextBox" MinWidth="175" IsReadOnly="True" Style="{StaticResource customTextBox}" Text="{Binding Student.user.person.name}"/>
+                    <TextBox Name="nameTextBox" MinWidth="175" IsReadOnly="True" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" Text="{Binding Student.user.person.name}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
                     <Label Content="Отчество:" MinWidth="150" FontSize="20"></Label>
-                    <TextBox Name="patronymicTextBox" MinWidth="175" IsReadOnly="True" Style="{StaticResource customTextBox}" Text="{Binding Student.user.person.patronymic}"/>
+                    <TextBox Name="patronymicTextBox" MinWidth="175" IsReadOnly="True" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" Text="{Binding Student.user.person.patronymic}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
                     <Label Content="Группа:" MinWidth="150" FontSize="20"></Label>
-                    <TextBox Name="groupTextBox" MinWidth="175" IsReadOnly="True" Style="{StaticResource customTextBox}" Text="{Binding Student.group.name}"/>
+                    <TextBox Name="groupTextBox" MinWidth="175" IsReadOnly="True" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" Text="{Binding Student.group.name}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
                     <Label Content="Адрес регистр:" MinWidth="150" FontSize="20"></Label>
-                    <TextBox Name="registrationTextBox" MinWidth="175" IsReadOnly="True" Style="{StaticResource customTextBox}" Text="{Binding Student.user.person.registrationAddress}"/>
+                    <TextBox Name="registrationTextBox" MinWidth="175" IsReadOnly="True" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" Text="{Binding Student.user.person.registrationAddress}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
                     <Label Content="Адрес прожив:" MinWidth="150" FontSize="20"></Label>
-                    <TextBox Name="redidentialTextBox" MinWidth="175" IsReadOnly="True" Style="{StaticResource customTextBox}" Text="{Binding Student.user.person.residentialAddress}"/>
+                    <TextBox Name="redidentialTextBox" MinWidth="175" IsReadOnly="True" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" Text="{Binding Student.user.person.residentialAddress}"/>
                 </StackPanel>
             </StackPanel>
         </Border>
@@ -113,6 +113,9 @@
             <Border.Effect>
                 <DropShadowEffect BlurRadius="10" Direction="-90" RenderingBias="Quality" ShadowDepth="0.5"/>
             </Border.Effect>
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="1" CornerRadius="20" Margin="30 10 30 10" MaxHeight="180" BorderBrush="Transparent">
         </Border>
     </Grid>
 </Page>

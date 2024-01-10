@@ -12,8 +12,8 @@ TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 D:\Projects\WPFprojects\Diplom\App.xaml
 271216154012
 
-110-1816305524
-2351362317782
+112671436740
+237905696119
 AvtorizationWindow.xaml;Resources\View\MainMenu.xaml;Resources\View\Pages\AchievementsPage.xaml;Resources\View\Pages\CuratorPage.xaml;Resources\View\Pages\DocumentsPage.xaml;Resources\View\Pages\Documents\FluorographyDataGridPage.xaml;Resources\View\Pages\Documents\FluVaccineDataGridPage.xaml;Resources\View\Pages\Documents\InnDataGridPage.xaml;Resources\View\Pages\Documents\MedicalPoliciesDataGridPage.xaml;Resources\View\Pages\Documents\PassportDataGridPage.xaml;Resources\View\Pages\Documents\SnilsDataGridPage.xaml;Resources\View\Pages\ProfilPage.xaml;Resources\View\Pages\StudentAchievementsPage.xaml;Resources\View\Pages\StudentDocumentsPage.xaml;Resources\View\Pages\StudentsPage.xaml;Resources\View\Windows\Documents\FluorographyHandler.xaml;Resources\View\Windows\Documents\FluVaccineHandler.xaml;Resources\View\Windows\Documents\InnHandler.xaml;Resources\View\Windows\Documents\MedicalPolicyHandler.xaml;Resources\View\Windows\Documents\PassportHandler.xaml;Resources\View\Windows\Documents\SnilsHandler.xaml;Resources\View\Windows\ErrorWindow.xaml;Resources\View\Windows\Handlers\ActivityHandler.xaml;Resources\View\Windows\Handlers\CuratorHandler.xaml;Resources\View\Windows\Handlers\CuratorHandlerPage.xaml;Resources\View\Windows\Handlers\StudentHandlerPage.xaml;Resources\View\Windows\WarningWindow.xaml;
 
 True

@@ -37,6 +37,13 @@ namespace Diplom.Resources.ViewModel.Documents
             this.student = student;
         }
 
+        public void DeleteInn(InnEntity inn)
+        {
+            InnEntities.Remove(inn);
+
+            new InnRepository().DeleteById(inn.id);
+        }
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public void OnPropertyChanged(string propertyName)

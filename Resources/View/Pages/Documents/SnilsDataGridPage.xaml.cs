@@ -1,4 +1,7 @@
 ﻿using Diplom.Resources.Model;
+using Diplom.Resources.Scripts.Interfaces;
+using Diplom.Resources.Scripts.Util;
+using Diplom.Resources.View.Windows;
 using Diplom.Resources.View.Windows.Documents;
 using Diplom.Resources.ViewModel.Documents;
 using System;
@@ -21,7 +24,7 @@ namespace Diplom.Resources.View.Pages.Documents
     /// <summary>
     /// Interaction logic for SnilsDataGridPage.xaml
     /// </summary>
-    public partial class SnilsDataGridPage : Page
+    public partial class SnilsDataGridPage : Page, IUnigue, IDocumentPage
     {
         private SnilsDataGridViewModel viewModel;
         private Frame frameContainer;
@@ -33,16 +36,42 @@ namespace Diplom.Resources.View.Pages.Documents
             this.frameContainer = frameContainer;
             viewModel = new SnilsDataGridViewModel(student);
             DataContext = viewModel;
+
+            InitByRole();
         }
 
-        public void AddSnils()
+        private void InitByRole()
+        {
+            if (AuthController.CurrentUser.id != 3)
+            {
+                SnilsDataGrid.Columns[1].Visibility = Visibility.Collapsed;
+            }
+        }
+
+        public void AddEntity()
         {
             frameContainer.Navigate(new SnilsHandler(viewModel.student));
+        }
+
+        public int GetDocumentCount()
+        {
+            return viewModel.Snilses.Count;
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
             frameContainer.Navigate(new SnilsHandler(GetSelectedSnils(), Scripts.HandlerOpenType.update));
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            WarningWindow warningWindow = new WarningWindow("Вы уверены что хотите удалить снилс?");
+            warningWindow.ShowDialog();
+
+            if (warningWindow.result == true)
+            {
+                viewModel.DeleteSnils(GetSelectedSnils());
+            }
         }
 
         private SnilsEntity GetSelectedSnils()

@@ -23,6 +23,7 @@ namespace Diplom.Resources.Requests.Activity
             id = activity.id;
             name = activity.name;
             date = activity.date;
+            place = activity.place;
             activityTypeId = activity.activityType.id;
             activityLevelId = activity.activityLevel.id;
         }

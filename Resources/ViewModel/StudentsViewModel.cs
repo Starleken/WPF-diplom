@@ -65,7 +65,7 @@ namespace Diplom.Resources.ViewModel
         {
             Students.Remove(student);
 
-            new StudentRepository().Delete(student.id);
+            new StudentRepository().DeleteById(student.id);
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

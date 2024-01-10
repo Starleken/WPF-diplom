@@ -1,4 +1,7 @@
 ﻿using Diplom.Resources.Model;
+using Diplom.Resources.Scripts.Interfaces;
+using Diplom.Resources.Scripts.Util;
+using Diplom.Resources.View.Windows;
 using Diplom.Resources.View.Windows.Documents;
 using Diplom.Resources.ViewModel.Documents;
 using System;
@@ -21,7 +24,7 @@ namespace Diplom.Resources.View.Pages.Documents
     /// <summary>
     /// Interaction logic for InnDataGridPage.xaml
     /// </summary>
-    public partial class InnDataGridPage : Page
+    public partial class InnDataGridPage : Page, IUnigue, IDocumentPage
     {
         private InnDataGridViewModel viewModel;
         private Frame frameContainer;
@@ -34,11 +37,26 @@ namespace Diplom.Resources.View.Pages.Documents
             DataContext = viewModel;
 
             this.frameContainer = frameContainer;
+
+            InitByRole();
         }
 
-        public void AddInn()
+        private void InitByRole()
+        {
+            if (AuthController.CurrentUser.id != 3)
+            {
+                InnDataGrid.Columns[1].Visibility = Visibility.Collapsed;
+            }
+        }
+
+        public void AddEntity()
         {
             frameContainer.Navigate(new InnHandler(viewModel.student));
+        }
+
+        public int GetDocumentCount()
+        {
+            return viewModel.InnEntities.Count;
         }
 
         private InnEntity GetSelectedInn()
@@ -53,6 +71,17 @@ namespace Diplom.Resources.View.Pages.Documents
             if (inn != null)
             {
                 frameContainer.Navigate(new InnHandler(inn, Scripts.HandlerOpenType.update));
+            }
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            WarningWindow warningWindow = new WarningWindow("Вы уверены что хотите удалить ИНН?");
+            warningWindow.ShowDialog();
+
+            if (warningWindow.result == true)
+            {
+                viewModel.DeleteInn(GetSelectedInn());
             }
         }
     }

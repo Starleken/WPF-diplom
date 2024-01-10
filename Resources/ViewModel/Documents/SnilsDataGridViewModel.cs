@@ -14,17 +14,17 @@ namespace Diplom.Resources.ViewModel.Documents
     {
         private SnilsRepository repository;
 
-        private ObservableCollection<SnilsEntity> snils;
+        private ObservableCollection<SnilsEntity> snilses;
 
         public StudentEntity student { get; set; }
 
-        public ObservableCollection<SnilsEntity> Snils
+        public ObservableCollection<SnilsEntity> Snilses
         {
-            get { return snils; }
+            get { return snilses; }
             set
             {
-                snils = value;
-                OnPropertyChanged(nameof(Snils));
+                snilses = value;
+                OnPropertyChanged(nameof(Snilses));
             }
         }
 
@@ -33,7 +33,14 @@ namespace Diplom.Resources.ViewModel.Documents
             repository = new SnilsRepository();
             this.student = student;
 
-            Snils = new ObservableCollection<SnilsEntity>(repository.GetAllByStudent(student.id));
+            Snilses = new ObservableCollection<SnilsEntity>(repository.GetAllByStudent(student.id));
+        }
+
+        public void DeleteSnils(SnilsEntity snils)
+        {
+            Snilses.Remove(snils);
+
+            new SnilsRepository().DeleteById(snils.id);
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
