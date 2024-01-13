@@ -1,5 +1,8 @@
 ﻿using Diplom.Resources.Model;
+using Diplom.Resources.Requests.Snils;
+using Diplom.Resources.Requests.Student;
 using Diplom.Resources.Scripts.DbConstants;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,13 +42,26 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
             return response;
         }
 
-        public StudentEntity PutStudent(StudentEntity student)
+        public StudentEntity Post(StudentCreateRequest createRequest)
         {
-            HttpClient client = new HttpClient();
+            var client = new RestClient(ApiConstants.API_URL);
+            var request = new RestRequest("student");
 
-            using StringContent jsonContent = new StringContent(JsonSerializer.Serialize(student), Encoding.UTF8, "application/json");
+            request.AddJsonBody(createRequest);
 
-            HttpResponseMessage responseMessage = client.PutAsync(URL, jsonContent).Result;
+            client.Post(request);
+
+            return null;
+        }
+
+        public StudentEntity Put(StudentUpdateRequest updateRequest)
+        {
+            var client = new RestClient(ApiConstants.API_URL);
+            var request = new RestRequest("student");
+
+            request.AddJsonBody(updateRequest);
+
+            client.Put(request);
 
             return null;
         }

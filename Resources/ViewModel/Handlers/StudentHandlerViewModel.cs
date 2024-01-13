@@ -1,5 +1,4 @@
 ﻿using Diplom.Resources.Model;
-using Diplom.Resources.Scripts.HttpRequests.Post;
 using Diplom.Resources.Scripts.HttpRequests.Repository;
 using System;
 using System.Collections.Generic;
@@ -68,13 +67,12 @@ namespace Diplom.Resources.ViewModel.Handlers
 
         public void AddStudent()
         {
-            StudentPoster studentPoster = new StudentPoster();
-            studentPoster.PostStudent(Student);
+            new StudentRepository().Post(new Requests.Student.StudentCreateRequest(Student));
         }
 
         public void PutStudent()
         {
-            new StudentRepository().PutStudent(Student);
+            new StudentRepository().Put(new Requests.Student.StudentUpdateRequest(Student));
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

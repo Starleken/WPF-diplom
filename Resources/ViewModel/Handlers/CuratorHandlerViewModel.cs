@@ -1,6 +1,5 @@
 ﻿using Diplom.Resources.Model;
 using Diplom.Resources.Scripts;
-using Diplom.Resources.Scripts.HttpRequests.Post;
 using Diplom.Resources.Scripts.HttpRequests.Repository;
 using System;
 using System.Collections.Generic;

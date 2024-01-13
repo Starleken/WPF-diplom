@@ -6,6 +6,7 @@
       xmlns:local="clr-namespace:Diplom.Resources.View.Pages"
       xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ProfilPage">
@@ -34,6 +35,7 @@
                     <TextBlock Text="{Binding Path=Student.user.person.Initials}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"/>
                 </Border>
                 <TextBlock Text="{Binding Path=Student.user.person.FullName}" VerticalAlignment="Center" Margin="10 0 0 0" FontSize="25"/>
+                <Button HorizontalAlignment="Right"/>
             </StackPanel>
         </Border>
 
@@ -116,6 +118,8 @@
         </Border>
 
         <Border Grid.Row="2" Grid.Column="1" CornerRadius="20" Margin="30 10 30 10" MaxHeight="180" BorderBrush="Transparent">
+            <lvc:PieChart>
+            </lvc:PieChart>
         </Border>
     </Grid>
 </Page>
