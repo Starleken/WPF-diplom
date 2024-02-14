@@ -49,13 +49,19 @@ namespace Diplom.Resources.View.Pages
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            CuratorHandler handler = new CuratorHandler(GetSelectedCurator());
-            handler.ShowDialog();
+            CuratorHandlerPage handler = new CuratorHandlerPage(GetSelectedCurator(), Scripts.HandlerOpenType.update);
+            frameContainer.Navigate(handler);
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
+            WarningWindow warningWindow = new WarningWindow("Вы уверены что хотите удалить куратора?");
+            warningWindow.ShowDialog();
 
+            if (warningWindow.result == true)
+            {
+                viewModel.DeleteCurator(GetSelectedCurator());
+            }
         }
 
         private CuratorEntity GetSelectedCurator()

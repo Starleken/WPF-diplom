@@ -57,12 +57,12 @@ namespace Diplom.Resources.ViewModel.Handlers
 
         public void AddCurator()
         {
-            curatorRepository.Create(Curator);
+            curatorRepository.Create(new Requests.Curator.CuratorCreateRequest(Curator));
         }
 
         public void UpdateCurator()
         {
-            curatorRepository.Update(Curator);
+            curatorRepository.Update(new Requests.Curator.CuratorUpdateRequest(Curator));
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

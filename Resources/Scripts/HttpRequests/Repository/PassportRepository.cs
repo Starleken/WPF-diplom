@@ -42,6 +42,10 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
 
             request.AddParameter("series", createRequest.series);
             request.AddParameter("number", createRequest.number);
+
+            string date = $"{createRequest.issueDate.Year}-{createRequest.issueDate.Month}-{createRequest.issueDate.Day}";
+
+            request.AddParameter("issueDate", date);
             request.AddParameter("studentId", createRequest.studentId);
 
             client.Post(request);
@@ -61,6 +65,10 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
 
             request.AddParameter("id", updateRequest.id);
             request.AddParameter("series", updateRequest.series);
+
+            string date = $"{updateRequest.issueDate.Year}-{updateRequest.issueDate.Month}-{updateRequest.issueDate.Day}";
+
+            request.AddParameter("issueDate", date);
             request.AddParameter("number", updateRequest.number);
 
             client.Put(request);

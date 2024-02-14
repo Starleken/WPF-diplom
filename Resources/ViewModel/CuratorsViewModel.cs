@@ -49,6 +49,11 @@ namespace Diplom.Resources.ViewModel
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
+        public void DeleteCurator(CuratorEntity curator)
+        {
+            curatorRepository.DeleteById(curator.id);
+        }
+
         public void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

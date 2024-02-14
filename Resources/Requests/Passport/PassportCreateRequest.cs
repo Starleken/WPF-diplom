@@ -11,12 +11,14 @@ namespace Diplom.Resources.Requests.Passport
     {
         public string series { get; set; }
         public string number { get; set; }
+        public DateTime issueDate { get; set; }
         public long studentId { get; set; }
 
         public PassportCreateRequest(PassportEntity passport)
         {
             this.series = passport.series;
             this.number = passport.number;
+            this.issueDate = passport.issueDate;
             this.studentId = passport.student.id.Value;
         }
     }

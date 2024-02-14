@@ -47,9 +47,15 @@ namespace Diplom.Resources.ViewModel
 
         private void TestInitNotifications()
         {
+            NotificationRepository notificationRepository = new NotificationRepository();
+            string[] notifications = notificationRepository.GetAllByStudent(Student.id);
+
             Notifications = new ObservableCollection<ProfileNotification>();
-            Notifications.Add(new ProfileNotification(1, "Обновить паспорт"));
-            Notifications.Add(new ProfileNotification(2, "Сделать флюроографию"));
+
+            for (int i = 0; i < notifications.Length; i++)
+            {
+                Notifications.Add(new ProfileNotification(i + 1, notifications[i]));
+            }
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

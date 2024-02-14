@@ -1,4 +1,5 @@
 ﻿using Diplom.Resources.Model;
+using Diplom.Resources.Scripts.HttpRequests.Repository;
 using Diplom.Resources.ViewModel;
 using System;
 using System.Collections.Generic;

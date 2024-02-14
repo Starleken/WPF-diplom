@@ -45,16 +45,15 @@
                         <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
                         <Label Content="Серия:" MinWidth="150" FontSize="20"></Label>
                     </StackPanel>
-
                     <TextBox Name="seriesTextBox"  MinWidth="225" materialDesign:HintAssist.Hint="Серия паспорта"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding Passport.series}"/>
                 </StackPanel>
-                <!--<StackPanel Margin="10 3 10 0">
+                <StackPanel Margin="10 3 10 0">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
-                        <Label Content="Дата:" MinWidth="150" FontSize="20"></Label>
+                        <Label Content="Дата выдачи:" MinWidth="150" FontSize="20"></Label>
                     </StackPanel>
-                    <DatePicker Height="30" Text="Введите дату" MinWidth="220" materialDesign:HintAssist.Hint="Дата получения паспорта"/>
-                </StackPanel>-->
+                    <DatePicker Height="30" materialDesign:HintAssist.Hint="Введите дату выдачи паспорта" MinWidth="220" SelectedDate="{Binding Passport.issueDate}"/>
+                </StackPanel>
             </StackPanel>
         </Border>
 

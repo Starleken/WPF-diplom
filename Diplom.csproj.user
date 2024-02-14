@@ -73,9 +73,6 @@
     <Compile Update="Resources\View\Windows\Handlers\ActivityHandler.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Resources\View\Windows\Handlers\CuratorHandler.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Resources\View\Windows\Handlers\CuratorHandlerPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -154,9 +151,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Resources\View\Windows\Handlers\ActivityHandler.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Resources\View\Windows\Handlers\CuratorHandler.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Resources\View\Windows\Handlers\CuratorHandlerPage.xaml">

@@ -1,5 +1,7 @@
 ﻿using Diplom.Resources.Model;
+using Diplom.Resources.Requests.Curator;
 using Diplom.Resources.Scripts.DbConstants;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,24 +33,26 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
             return response;
         }
 
-        public CuratorEntity Create(CuratorEntity curator)
+        public CuratorEntity Create(CuratorCreateRequest createRequest)
         {
-            HttpClient client = new HttpClient();
+            var client = new RestClient(ApiConstants.API_URL);
+            var request = new RestRequest("curator");
 
-            using StringContent jsonContent = new StringContent(JsonSerializer.Serialize(curator), Encoding.UTF8, "application/json");
+            request.AddJsonBody(createRequest);
 
-            HttpResponseMessage responseMessage = client.PostAsync(URL, jsonContent).Result;
+            client.Post(request);
 
             return null;
         }
 
-        public CuratorEntity Update(CuratorEntity curator)
+        public CuratorEntity Update(CuratorUpdateRequest updateRequest)
         {
-            HttpClient client = new HttpClient();
+            var client = new RestClient(ApiConstants.API_URL);
+            var request = new RestRequest("curator");
 
-            using StringContent jsonContent = new StringContent(JsonSerializer.Serialize(curator), Encoding.UTF8, "application/json");
+            request.AddJsonBody(updateRequest);
 
-            HttpResponseMessage responseMessage = client.PutAsync(URL, jsonContent).Result;
+            client.Put(request);
 
             return null;
         }

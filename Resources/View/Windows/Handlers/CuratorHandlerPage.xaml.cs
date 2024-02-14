@@ -1,4 +1,5 @@
 ﻿using Diplom.Resources.Model;
+using Diplom.Resources.Scripts;
 using Diplom.Resources.ViewModel.Handlers;
 using System;
 using System.Collections.Generic;
@@ -32,12 +33,27 @@ namespace Diplom.Resources.View.Windows.Handlers
             DataContext = viewModel;
         }
 
-        public CuratorHandlerPage(CuratorEntity curator)
+        public CuratorHandlerPage(CuratorEntity curator, HandlerOpenType openType)
         {
             InitializeComponent();
 
             viewModel = new CuratorHandlerViewModel(curator);
             DataContext = viewModel;
+
+            InitByOpenType(openType);
+        }
+
+        private void InitByOpenType(HandlerOpenType openType)
+        {
+            if (openType == HandlerOpenType.update)
+            {
+                ChangeButton.Visibility = Visibility.Visible;
+                AddButton.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                AddButton.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
