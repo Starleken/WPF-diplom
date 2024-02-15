@@ -104,5 +104,18 @@ namespace Diplom.Resources.View.Pages
         {
 
         }
+
+        private void ActivitiesDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            ActivityEntity selectedActivity = GetSelectedActivity();
+
+            if (selectedActivity == null)
+            {
+                return;
+            }
+
+            ActivityHandler activityHandler = new ActivityHandler(viewModel.student, selectedActivity, HandlerOpenType.watch);
+            frameContainer.Navigate(activityHandler);
+        }
     }
 }

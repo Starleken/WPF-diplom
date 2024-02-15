@@ -64,7 +64,7 @@
             <TextBox x:Name="txtFilter" Style="{StaticResource textBoxFilter}"/>
         </Grid>-->
 
-        <DataGrid Name="ActivitiesDataGrid" Grid.Row="5" RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" Style="{DynamicResource DataGridStyle1}" Background="Transparent" ItemsSource="{Binding Activities}">
+        <DataGrid Name="ActivitiesDataGrid" Grid.Row="5" RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" Style="{DynamicResource DataGridStyle1}" Background="Transparent" ItemsSource="{Binding Activities}" MouseDoubleClick="ActivitiesDataGrid_MouseDoubleClick">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Название" Binding="{Binding name}"/>
                 <DataGridTextColumn Header="Дата" Binding="{Binding date}"/>

@@ -35,7 +35,7 @@
                     <TextBlock Text="{Binding Path=Student.user.person.Initials}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"/>
                 </Border>
                 <TextBlock Text="{Binding Path=Student.user.person.FullName}" VerticalAlignment="Center" Margin="10 0 0 0" FontSize="25"/>
-                <Button HorizontalAlignment="Right"/>
+                <Button HorizontalAlignment="Right" Margin="10 0 0 0" Content="Сохранить"/>
             </StackPanel>
         </Border>
 

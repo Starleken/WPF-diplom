@@ -79,5 +79,12 @@ namespace Diplom.Resources.View.Pages.Documents
         {
             return (MedicalPolicyEntity)MedicalPoliciesDataGrid.SelectedItem;
         }
+
+        private void MedicalPoliciesDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            MedicalPolicyEntity medicalPolicy = GetSelectedMedicalPolicy();
+
+            frameContainer.Navigate(new MedicalPolicyHandler(medicalPolicy, Scripts.HandlerOpenType.watch));
+        }
     }
 }

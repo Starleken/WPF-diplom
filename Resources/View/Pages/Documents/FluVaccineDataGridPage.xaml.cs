@@ -80,5 +80,15 @@ namespace Diplom.Resources.View.Pages.Documents
                 viewModel.DeleteFluVaccine(GetSelectedFluVaccine());
             }
         }
+
+        private void FluVaccinesDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            FluVaccineEntity fluVaccine = GetSelectedFluVaccine();
+
+            if (fluVaccine != null)
+            {
+                frameContainer.Navigate(new FluVaccineHandler(fluVaccine, Scripts.HandlerOpenType.watch));
+            }
+        }
     }
 }
