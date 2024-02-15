@@ -60,7 +60,13 @@ namespace Diplom.Resources.View.Pages.Documents
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            frameContainer.Navigate(new SnilsHandler(GetSelectedSnils(), Scripts.HandlerOpenType.update));
+            SnilsEntity snils = GetSelectedSnils();
+
+            if (snils != null)
+            {
+                frameContainer.Navigate(new SnilsHandler(GetSelectedSnils(), Scripts.HandlerOpenType.update));
+            }
+
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
@@ -77,6 +83,16 @@ namespace Diplom.Resources.View.Pages.Documents
         private SnilsEntity GetSelectedSnils()
         {
             return (SnilsEntity)SnilsDataGrid.SelectedItem;
+        }
+
+        private void SnilsDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            SnilsEntity snils = GetSelectedSnils();
+
+            if (snils != null)
+            {
+                frameContainer.Navigate(new SnilsHandler(GetSelectedSnils(), Scripts.HandlerOpenType.watch));
+            }
         }
     }
 }

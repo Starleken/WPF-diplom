@@ -85,5 +85,15 @@ namespace Diplom.Resources.View.Pages.Documents
                 viewModel.DeleteFluorography(GetSelectedFluorography());
             }
         }
+
+        private void FluorographiesDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            FluorographyEntity fluorography = GetSelectedFluorography();
+
+            if (fluorography != null)
+            {
+                frameContainer.Navigate(new FluorographyHandler(fluorography, Scripts.HandlerOpenType.watch));
+            }
+        }
     }
 }

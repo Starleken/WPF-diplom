@@ -79,5 +79,12 @@ namespace Diplom.Resources.View.Pages.Documents
         {
             return (PassportEntity)PassportsDataGrid.SelectedItem;
         }
+
+        private void PassportsDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            PassportEntity passport = GetSelectedPassport();
+
+            frameContainer.Navigate(new PassportHandler(passport, Scripts.HandlerOpenType.watch));
+        }
     }
 }

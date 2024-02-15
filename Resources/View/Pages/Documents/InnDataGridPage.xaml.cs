@@ -84,5 +84,15 @@ namespace Diplom.Resources.View.Pages.Documents
                 viewModel.DeleteInn(GetSelectedInn());
             }
         }
+
+        private void InnDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            InnEntity inn = GetSelectedInn();
+
+            if (inn != null)
+            {
+                frameContainer.Navigate(new InnHandler(inn, Scripts.HandlerOpenType.watch));
+            }
+        }
     }
 }
