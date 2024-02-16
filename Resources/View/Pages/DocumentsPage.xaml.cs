@@ -62,7 +62,7 @@ namespace Diplom.Resources.View.Pages
         {
 
             SnilsDataGridPage page = new SnilsDataGridPage(frameContainer, viewModel.student);
-            ChangePage("Снилс", page);
+            ChangePage("СНИЛС", page);
         }
 
         private void FluorographyButton_Click(object sender, RoutedEventArgs e)
@@ -80,7 +80,7 @@ namespace Diplom.Resources.View.Pages
         private void FluVaccinesButton_Click(object sender, RoutedEventArgs e)
         {
             FluVaccineDataGridPage page = new FluVaccineDataGridPage(frameContainer, viewModel.student);
-            ChangePage("Прививка от гриппа", page);
+            ChangePage("Прививки", page);
         }
 
         private void InnButton_Click(object sender, RoutedEventArgs e)

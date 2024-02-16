@@ -58,20 +58,20 @@
                         </Button>
                     </StackPanel>
                     <StackPanel DockPanel.Dock="Top">
-                        <Button Style="{StaticResource menuButton}" Name="DocumentsButton" Click="DocumentsButton_Click">
-                            <StackPanel Orientation="Horizontal">
-                                <Border Name="DocumentsActivity" Width="3" Background="#6568bb" CornerRadius="5"/>
-                                <Icon:PackIconMaterial Kind="FileDocumentMultiple" Style="{StaticResource menuButtonIcon}" />
-                                <TextBlock Text="Документы"/>
-                            </StackPanel>
-                        </Button>
-                    </StackPanel>
-                    <StackPanel DockPanel.Dock="Top">
                         <Button Style="{StaticResource menuButton}" Name="StudentsButton" Click="StudentsButton_Click" >
                             <StackPanel Orientation="Horizontal">
                                 <Border Name="StudentsActivity" Width="3" Background="#6568bb" CornerRadius="5" Visibility="Hidden"/>
                                 <Icon:PackIconMaterial Kind="AccountMultiple" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="Студенты"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel DockPanel.Dock="Top">
+                        <Button Style="{StaticResource menuButton}" Name="DocumentsButton" Click="DocumentsButton_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <Border Name="DocumentsActivity" Width="3" Background="#6568bb" CornerRadius="5"/>
+                                <Icon:PackIconMaterial Kind="FileDocumentMultiple" Style="{StaticResource menuButtonIcon}" />
+                                <TextBlock Text="Документы"/>
                             </StackPanel>
                         </Button>
                     </StackPanel>

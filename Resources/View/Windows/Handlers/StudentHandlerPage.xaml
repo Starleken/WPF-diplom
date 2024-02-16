@@ -30,46 +30,46 @@
         <Border Grid.Row="1" Grid.Column="1" CornerRadius="20" BorderBrush="Black">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
-                    <Label Content="Фамилия:" MinWidth="225" FontSize="20"></Label>
+                    <Label Content="*" Foreground="Red" Width="14" FontSize="14"></Label>
+                    <Label Content="Фамилия:" MinWidth="225" FontSize="14"></Label>
 
                     <TextBox Name="textBox" MinWidth="175" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Введите фамилию студента" Text="{Binding Student.user.person.surname}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
-                    <Label Content="Имя:" MinWidth="225" FontSize="20"></Label>
+                    <Label Content="*" Foreground="Red" Width="14" FontSize="14"></Label>
+                    <Label Content="Имя:" MinWidth="225" FontSize="14"></Label>
                     <TextBox Name="nameTextBox" MinWidth="175" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Введите имя студента"  Text="{Binding Student.user.person.name}"/>
 
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
-                    <Label Content="Отчество:" MinWidth="225" FontSize="20"></Label>
+                    <Label Content="*" Foreground="Red" Width="14" FontSize="14"></Label>
+                    <Label Content="Отчество:" MinWidth="225" FontSize="14"></Label>
                     <TextBox Name="PatronymicTextBox" MinWidth="175" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Введите отчество студента" Text="{Binding Student.user.person.patronymic}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
-                    <Label Content="Логин:" MinWidth="225" FontSize="20"></Label>
+                    <Label Content="*" Foreground="Red" Width="14" FontSize="14"></Label>
+                    <Label Content="Логин:" MinWidth="225" FontSize="14"></Label>
                     <TextBox Name="LoginTextBox" MinWidth="175" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Введите логин студента" Text="{Binding Student.user.login}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
-                    <Label Content="Пароль:" MinWidth="225" FontSize="20"></Label>
+                    <Label Content="*" Foreground="Red" Width="14" FontSize="14"></Label>
+                    <Label Content="Пароль:" MinWidth="225" FontSize="14"></Label>
                     <TextBox Name="passwordTextBox" MinWidth="175" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Введите пароль студента" Text="{Binding Student.user.password}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
-                    <Label Content="Форма обучения:" MinWidth="225" FontSize="20"></Label>
+                    <Label Content="*" Foreground="Red" Width="14" FontSize="14"></Label>
+                    <Label Content="Форма обучения:" MinWidth="225" FontSize="14"></Label>
                     <ComboBox Style="{DynamicResource MaterialDesignComboBox}" MinWidth="175" FontSize="13" Padding="10 8" VerticalAlignment="Center" ItemsSource="{Binding EducationForms}" DisplayMemberPath="name" SelectedValuePath="name" SelectedItem="{Binding Student.educationForm}" IsSynchronizedWithCurrentItem="True"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
-                    <Label Content="Группа:" MinWidth="225" FontSize="20"></Label>
+                    <Label Content="*" Foreground="Red" Width="14" FontSize="14"></Label>
+                    <Label Content="Группа:" MinWidth="225" FontSize="14"></Label>
                     <ComboBox Style="{DynamicResource MaterialDesignComboBox}" MinWidth="175" FontSize="13" Padding="10 8" VerticalAlignment="Center" ItemsSource="{Binding Groups}" DisplayMemberPath="name" SelectedValuePath="name" SelectedItem="{Binding Student.group}" IsSynchronizedWithCurrentItem="True"/>
                 </StackPanel>
             </StackPanel>
         </Border>
 
-        <Button Grid.Row="4" Grid.Column="1" Height="45" Width="150" Content="Сохранить" Style="{StaticResource CornerButton}" FontSize="20" Name="AddButton" Click="AddButton_Click"/>
-        <Button Grid.Row="4" Grid.Column="1" Height="45" Width="150" Content="Изменить" Style="{StaticResource CornerButton}" FontSize="20" Name="ChangeButton" Visibility="Collapsed" Click="ChangeButton_Click" />
+        <Button Grid.Row="4" Grid.Column="1" Height="45" Width="130" Content="Сохранить" Style="{StaticResource CornerButton}" FontSize="14" Name="AddButton" Click="AddButton_Click"/>
+        <Button Grid.Row="4" Grid.Column="1" Height="45" Width="130" Content="Изменить" Style="{StaticResource CornerButton}" FontSize="14" Name="ChangeButton" Visibility="Collapsed" Click="ChangeButton_Click" />
     </Grid>
 </Page>
