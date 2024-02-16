@@ -13,7 +13,7 @@
         <DataGrid Name="FluorographiesDataGrid" Grid.Row="5" RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" Style="{DynamicResource DataGridStyle1}" Background="Transparent" ItemsSource="{Binding Fluorographies}" MouseDoubleClick="FluorographiesDataGrid_MouseDoubleClick">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Номер" Binding="{Binding number}"/>
-                <DataGridTextColumn Header="Дата создания" Binding="{Binding createDate}"/>
+                <DataGridTextColumn Header="Дата прохождения" Binding="{Binding createDate}"/>
                 <DataGridTemplateColumn Header="Операции" IsReadOnly="True" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

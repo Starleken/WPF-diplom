@@ -34,38 +34,38 @@
             <StackPanel>
                 <StackPanel  Margin="10 3 10 0">
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
-                        <Label Content="Название:" MinWidth="150" FontSize="20"></Label>
+                        <Label Content="*" Foreground="Red" Width="14" FontSize="14"></Label>
+                        <Label Content="Название:" MinWidth="150" FontSize="14"></Label>
                     </StackPanel>
                     <TextBox Name="textBox" MinWidth="225" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Введите название конкурса" Text="{Binding Activity.name}"/>
                 </StackPanel>
-                <StackPanel Margin="10 3 10 0">
+                <StackPanel Margin="10 10 10 0">
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
-                        <Label Content="Дата:" MinWidth="150" FontSize="20"></Label>
+                        <Label Content="*" Foreground="Red" Width="14" FontSize="14"></Label>
+                        <Label Content="Дата:" MinWidth="150" FontSize="14"></Label>
                     </StackPanel>
                     <DatePicker Height="30" Text="Введите дату" MinWidth="220" materialDesign:HintAssist.Hint="Выберите дату конкурса" SelectedDate="{Binding Activity.date}"/>
                 </StackPanel>
-                <StackPanel Margin="10 3 10 0">
+                <StackPanel Margin="10 10 10 0">
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
-                        <Label Content="Результат:" MinWidth="150" FontSize="20"></Label>
-                    </StackPanel>
-                    <TextBox Name="PlaceTextBox" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Введите ваш результат" MinWidth="225" Text="{Binding Activity.place}"/>
-                </StackPanel>
-                <StackPanel Margin="10 3 10 0">
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
-                        <Label Content="Тип:" MinWidth="150" FontSize="20"></Label>
+                        <Label Content="*" Foreground="Red" Width="14" FontSize="14"></Label>
+                        <Label Content="Тип:" MinWidth="150" FontSize="14"></Label>
                     </StackPanel>
                     <ComboBox Style="{DynamicResource MaterialDesignComboBox}" FontSize="13" Padding="10 8" MinWidth="220" VerticalAlignment="Center" ItemsSource="{Binding ActivityTypes}" DisplayMemberPath="name" SelectedItem="{Binding Activity.activityType}" IsSynchronizedWithCurrentItem="True"/>
                 </StackPanel>
-                <StackPanel Margin="10 3 10 0">
+                <StackPanel Margin="10 10 10 0">
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
-                        <Label Content="Уровень:" MinWidth="150" FontSize="20"></Label>
+                        <Label Content="*" Foreground="Red" Width="14" FontSize="14"></Label>
+                        <Label Content="Уровень:" MinWidth="150" FontSize="14"></Label>
                     </StackPanel>
                     <ComboBox Style="{DynamicResource MaterialDesignComboBox}" FontSize="13" Padding="10 8" MinWidth="220" VerticalAlignment="Center" ItemsSource="{Binding ActivityLevels}" DisplayMemberPath="name" SelectedItem="{Binding Activity.activityLevel}" IsSynchronizedWithCurrentItem="True"/>
+                </StackPanel>
+                <StackPanel Margin="10 10 10 0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="*" Foreground="Red" Width="14" FontSize="14"></Label>
+                        <Label Content="Результат:" MinWidth="150" FontSize="14"></Label>
+                    </StackPanel>
+                    <TextBox Name="PlaceTextBox" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Введите ваш результат" MinWidth="225" Text="{Binding Activity.place}"/>
                 </StackPanel>
             </StackPanel>
         </Border>
@@ -83,9 +83,9 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0">
-                    <Label Content="*" Foreground="Red" Width="25" FontSize="30"></Label>
-                    <Label Content="Выбор изображения:" MinWidth="150" FontSize="20"></Label>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 10 0 0">
+                    <Label Content="*" Foreground="Red" Width="14" FontSize="14"></Label>
+                    <Label Content="Загрузить диплом:" MinWidth="150" FontSize="14"></Label>
                 </StackPanel>
 
                 <Image Grid.Row="1" Margin="40" Source="../../../Images/QuestionMark.png"/>
@@ -96,7 +96,7 @@
             </Grid>
         </Border>
 
-        <Button Grid.Row="1" Name="AddButton" Grid.ColumnSpan="2" Width="150" Height="40" Style="{StaticResource CornerButton}" Content="Добавить" FontSize="20" Margin="0 0 0 10" Click="AddButton_Click" />
-        <Button Grid.Row="1" Name="EditButton" Grid.ColumnSpan="2" Width="150" Height="40" Style="{StaticResource CornerButton}" Content="Изменить" FontSize="20" Margin="0 0 0 10"  Visibility="Collapsed" Click="EditButton_Click"/>
+        <Button Grid.Row="1" Name="AddButton" Grid.ColumnSpan="2" Width="130" Height="40" Style="{StaticResource CornerButton}" Content="Добавить" FontSize="14" Margin="0 0 0 10" Click="AddButton_Click" />
+        <Button Grid.Row="1" Name="EditButton" Grid.ColumnSpan="2" Width="130" Height="40" Style="{StaticResource CornerButton}" Content="Изменить" FontSize="14" Margin="0 0 0 10"  Visibility="Collapsed" Click="EditButton_Click"/>
     </Grid>
 </Page>

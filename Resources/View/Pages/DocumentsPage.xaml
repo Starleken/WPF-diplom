@@ -24,13 +24,13 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
-        <!--<Grid Width="300" HorizontalAlignment="Left">
-            <TextBlock Margin="20 0" VerticalAlignment="Center" Foreground="#b0b9c6" 
+        <Grid Width="300" HorizontalAlignment="Left" Visibility="Hidden">
+            <TextBlock Height="30" Style="{DynamicResource MaterialDesignBody1TextBlock}" Foreground="#b0b9c6" 
                IsHitTestVisible="False" Panel.ZIndex="1" Text="Искать..." Visibility="{Binding ElementName=SearchTextBox, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}"/>
-            <TextBox x:Name="SearchTextBox" Style="{StaticResource textBoxSearch}"/>
+            <TextBox x:Name="SearchTextBox" Height="30" Style="{DynamicResource MaterialDesignTextBox}" FontSize="15"/>
             <Icon:PackIconMaterial Kind="Magnify" Width="15" Height="15" VerticalAlignment="Center" Margin="0 0 15 0"
                            Foreground="#b0b9c6" HorizontalAlignment="Right"/>
-        </Grid>-->
+        </Grid>
 
         <TextBlock Text="{Binding student.user.person.name}" Grid.Row="1" FontSize="32" FontWeight="SemiBold" Margin="0 20 0 0"
            HorizontalAlignment="Left" Foreground="#121518"/>
@@ -45,7 +45,7 @@
         <Separator Height="1" Grid.Row="3" Background="#dae2ea" Margin="0 -1 0 10"/>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0 10 0 0">
-            <Button Content="Снилс" Style="{StaticResource tabButton}" Name="SnilsButton" Click="SnilsButton_Click"/>
+            <Button Content="СНИЛС" Style="{StaticResource tabButton}" Name="SnilsButton" Click="SnilsButton_Click"/>
             <Button Content="Флюроография" Style="{StaticResource tabButton}" Name="FluorographyButton" Width="120" Click="FluorographyButton_Click"/>
             <Button Content="Паспорт" Style="{StaticResource tabButton}" Name="PassportsButton" Click="PassportsButton_Click"/>
             <Button Content="Мед полис" Style="{StaticResource tabButton}" Width="90" Name="MedicalPoliciesButton" Click="MedicalPoliciesButton_Click"/>
