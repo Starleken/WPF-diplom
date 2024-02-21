@@ -39,6 +39,13 @@
                     </StackPanel>
                     <TextBox Name="textBox" MinWidth="225" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Введите название конкурса" Text="{Binding Activity.name}"/>
                 </StackPanel>
+                <StackPanel  Margin="10 3 10 0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="*" Foreground="Red" Width="14" FontSize="14"></Label>
+                        <Label Content="Место проведения:" MinWidth="150" FontSize="14"></Label>
+                    </StackPanel>
+                    <TextBox Name="eventPlaceTextBox" MinWidth="225" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Введите место проведения конкурса" Text="{Binding Activity.eventPlace}"/>
+                </StackPanel>
                 <StackPanel Margin="10 10 10 0">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="*" Foreground="Red" Width="14" FontSize="14"></Label>

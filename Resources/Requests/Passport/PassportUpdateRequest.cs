@@ -12,6 +12,7 @@ namespace Diplom.Resources.Requests.Passport
         public long id;
         public string series;
         public string number;
+        public string issuingOrganization;
         public DateTime issueDate;
 
         public PassportUpdateRequest(PassportEntity passport)
@@ -19,6 +20,7 @@ namespace Diplom.Resources.Requests.Passport
             this.id = passport.id.Value;
             this.series = passport.series;
             this.issueDate = passport.issueDate;
+            this.issuingOrganization = passport.issuingOrganization;
             this.number = passport.number;
         }
     }

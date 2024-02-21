@@ -11,6 +11,7 @@ namespace Diplom.Resources.Model.Activity
         public int id { get; set; }
         public string name { get; set; }
         public DateTime date { get; set; }
+        public string eventPlace { get; set; }
         public int place { get; set; }
         public string imageURL { get; set; }
         public ActivityLevelEntity activityLevel { get; set; }

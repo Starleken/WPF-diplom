@@ -12,6 +12,7 @@ namespace Diplom.Resources.Model
         public string series { get; set; }
         public string number { get; set; }
         public DateTime issueDate { get; set; }
+        public string issuingOrganization { get; set; }
         public string imageURL { get; set; }
         public StudentEntity student { get; set; }
     }
