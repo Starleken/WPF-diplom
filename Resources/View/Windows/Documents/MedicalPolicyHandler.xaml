@@ -40,6 +40,14 @@
 
                     <TextBox Name="numberTextBox"  MinWidth="225" materialDesign:HintAssist.Hint="Номер медицинского полиса"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding MedicalPolicy.number}"/>
                 </StackPanel>
+                <StackPanel  Margin="10 3 10 0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="*" Foreground="Red" Width="14" FontSize="14"></Label>
+                        <Label Content="Место выдачи:" MinWidth="150" FontSize="14"></Label>
+                    </StackPanel>
+
+                    <TextBox Name="issuingOrganizationTextBox"  MinWidth="225" materialDesign:HintAssist.Hint="Место выдачи медицинского полиса"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding MedicalPolicy.issuingOrganization}"/>
+                </StackPanel>
             </StackPanel>
         </Border>
 

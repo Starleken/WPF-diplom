@@ -13,6 +13,7 @@ namespace Diplom.Resources.Requests.Student
         public long id { get; set; }
         public string registrationAddress { get; set; }
         public string residentialAddress { get; set; }
+        public string phone { get; set; }
         public long educationFormId { get; set; }
         public UserUpdateRequest user { get; set; }
         public long groupId { get; set; }
@@ -25,6 +26,7 @@ namespace Diplom.Resources.Requests.Student
             this.educationFormId = student.educationForm.id.Value;
             this.user = new UserUpdateRequest(student.user);
             this.groupId = student.group.id.Value;
+            this.phone = student.phone;
         }
     }
 }

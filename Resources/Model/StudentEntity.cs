@@ -11,6 +11,7 @@ namespace Diplom.Resources.Model
         public int? id { get; set; }
         public string? registrationAddress { get; set; }
         public string? residentialAddress { get; set; }
+        public string? phone { get; set; }
         public EducationFormEntity? educationForm { get; set; }
         public UserEntity? user { get; set; }
         public GroupEntity? group { get; set; }

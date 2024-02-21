@@ -11,6 +11,7 @@ namespace Diplom.Resources.Model
         public long? id { get; set; }
         public string number { get; set; }
         public string imageURL { get; set; }
+        public string issuingOrganization { get; set; }
         public StudentEntity student { get; set; }
     }
 }

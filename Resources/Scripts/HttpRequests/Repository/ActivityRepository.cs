@@ -46,6 +46,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
             request.AddParameter("activityTypeId", createRequest.activityTypeId.Value);
             request.AddParameter("activityLevelId", createRequest.activityLevelId);
             request.AddParameter("studentId", createRequest.studentId.Value);
+            request.AddParameter("eventPlace", createRequest.eventPlace);
 
             string date = $"{createRequest.date.Year}-{createRequest.date.Month}-{createRequest.date.Day}";
 
@@ -71,6 +72,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
             request.AddParameter("place", updateRequest.place);
             request.AddParameter("activityTypeId", updateRequest.activityTypeId.Value);
             request.AddParameter("activityLevelId", updateRequest.activityLevelId.Value);
+            request.AddParameter("eventPlace", updateRequest.eventPlace);
 
             string date = $"{updateRequest.date.Year}-{updateRequest.date.Month}-{updateRequest.date.Day}";
 

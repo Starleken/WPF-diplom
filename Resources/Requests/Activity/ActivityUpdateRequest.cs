@@ -14,6 +14,7 @@ namespace Diplom.Resources.Requests.Activity
         public long id { get; set; }
         public string name { get; set; }
         public DateTime date { get; set; }
+        public string eventPlace { get; set; }
         public int place { get; set; }
         public long? activityTypeId { get; set; }
         public long? activityLevelId { get; set; }
@@ -24,6 +25,7 @@ namespace Diplom.Resources.Requests.Activity
             name = activity.name;
             date = activity.date;
             place = activity.place;
+            eventPlace = activity.eventPlace;
             activityTypeId = activity.activityType.id;
             activityLevelId = activity.activityLevel.id;
         }

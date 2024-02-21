@@ -47,6 +47,13 @@
                     </StackPanel>
                     <TextBox Name="seriesTextBox"  MinWidth="225" materialDesign:HintAssist.Hint="Серия паспорта"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding Passport.series}"/>
                 </StackPanel>
+                <StackPanel  Margin="10 10 10 0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="*" Foreground="Red" Width="14" FontSize="14"></Label>
+                        <Label Content="Место выдачи:" MinWidth="150" FontSize="14"></Label>
+                    </StackPanel>
+                    <TextBox Name="issuingOrganizationTextBox"  MinWidth="225" materialDesign:HintAssist.Hint="Место выдачи паспорта"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding Passport.issuingOrganization}"/>
+                </StackPanel>
                 <StackPanel Margin="10 10 10 0">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="*" Foreground="Red" Width="14" FontSize="14"></Label>

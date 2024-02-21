@@ -12,6 +12,7 @@ namespace Diplom.Resources.Requests.Passport
         public string series { get; set; }
         public string number { get; set; }
         public DateTime issueDate { get; set; }
+        public string issuingOrganization { get; set; }
         public long studentId { get; set; }
 
         public PassportCreateRequest(PassportEntity passport)
@@ -19,6 +20,7 @@ namespace Diplom.Resources.Requests.Passport
             this.series = passport.series;
             this.number = passport.number;
             this.issueDate = passport.issueDate;
+            this.issuingOrganization = passport.issuingOrganization;
             this.studentId = passport.student.id.Value;
         }
     }

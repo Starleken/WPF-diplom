@@ -41,6 +41,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
 
             request.AddParameter("number", createRequest.number);
             request.AddParameter("studentId", createRequest.studentId);
+            request.AddParameter("issuingOrganization", createRequest.issuingOrganization);
 
             client.Post(request);
 
@@ -59,6 +60,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
 
             request.AddParameter("id", updateRequest.id);
             request.AddParameter("number", updateRequest.number);
+            request.AddParameter("issuingOrganization", updateRequest.issuingOrganization);
 
             client.Put(request);
 
