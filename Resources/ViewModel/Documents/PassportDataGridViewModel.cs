@@ -33,7 +33,7 @@ namespace Diplom.Resources.ViewModel.Documents
             repository = new PassportRepository();
             this.student = student;
 
-            Passports = new ObservableCollection<PassportEntity>(repository.GetAllByStudent(student.id));
+            Passports = new ObservableCollection<PassportEntity>(repository.GetByStudent(student.id));
         }
 
         public void DeletePassport(PassportEntity passport)

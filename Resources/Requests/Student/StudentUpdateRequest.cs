@@ -19,7 +19,7 @@ namespace Diplom.Resources.Requests.Student
         public long groupId { get; set; }
 
         public StudentUpdateRequest(StudentEntity student)
-        {
+        {   
             this.id = student.id.Value;
             this.registrationAddress = student.registrationAddress;
             this.residentialAddress = student.residentialAddress;
