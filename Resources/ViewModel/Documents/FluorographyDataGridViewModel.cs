@@ -33,7 +33,8 @@ namespace Diplom.Resources.ViewModel.Documents
             repository = new FluorographyRepository();
             this.student = student;
 
-            Fluorographies = new ObservableCollection<FluorographyEntity>(repository.GetAllByStudent(student.id));
+            FluorographyEntity entity = repository.GetAllByStudent(student.id);
+            Fluorographies = new ObservableCollection<FluorographyEntity>(new List<FluorographyEntity>() { entity});
         }
 
         public void DeleteFluorography (FluorographyEntity fluorography)

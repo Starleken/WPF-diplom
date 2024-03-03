@@ -8,6 +8,6 @@ namespace Diplom.Resources.Scripts.DbConstants
 {
     static class ApiConstants
     {
-        public static readonly string API_URL = "http://127.0.0.1:8080/api/v1/";
+        public static readonly string API_URL = "http://147.45.102.27/api/v1/";
     }
 }

@@ -81,7 +81,8 @@ namespace Diplom.Resources.ViewModel
 
         public void GetFluographiesByStudent()
         {
-            Fluorographies = new ObservableCollection<FluorographyEntity>(new FluorographyRepository().GetAllByStudent(student.id).ToList());
+            FluorographyEntity entity = new FluorographyRepository().GetAllByStudent(student.id);
+            Fluorographies = new ObservableCollection<FluorographyEntity>(new List<FluorographyEntity>() { entity});
         }
 
         public void GetMedicalPoliciesByStudent()

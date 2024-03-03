@@ -28,9 +28,18 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
         public FluorographyEntity[] GetAllByStudent(long? studentId)
         {
             HttpClient httpClient = new HttpClient();
-            var response = httpClient.GetFromJsonAsync<FluorographyEntity[]>($"{URL}/student?studentId={studentId}").Result;
 
-            return response;
+            FluorographyEntity response;
+            try
+            {
+                response = httpClient.GetFromJsonAsync<FluorographyEntity>($"{URL}/student?studentId={studentId}").Result;
+            }
+            catch (Exception ex)
+            {
+                return new FluorographyEntity[0];
+            }
+
+            return new FluorographyEntity[] { response };
         }
 
         public FluorographyEntity Post(FluorographyCreateRequest createRequest, string imagePath)

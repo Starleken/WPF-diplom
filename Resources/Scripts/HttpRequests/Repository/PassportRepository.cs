@@ -26,12 +26,22 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
             return response;
         }
 
-        public PassportEntity[] GetAllByStudent(long? studentId)
+        public PassportEntity[] GetByStudent(long? studentId)
         {
             HttpClient httpClient = new HttpClient();
-            var response = httpClient.GetFromJsonAsync<PassportEntity[]>($"{URL}/student?studentId={studentId}").Result;
 
-            return response;
+            PassportEntity response;
+            try
+            {
+                response = httpClient.GetFromJsonAsync<PassportEntity>($"{URL}/student?studentId={studentId}").Result;
+            }
+            catch (Exception ex)
+            {
+                return new PassportEntity[0];
+            }
+            
+
+            return new PassportEntity[] {response};
         }
 
         public FluorographyEntity Post(PassportCreateRequest createRequest, string imagePath)
