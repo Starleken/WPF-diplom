@@ -1,6 +1,5 @@
 ﻿using Diplom.Resources.Model;
 using Diplom.Resources.Model.Activity;
-using Diplom.Resources.Scripts.HttpRequests.Get;
 using Diplom.Resources.Scripts.HttpRequests.Repository;
 using System;
 using System.Collections.Generic;
@@ -46,7 +45,7 @@ namespace Diplom.Resources.ViewModel
 
             PullAchievmentsByStudentId(student);
 
-            ActivityTypes = new ObservableCollection<ActivityLevelEntity>(new ActivityTypeGetter().GetAll());
+            ActivityTypes = new ObservableCollection<ActivityLevelEntity>(new ActivityLevelRepository().GetAll());
         }
 
         public void PullAchievmentsByStudentId(StudentEntity student)

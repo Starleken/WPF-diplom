@@ -1,4 +1,5 @@
 ﻿using Diplom.Resources.Model;
+using Diplom.Resources.Scripts;
 using Diplom.Resources.Scripts.Interfaces;
 using Diplom.Resources.Scripts.Util;
 using Diplom.Resources.View.Windows;
@@ -35,16 +36,6 @@ namespace Diplom.Resources.View.Pages.Documents
             viewModel = new PassportDataGridViewModel(student);
             DataContext = viewModel;
             this.frameContainer = frameContainer;
-
-            InitByRole();
-        }
-
-        private void InitByRole()
-        {
-            if (AuthController.CurrentUser.id != 3)
-            {
-                PassportsDataGrid.Columns[2].Visibility = Visibility.Collapsed;
-            }
         }
 
         public void AddEntity()

@@ -1,5 +1,4 @@
 ﻿using Diplom.Resources.Model;
-using Diplom.Resources.Scripts.HttpRequests.Get;
 using Diplom.Resources.Scripts.HttpRequests.Repository;
 using Diplom.Resources.View.Windows;
 using System;

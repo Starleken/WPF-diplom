@@ -13,7 +13,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
 {
     class UserRepository
     {
-        private string URL = ApiConstants.API_URL + "user";
+        private string URL = ApiConstants.API_URL + "users";
 
         public UserEntity[] GetAll()
         {

@@ -16,7 +16,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
 {
     internal class StudentRepository
     {
-        private string URL = ApiConstants.API_URL + "student";
+        private string URL = ApiConstants.API_URL + "students";
 
         public StudentEntity[] GetAll()
         {

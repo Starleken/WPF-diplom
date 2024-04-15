@@ -12,7 +12,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
 {
     class ActivityTypeRepository
     {
-        private string URL = ApiConstants.API_URL + "activityType";
+        private string URL = ApiConstants.API_URL + "activityTypes";
 
         public ActivityTypeEntity[] GetAll()
         {

@@ -12,7 +12,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
 {
     internal class EducationFormRepository
     {
-        private string URL = ApiConstants.API_URL + "educationForm";
+        private string URL = ApiConstants.API_URL + "educationForms";
 
         public EducationFormEntity[] GetAll()
         {

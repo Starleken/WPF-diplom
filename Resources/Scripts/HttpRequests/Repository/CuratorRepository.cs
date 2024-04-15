@@ -15,7 +15,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
 {
     internal class CuratorRepository
     {
-        private string URL = ApiConstants.API_URL + "curator";
+        private string URL = ApiConstants.API_URL + "curators";
 
         public CuratorEntity[] GetAll()
         {
