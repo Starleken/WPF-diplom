@@ -15,7 +15,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
 {
     class MedicalPolicyRepository
     {
-        private string URL = ApiConstants.API_URL + "medicalPolicy";
+        private string URL = ApiConstants.API_URL + "medicalPolicies";
 
         public MedicalPolicyEntity[] GetAll()
         {
@@ -36,7 +36,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
         public MedicalPolicyEntity Post(MedicalPolicyCreateRequest createRequest, string imagePath)
         {
             var client = new RestClient(ApiConstants.API_URL);
-            var request = new RestRequest("medicalPolicy");
+            var request = new RestRequest("medicalPolicies");
             request.AddFile("image", imagePath);
 
             request.AddParameter("number", createRequest.number);
@@ -51,7 +51,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
         public MedicalPolicyEntity Put(MedicalPolicyUpdateRequest updateRequest, string imagePath)
         {
             var client = new RestClient(ApiConstants.API_URL);
-            var request = new RestRequest("medicalPolicy");
+            var request = new RestRequest("medicalPolicies");
 
             if (!imagePath.Contains("http"))
             {

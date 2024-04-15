@@ -36,16 +36,6 @@ namespace Diplom.Resources.View.Pages.Documents
             this.frameContainer = frameContainer;
             viewModel = new SnilsDataGridViewModel(student);
             DataContext = viewModel;
-
-            InitByRole();
-        }
-
-        private void InitByRole()
-        {
-            if (AuthController.CurrentUser.id != 3)
-            {
-                SnilsDataGrid.Columns[1].Visibility = Visibility.Collapsed;
-            }
         }
 
         public void AddEntity()

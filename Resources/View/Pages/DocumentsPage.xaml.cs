@@ -1,4 +1,5 @@
 ﻿using Diplom.Resources.Model;
+using Diplom.Resources.Scripts;
 using Diplom.Resources.Scripts.Interfaces;
 using Diplom.Resources.Scripts.Util;
 using Diplom.Resources.View.Pages.Documents;

@@ -60,11 +60,13 @@ namespace Diplom.Resources.View.Windows.Documents
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             viewModel.AddPassport();
+            NotificationViewController.Instance.UpdateNotificationCount();
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
             viewModel.UpdatePassport();
+            NotificationViewController.Instance.UpdateNotificationCount();
         }
 
         private void ImageButton_Click(object sender, RoutedEventArgs e)

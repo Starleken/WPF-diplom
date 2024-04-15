@@ -15,7 +15,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
 {
     class SnilsRepository
     {
-        private string URL = ApiConstants.API_URL + "snils";
+        private string URL = ApiConstants.API_URL + "snilses";
 
         public SnilsEntity[] GetAll()
         {
@@ -36,7 +36,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
         public SnilsEntity Post(SnilsCreateRequest createRequest, string imagePath)
         {
             var client = new RestClient(ApiConstants.API_URL);
-            var request = new RestRequest("snils");
+            var request = new RestRequest("snilses");
             request.AddFile("image", imagePath);
 
             request.AddParameter("number", createRequest.number);
@@ -50,7 +50,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
         public SnilsEntity Put(SnilsUpdateRequest updateRequest, string imagePath)
         {
             var client = new RestClient(ApiConstants.API_URL);
-            var request = new RestRequest("snils");
+            var request = new RestRequest("snilses");
 
             if (!imagePath.Contains("http"))
             {

@@ -15,7 +15,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
 {
     class FluorographyRepository
     {
-        private string URL = ApiConstants.API_URL + "fluorography";
+        private string URL = ApiConstants.API_URL + "fluorographies";
 
         public FluorographyEntity[] GetAll()
         {
@@ -45,7 +45,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
         public FluorographyEntity Post(FluorographyCreateRequest createRequest, string imagePath)
         {
             var client = new RestClient(ApiConstants.API_URL);
-            var request = new RestRequest("fluorography");
+            var request = new RestRequest("fluorographies");
             request.AddFile("image", imagePath);
 
             request.AddParameter("number", createRequest.number);
@@ -63,7 +63,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
         public FluorographyEntity Put(FluorographyUpdateRequest updateRequest, string imagePath)
         {
             var client = new RestClient(ApiConstants.API_URL);
-            var request = new RestRequest("fluorography");
+            var request = new RestRequest("fluorographies");
 
             if (!imagePath.Contains("http"))
             {

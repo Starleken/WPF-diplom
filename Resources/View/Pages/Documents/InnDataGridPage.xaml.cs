@@ -37,16 +37,6 @@ namespace Diplom.Resources.View.Pages.Documents
             DataContext = viewModel;
 
             this.frameContainer = frameContainer;
-
-            InitByRole();
-        }
-
-        private void InitByRole()
-        {
-            if (AuthController.CurrentUser.id != 3)
-            {
-                InnDataGrid.Columns[1].Visibility = Visibility.Collapsed;
-            }
         }
 
         public void AddEntity()

@@ -15,7 +15,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
 {
     class FluVaccineRepository
     {
-        private string URL = ApiConstants.API_URL + "fluVaccine";
+        private string URL = ApiConstants.API_URL + "fluVaccines";
 
         public FluVaccineEntity[] GetAll()
         {
@@ -36,7 +36,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
         public FluorographyEntity Post(FluVaccineCreateRequest createRequest, string imagePath)
         {
             var client = new RestClient(ApiConstants.API_URL);
-            var request = new RestRequest("fluVaccine");
+            var request = new RestRequest("fluVaccines");
             request.AddFile("image", imagePath);
 
             request.AddParameter("studentId", createRequest.studentId);
@@ -53,7 +53,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
         public FluorographyEntity Put(FluVaccineUpdateRequest updateRequest, string imagePath)
         {
             var client = new RestClient(ApiConstants.API_URL);
-            var request = new RestRequest("fluVaccine");
+            var request = new RestRequest("fluVaccines");
 
             if (!imagePath.Contains("http"))
             {

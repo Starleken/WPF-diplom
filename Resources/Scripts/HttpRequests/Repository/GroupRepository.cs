@@ -12,7 +12,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
 {
     internal class GroupRepository
     {
-        private string URL = ApiConstants.API_URL + "group";
+        private string URL = ApiConstants.API_URL + "groups";
 
         public GroupEntity[] GetAll()
         {

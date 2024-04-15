@@ -16,7 +16,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
 {
     internal class PassportRepository
     {
-        private string URL = ApiConstants.API_URL + "passport";
+        private string URL = ApiConstants.API_URL + "passports";
 
         public PassportEntity[] GetAll()
         {
@@ -47,7 +47,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
         public FluorographyEntity Post(PassportCreateRequest createRequest, string imagePath)
         {
             var client = new RestClient(ApiConstants.API_URL);
-            var request = new RestRequest("passport");
+            var request = new RestRequest("passports");
             request.AddFile("image", imagePath);
 
             request.AddParameter("series", createRequest.series);
@@ -67,7 +67,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
         public FluorographyEntity Put(PassportUpdateRequest updateRequest, string imagePath)
         {
             var client = new RestClient(ApiConstants.API_URL);
-            var request = new RestRequest("passport");
+            var request = new RestRequest("passports");
 
             if (!imagePath.Contains("http"))
             {

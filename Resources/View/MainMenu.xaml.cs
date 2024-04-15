@@ -78,6 +78,11 @@ namespace Diplom.Resources.View
             CuratorsButton.Visibility = Visibility.Collapsed;
             StudentsButton.Visibility = Visibility.Collapsed;
             ProfileButton.Visibility = Visibility.Visible;
+
+            NotificationViewController notificationViewController = new NotificationViewController(NotificationBorder, NotificationCount);
+            notificationViewController.UpdateNotificationCount();
+            NotificationViewController.Instance = notificationViewController;
+            
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)

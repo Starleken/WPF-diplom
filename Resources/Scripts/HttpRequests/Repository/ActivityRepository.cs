@@ -17,7 +17,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
 {
     class ActivityRepository
     {
-        private string URL = ApiConstants.API_URL + "activity";
+        private string URL = ApiConstants.API_URL + "activities";
 
         public ActivityEntity[] GetAll()
         {
@@ -38,7 +38,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
         public ActivityEntity PostActivity(ActivityCreateRequest createRequest, string imagePath)
         {    
             var client = new RestClient(ApiConstants.API_URL);
-            var request = new RestRequest("activity");
+            var request = new RestRequest("activities");
             request.AddFile("image", imagePath);
 
             request.AddParameter("name", createRequest.name);
@@ -60,7 +60,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
         public ActivityEntity PutActivity(ActivityUpdateRequest updateRequest, string imagePath)
         {
             var client = new RestClient(ApiConstants.API_URL);
-            var request = new RestRequest("activity");
+            var request = new RestRequest("activities");
 
             if (!imagePath.Contains("http"))
             {

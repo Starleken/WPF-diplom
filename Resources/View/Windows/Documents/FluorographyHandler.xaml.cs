@@ -60,11 +60,13 @@ namespace Diplom.Resources.View.Windows.Documents
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             viewModel.AddFluorography();
+            NotificationViewController.Instance.UpdateNotificationCount();
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
             viewModel.UpdateFluorography();
+            NotificationViewController.Instance.UpdateNotificationCount();
         }
 
         private void ImageButton_Click(object sender, RoutedEventArgs e)

@@ -90,6 +90,9 @@
                                 <Border Visibility="Hidden" Name="ProfileActivity" Width="3" Background="#6568bb" CornerRadius="5"/>
                                 <Icon:PackIconMaterial Kind="Trophy" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="Профиль"/>
+                                <Border Visibility="Hidden" Name="NotificationBorder" Background="Red" BorderBrush="Transparent" Margin="20 0 0 0" CornerRadius="20" Width="20" Height="20">
+                                    <TextBlock Name="NotificationCount" Foreground="White" Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
                             </StackPanel>
                         </Button>
                     </StackPanel>

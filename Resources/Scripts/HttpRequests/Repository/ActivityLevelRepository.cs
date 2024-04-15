@@ -13,7 +13,7 @@ namespace Diplom.Resources.Scripts.HttpRequests.Repository
 {
     class ActivityLevelRepository
     {
-        private string URL = ApiConstants.API_URL + "activityLevel";
+        private string URL = ApiConstants.API_URL + "activityLevels";
 
         public ActivityLevelEntity[] GetAll()
         {
